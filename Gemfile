@@ -47,6 +47,9 @@ group :development, :test do
   # Interface testing DSL
   gem 'capybara'
 
+  # Use shoulda for database testing matchers
+  gem 'shoulda'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
