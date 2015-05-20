@@ -10,4 +10,8 @@
     %header
       .notice
         = flash[:notice]
+      .notice.errors
+        - if flash[:errors]
+          - flash[:errors].each do |error|
+            = error
     = yield
