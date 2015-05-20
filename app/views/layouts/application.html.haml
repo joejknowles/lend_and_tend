@@ -7,17 +7,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-<<<<<<< HEAD
-    %header
-      .notice
-        = flash[:notice]
-      .notice.errors
-        - if flash[:errors]
-          - flash[:errors].each do |error|
-            = error
-=======
+    .errors
+      - if flash[:errors]
+        - flash[:errors].each do |error|
+          %p.error= error
     %p.notice= notice
     %p.alert= alert
-    %p.error= flash[:error]
->>>>>>> origin/development
     = yield
