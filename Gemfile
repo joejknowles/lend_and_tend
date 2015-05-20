@@ -9,6 +9,9 @@ gem 'pg'
 gem 'sass-rails', '~> 5.0'
 # Provides user management and OAuth
 gem 'devise'
+# Provides facebook login
+gem 'omniauth-facebook'
+# Bootstrap for easier layout of pages
 gem 'bootstrap-sass', '~> 3.3.4'
 # Simpler HTML markup language
 gem 'haml', '~> 4.0.5'
