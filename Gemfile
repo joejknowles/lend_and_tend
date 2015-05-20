@@ -51,6 +51,9 @@ group :development, :test do
   # Interface testing DSL
   gem 'capybara'
 
+  # Remote test coverage measuring suite
+  gem 'coveralls'
+
   # Use shoulda for database testing matchers
   gem 'shoulda'
 
