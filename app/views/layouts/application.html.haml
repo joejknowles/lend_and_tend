@@ -1,12 +1,13 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title LendAndTend
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+<<<<<<< HEAD
     %header
       .notice
         = flash[:notice]
@@ -14,4 +15,9 @@
         - if flash[:errors]
           - flash[:errors].each do |error|
             = error
+=======
+    %p.notice= notice
+    %p.alert= alert
+    %p.error= flash[:error]
+>>>>>>> origin/development
     = yield

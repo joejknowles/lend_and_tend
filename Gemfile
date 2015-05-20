@@ -7,8 +7,13 @@ gem 'rails', '4.2.1'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Provides user management and OAuth
+gem 'devise'
+# Provides facebook login
+gem 'omniauth-facebook'
+# Bootstrap for easier layout of pages
 gem 'bootstrap-sass', '~> 3.3.4'
-# Use haml for embedding ruby in views
+# Simpler HTML markup language
 gem 'haml', '~> 4.0.5'
 gem 'haml-rails', '~> 0.9'
 # Use Uglifier as compressor for JavaScript assets
@@ -17,7 +22,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
