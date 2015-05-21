@@ -1,5 +1,5 @@
 class PatchesController < ApplicationController
-  before_action :authenticate_user!, except: [:create, :new]
+  before_action :authenticate_user!
 
   def index
     @patches = Patch.all
