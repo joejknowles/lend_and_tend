@@ -51,6 +51,9 @@ group :development, :test do
   # Interface testing DSL
   gem 'capybara'
 
+  # Keeping test database clean
+  gem 'database_cleaner'
+
   # Remote test coverage measuring suite
   gem 'coveralls'
 
