@@ -2,7 +2,11 @@ class PatchesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @patches = Patch.all
+    if params[:patch_type]
+      @patches = Patch.filtered_by_type(params[:patch_type])
+    else
+      @patches = Patch.all
+    end
   end
 
   def create
