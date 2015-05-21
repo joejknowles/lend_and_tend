@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
 
   root 'static#index'
-  resources :patches
-
-  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   get '/about_us' => 'static#about_us'
   get '/faq' => 'static#faq'
   get '/terms' => 'static#terms'
+  get '/users/edit_profile' => 'users#edit_profile'
+  put '/users/edit_profile' => 'users#update_profile'
+
+  resources :patches
+
+  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  resources :users, only: [ :show ]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

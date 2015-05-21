@@ -1,0 +1,8 @@
+%h1= @user.name
+%p= link_to 'Edit profile', users_edit_profile_path
+
+%p
+  Space available:
+  = @user.patches.first.patch_type
+  = @user.email
+

@@ -19,6 +19,11 @@ feature 'User Management' do
       expect(page).not_to have_link 'Log out'
     end
 
+    it 'should not see "My profile" link' do
+      visit '/'
+      expect(page).not_to have_link 'My profile'
+    end
+
   end
 
 
@@ -42,6 +47,11 @@ feature 'User Management' do
     it 'should see "Log out" link' do
       visit '/'
       expect(page).to have_link 'Log out'
+    end
+
+    it 'should see "My profile" link' do
+      visit '/'
+      expect(page).to have_link 'My profile'
     end
 
   end

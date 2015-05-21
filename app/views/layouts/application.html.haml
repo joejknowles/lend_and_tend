@@ -13,4 +13,6 @@
           %p.error= error
     %p.notice= notice
     %p.alert= alert
+    - if current_user
+      %span.view_profile= link_to 'My profile', user_path(current_user)
     = yield
