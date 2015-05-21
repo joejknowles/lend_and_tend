@@ -1,0 +1,6 @@
+%ul
+  - @patches.each do |patch|
+    %li
+      %span.location= patch.location
+      %span.patch_type= patch.patch_type
+      %span.duration= patch.duration
