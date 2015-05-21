@@ -21,7 +21,7 @@ class PatchesController < ApplicationController
   end
 
   def patch_params
-    permitted_params = params.require(:patch).permit(:location, :patch_type, :duration)
+    permitted_params = params.require(:patch).permit(:location, :patch_type, :duration, :description)
     permitted_params.merge(user_id: current_user.id)
   end
 end

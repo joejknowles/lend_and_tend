@@ -7,7 +7,7 @@
   Space available:
   - if @user.patches.first
     %p= @user.patches.first.patch_type
+    %p= @user.patches.first.description
   -else
     This user has no patches to share
 %p= @user.email
-
