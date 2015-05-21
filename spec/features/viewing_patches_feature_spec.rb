@@ -11,10 +11,18 @@ feature 'View available patches' do
     add_patch('SW11 3AX', 'small', '15')
   end
 
-  scenario 'view all advertised patches' do
+  scenario 'authenticated user views all advertised patches' do
+    visit '/'
+    join_with_email
     visit '/patches'
     expect(page).to have_content 'SW11 3AX'
     expect(page).to have_content 'small'
     expect(page).to have_content '15'
+  end
+
+  scenario 'unauthenticated user is redirected to log in page' do
+    visit '/patches'
+    expect(page).to have_content 'You need to sign in or sign up before continuing.'
+    expect(current_path).to eq '/users/sign_in'
   end
 end
