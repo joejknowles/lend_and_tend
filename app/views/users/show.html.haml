@@ -1,8 +1,13 @@
 %h1= @user.name
 %p= link_to 'Edit profile', users_edit_profile_path
 
+%p= @user.about_me
+
 %p
   Space available:
-  = @user.patches.first.patch_type
-  = @user.email
+  - if @user.patches.first
+    %p= @user.patches.first.patch_type
+  -else
+    This user has no patches to share
+%p= @user.email
 
