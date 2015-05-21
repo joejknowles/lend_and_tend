@@ -15,7 +15,6 @@ class PatchesController < ApplicationController
   end
 
   def patch_params
-    p params
     params.require(:patch).permit(:location, :patch_type, :duration)
   end
 end
