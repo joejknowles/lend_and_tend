@@ -2,7 +2,7 @@ class PatchesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @patches = Patch.all
+    @patches = Patch.all.includes(:user)
   end
 
   def create
@@ -21,6 +21,7 @@ class PatchesController < ApplicationController
   end
 
   def patch_params
-    params.require(:patch).permit(:location, :patch_type, :duration)
+    permitted_params = params.require(:patch).permit(:location, :patch_type, :duration)
+    permitted_params.merge(user_id: current_user.id)
   end
 end
