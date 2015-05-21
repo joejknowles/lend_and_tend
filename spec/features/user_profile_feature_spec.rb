@@ -20,7 +20,7 @@ feature 'Each user has their own profile page' do
     visit '/'
     join_with_email
     click_link 'My profile'
-    expect(page).to have_content 'Space available: This user has no patches to share'
+    expect(page).to have_content 'You are not offering any patches yet'
   end
 
   scenario 'can add a about me' do

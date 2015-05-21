@@ -16,6 +16,7 @@ feature 'Add a patch' do
       click_button 'List my patch'
       expect(page).to have_content(
         'You have successfully added your Hanging basket')
+      expect(current_path).to eq '/patches'
     end
 
     scenario 'fails with location missing' do

@@ -9,7 +9,7 @@ class PatchesController < ApplicationController
     @patch = Patch.new patch_params
     if @patch.save
       flash.notice = "You have successfully added your #{ @patch.patch_type } patch."
-      redirect_to '/'
+      redirect_to '/patches'
     else
       flash[:errors] = @patch.errors.full_messages
       redirect_to '/patches/new'

@@ -7,12 +7,18 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .errors
-      - if flash[:errors]
+    - if flash[:errors]
+      .errors
         - flash[:errors].each do |error|
           %p.error= error
-    %p.notice= notice
-    %p.alert= alert
+    - if notice
+      %p.notice= notice
+    -if alert
+      %p.alert= alert
+    %span= link_to 'Lend & Tend', root_path
     - if current_user
       %span.view_profile= link_to 'My profile', user_path(current_user)
+      %span= link_to 'View patches', patches_path
+      =link_to 'List a patch', new_patch_path
+
     = yield
