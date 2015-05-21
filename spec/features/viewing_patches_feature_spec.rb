@@ -4,7 +4,8 @@ feature 'View available patches' do
   def add_patch(location = 'EC4M 8AD',
                 patch_type = 'Window sill',
                 duration = '1')
-    Patch.create(location: location, patch_type: patch_type, duration: duration)
+    user = User.create(name: 'Mr Tester', email: 'email@for.contact', password: 'secretpassword', password_confirmation: 'secretpassword')
+    Patch.create(location: location, patch_type: patch_type, duration: duration, user_id: user.id)
   end
 
   before do
