@@ -4,6 +4,8 @@ class PatchesController < ApplicationController
   def index
     if params[:patch_type]
       @patches = Patch.filtered_by_type(params[:patch_type])
+    elsif params[:offer_period]
+      @patches = Patch.filtered_by_duration(params[:offer_period])
     else
       @patches = Patch.all
     end

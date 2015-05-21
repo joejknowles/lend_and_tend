@@ -31,6 +31,15 @@ feature 'To view available patches' do
       expect(page).not_to have_content 'EC4M 8AD'
       expect(page).not_to have_content 'ND2 7LM'
     end
+
+    scenario 'applies project duration filter' do
+      visit '/patches'
+      select '1-2 year', from: 'Offer period'
+      click_button 'Filter duration'
+      expect(page).not_to have_content 'SW11 4AE'
+      expect(page).not_to have_content 'EC4M 8AD'
+      expect(page).to have_content 'ND2 7LM'
+    end
   end
 
   scenario 'unauthenticated user is redirected to log in page' do

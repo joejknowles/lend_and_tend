@@ -1,7 +1,12 @@
 %form{action: patches_path, method: 'get'}
   = label_tag :patch_type, 'Patch type'
-  = select_tag :patch_type, options_for_select([['Hanging baskets', 'Hanging baskets'], ['Window sill', 'Window sill'], ['Patio', 'Patio'], ['Roof garden', 'Roof garden'], ['Front garden', 'Front garden'], ['Back yard', 'Back yard'], ['Lawn', 'Lawn'], ['Patch in your garden', 'Patch in your garden'], ['Other', 'Other']])
+  = select_tag :patch_type, options_for_select(['Hanging baskets', 'Window sill', 'Patio', 'Roof garden', 'Front garden', 'Back yard', 'Lawn', 'Patch in your garden', 'Other'])
   = submit_tag 'Filter', name: nil
+
+%form{action: patches_path, method: 'get'}
+  = label_tag :offer_period
+  = select_tag :offer_period, options_for_select([['0-1 year', 1], ['1-2 year', 2]])
+  = submit_tag 'Filter duration', name: nil
 
 - if @patches
   %ul
