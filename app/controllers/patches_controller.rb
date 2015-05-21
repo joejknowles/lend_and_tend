@@ -1,6 +1,6 @@
 class PatchesController < ApplicationController
-  def new
-    @patch = Patch.new
+  def index
+    @patches = Patch.all
   end
 
   def create
@@ -12,6 +12,10 @@ class PatchesController < ApplicationController
       flash[:errors] = @patch.errors.full_messages
       redirect_to '/patches/new'
     end
+  end
+
+  def new
+    @patch = Patch.new
   end
 
   def patch_params

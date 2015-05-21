@@ -33,22 +33,26 @@
       "/Users/Augis/Projects/lend_and_tend/app/controllers/patches_controller.rb": [
         1,
         1,
-        9,
+        1,
         null,
         null,
         1,
-        5,
-        5,
-        1,
-        1,
-        null,
         4,
         4,
+        1,
+        1,
+        null,
+        3,
+        3,
         null,
         null,
         null,
         1,
-        5,
+        7,
+        null,
+        null,
+        1,
+        4,
         null,
         null
       ],
@@ -79,16 +83,6 @@
         1,
         1,
         1,
-        1,
-        null
-      ],
-      "/Users/Augis/Projects/lend_and_tend/app/validators/postcode_validator.rb": [
-        1,
-        1,
-        10,
-        7,
-        null,
-        null,
         null
       ],
       "/Users/Augis/Projects/lend_and_tend/app/controllers/users/omniauth_callbacks_controller.rb": [
@@ -109,6 +103,6 @@
         null
       ]
     },
-    "timestamp": 1432144552
+    "timestamp": 1432202741
   }
 }
