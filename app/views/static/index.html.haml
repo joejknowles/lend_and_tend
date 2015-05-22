@@ -1,5 +1,44 @@
-%h1 Lend and Tend
-
-- unless user_signed_in?
-  = link_to 'Join with Email', new_user_registration_path
-  = link_to 'Join with Facebook', user_omniauth_authorize_path(:facebook)
+.container-fluid#index-header
+  .row
+    .col-md-2
+      img
+    .col-md-2
+      img
+    .col-md-4
+      img
+    .col-md-2
+      img
+    .col-md-2
+      img
+  .row
+    .col-md-2.vcenter-outer
+      .vcenter-inner
+        %h3
+          Lendr
+        %p
+          Get your Garden Gardened
+    .col-md-8
+      %h1
+        Lend and Tend
+      %h2
+        Growing allotment-like communities amongst those without allotments.
+      - unless user_signed_in?
+        = link_to 'Join with Email', new_user_registration_path
+        = link_to 'Join with Facebook', user_omniauth_authorize_path(:facebook)
+    .col-md-2.vcenter-outer
+      .vcenter-inner
+        %h3
+          Tendr
+        %p
+          Get Gardening with a Garden Guardianship
+  .row
+    .col-md-2
+      img
+    .col-md-2
+      img
+    .col-md-4
+      img
+    .col-md-2
+      img
+    .col-md-2
+      img
