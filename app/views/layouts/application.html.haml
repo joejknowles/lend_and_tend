@@ -45,11 +45,11 @@
             .vcenter-outer
               %ul.nav.navbar-nav.vcenter-inner
                 %li
-                  %a{ href: '#' }About
+                  = link_to 'About', about_us_path
                 %li
-                  %a{ href: '#' }FAQ
+                  = link_to 'Faq', faq_path
                 %li
-                  %a{ href: '#' }T&C's
+                  = link_to 'T&C', terms_path
           .col-md-6
             .vcenter-outer
               %ul.nav.navbar-nav.navbar-right.vcenter-inner
