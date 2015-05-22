@@ -7,7 +7,7 @@ class PatchesController < ApplicationController
     elsif params[:offer_period]
       @patches = Patch.filtered_by_duration(params[:offer_period])
     else
-      @patches = Patch.all
+      @patches = Patch.all.includes(:user)
     end
   end
 
@@ -15,7 +15,7 @@ class PatchesController < ApplicationController
     @patch = Patch.new patch_params
     if @patch.save
       flash.notice = "You have successfully added your #{ @patch.patch_type } patch."
-      redirect_to '/'
+      redirect_to '/patches'
     else
       flash[:errors] = @patch.errors.full_messages
       redirect_to '/patches/new'
@@ -27,6 +27,7 @@ class PatchesController < ApplicationController
   end
 
   def patch_params
-    params.require(:patch).permit(:location, :patch_type, :duration)
+    permitted_params = params.require(:patch).permit(:location, :patch_type, :duration, :description)
+    permitted_params.merge(user_id: current_user.id)
   end
 end

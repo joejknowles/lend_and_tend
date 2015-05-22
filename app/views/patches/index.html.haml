@@ -12,6 +12,7 @@
   %ul
     - @patches.each do |patch|
       %li
+        %span.owner= link_to patch.user.name, user_path(patch.user)
         %span.location= patch.location
         %span.patch_type= patch.patch_type
         %span.duration= patch.duration

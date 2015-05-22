@@ -19,6 +19,11 @@ feature 'User Management' do
       expect(page).not_to have_link 'Log out'
     end
 
+    it 'should not see "My profile" link' do
+      visit '/'
+      expect(page).not_to have_link 'My profile'
+    end
+
   end
 
 
@@ -42,6 +47,11 @@ feature 'User Management' do
     it 'should see "Log out" link' do
       visit '/'
       expect(page).to have_link 'Log out'
+    end
+
+    it 'should see "My profile" link' do
+      visit '/'
+      expect(page).to have_link 'My profile'
     end
 
   end
@@ -79,5 +89,18 @@ feature 'User Management' do
       expect(page).to have_content 'Signed out successfully.'
     end
 
+  end
+
+  context 'User sign up' do
+    it 'user is asked for name when signing up by email' do
+      visit '/'
+      click_link 'Join with Email'
+      fill_in 'Name', with: 'The Tester'
+      fill_in 'Email', with: 'test@test.com'
+      fill_in 'Password', with: 'supersecret'
+      fill_in 'Password confirmation', with: 'supersecret'
+      click_button 'Join'
+      expect(page).to have_content 'Welcome! You have signed up successfully.'
+    end
   end
 end
