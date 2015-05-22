@@ -17,4 +17,9 @@ class HomepageImagesController < ApplicationController
     params.require(:homepage_image).permit(:image)
   end
 
+  def destroy
+    HomepageImage.destroy params[:id]
+    redirect_to homepage_images_path, notice: 'Photo removed!'
+  end
+
 end

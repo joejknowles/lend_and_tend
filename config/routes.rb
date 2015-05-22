@@ -9,9 +9,7 @@ Rails.application.routes.draw do
   get '/users/edit_profile' => 'users#edit_profile'
   put '/users/edit_profile' => 'users#update_profile'
 
-  get '/homepage_images' => 'homepage_images#index'
-  get '/home_images/new' => 'homepage_images#new'
-  put '/homepage_images' => 'homepage_images#create'
+  resources :homepage_images
 
   resources :patches
 
