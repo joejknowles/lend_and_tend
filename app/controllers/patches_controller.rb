@@ -3,11 +3,11 @@ class PatchesController < ApplicationController
 
   def index
     if params[:patch_type] && params[:patch_type] != '' && params[:offer_period] && params[:offer_period] != ''
-      @patches = Patch.filtered_by_type(params[:patch_type]).filtered_by_duration(params[:offer_period])
+      @patches = Patch.filtered_by_type(params[:patch_type]).filtered_by_duration(params[:offer_period]).includes(:user)
     elsif params[:patch_type] && params[:patch_type] != ''
-      @patches = Patch.filtered_by_type(params[:patch_type])
+      @patches = Patch.filtered_by_type(params[:patch_type]).includes(:user)
     elsif params[:offer_period] && params[:offer_period] != ''
-      @patches = Patch.filtered_by_duration(params[:offer_period])
+      @patches = Patch.filtered_by_duration(params[:offer_period]).includes(:user)
     else
       @patches = Patch.all.includes(:user)
     end
