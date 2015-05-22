@@ -1,0 +1,4 @@
+= form_for @homepage_image, html: { multipart: true}, method: :put  do |f|
+  = f.label :image
+  = f.file_field :image
+  = f.submit 'Add photo'
