@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Augis/Projects/lend_and_tend/app/models/user.rb": [
+      "/home/jade/Projects/lend_and_tend/app/models/user.rb": [
         1,
         null,
         null,
@@ -18,19 +18,19 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/helpers/application_helper.rb": [
+      "/home/jade/Projects/lend_and_tend/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/helpers/patches_helper.rb": [
+      "/home/jade/Projects/lend_and_tend/app/helpers/patches_helper.rb": [
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/helpers/static_helper.rb": [
+      "/home/jade/Projects/lend_and_tend/app/helpers/static_helper.rb": [
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/controllers/patches_controller.rb": [
+      "/home/jade/Projects/lend_and_tend/app/controllers/patches_controller.rb": [
         1,
         1,
         null,
@@ -58,14 +58,14 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/controllers/application_controller.rb": [
+      "/home/jade/Projects/lend_and_tend/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/controllers/static_controller.rb": [
+      "/home/jade/Projects/lend_and_tend/app/controllers/static_controller.rb": [
         1,
         1,
         null,
@@ -80,14 +80,14 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/models/patch.rb": [
+      "/home/jade/Projects/lend_and_tend/app/models/patch.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/controllers/users/omniauth_callbacks_controller.rb": [
+      "/home/jade/Projects/lend_and_tend/app/controllers/users/omniauth_callbacks_controller.rb": [
         1,
         null,
         null,
@@ -105,6 +105,6 @@
         null
       ]
     },
-    "timestamp": 1432210317
+    "timestamp": 1432329008
   }
 }
