@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   get '/about_us' => 'static#about_us'
   get '/faq' => 'static#faq'
   get '/terms' => 'static#terms'
+
   get '/users/edit_profile' => 'users#edit_profile'
   put '/users/edit_profile' => 'users#update_profile'
+
+  resources :homepage_images
 
   resources :patches
 

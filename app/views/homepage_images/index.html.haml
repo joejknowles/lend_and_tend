@@ -1,0 +1,5 @@
+=link_to 'Add new image to the homepage', new_homepage_image_path
+
+- @images.each do |item|
+  = image_tag item.image.url(:medium)
+  = link_to 'Remove photo', homepage_image_path(item), method: :delete
