@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/dan/Desktop/Dev/lend_and_tend/app/models/user.rb": [
+      "/Users/Augis/Projects/lend_and_tend/app/models/user.rb": [
         1,
         null,
         null,
@@ -21,28 +21,36 @@
         null,
         null
       ],
-      "/Users/dan/Desktop/Dev/lend_and_tend/app/helpers/application_helper.rb": [
+      "/Users/Augis/Projects/lend_and_tend/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/dan/Desktop/Dev/lend_and_tend/app/helpers/patches_helper.rb": [
+      "/Users/Augis/Projects/lend_and_tend/app/helpers/patches_helper.rb": [
         1,
         null
       ],
-      "/Users/dan/Desktop/Dev/lend_and_tend/app/helpers/static_helper.rb": [
+      "/Users/Augis/Projects/lend_and_tend/app/helpers/static_helper.rb": [
         1,
         null
       ],
-      "/Users/dan/Desktop/Dev/lend_and_tend/app/helpers/users_helper.rb": [
+      "/Users/Augis/Projects/lend_and_tend/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/dan/Desktop/Dev/lend_and_tend/app/controllers/patches_controller.rb": [
+      "/Users/Augis/Projects/lend_and_tend/app/controllers/patches_controller.rb": [
         1,
         1,
         null,
         1,
-        6,
+        12,
+        1,
+        11,
+        1,
+        10,
+        1,
+        null,
+        9,
+        null,
         null,
         null,
         1,
@@ -66,7 +74,7 @@
         null,
         null
       ],
-      "/Users/dan/Desktop/Dev/lend_and_tend/app/controllers/application_controller.rb": [
+      "/Users/Augis/Projects/lend_and_tend/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -76,13 +84,13 @@
         1,
         null,
         1,
-        42,
-        32,
-        30,
+        51,
+        38,
+        36,
         null,
         null
       ],
-      "/Users/dan/Desktop/Dev/lend_and_tend/app/controllers/static_controller.rb": [
+      "/Users/Augis/Projects/lend_and_tend/app/controllers/static_controller.rb": [
         1,
         1,
         null,
@@ -97,7 +105,7 @@
         null,
         null
       ],
-      "/Users/dan/Desktop/Dev/lend_and_tend/app/controllers/users_controller.rb": [
+      "/Users/Augis/Projects/lend_and_tend/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -115,19 +123,20 @@
         null,
         null
       ],
-      "/Users/dan/Desktop/Dev/lend_and_tend/app/models/patch.rb": [
-        1,
-        1,
-        1,
+      "/Users/Augis/Projects/lend_and_tend/app/models/patch.rb": [
         1,
         null,
         1,
         null,
-        2,
-        2,
+        1,
+        1,
+        1,
+        null,
+        3,
+        3,
         null
       ],
-      "/Users/dan/Desktop/Dev/lend_and_tend/app/controllers/users/omniauth_callbacks_controller.rb": [
+      "/Users/Augis/Projects/lend_and_tend/app/controllers/users/omniauth_callbacks_controller.rb": [
         1,
         null,
         null,
@@ -145,6 +154,6 @@
         null
       ]
     },
-    "timestamp": 1432244418
+    "timestamp": 1432292591
   }
 }

@@ -2,9 +2,11 @@ class PatchesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if params[:patch_type]
+    if params[:patch_type] && params[:patch_type] != '' && params[:offer_period] && params[:offer_period] != ''
+      @patches = Patch.filtered_by_type(params[:patch_type]).filtered_by_duration(params[:offer_period])
+    elsif params[:patch_type] && params[:patch_type] != ''
       @patches = Patch.filtered_by_type(params[:patch_type])
-    elsif params[:offer_period]
+    elsif params[:offer_period] && params[:offer_period] != ''
       @patches = Patch.filtered_by_duration(params[:offer_period])
     else
       @patches = Patch.all.includes(:user)
