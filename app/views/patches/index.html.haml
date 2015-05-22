@@ -6,15 +6,17 @@
   = submit_tag 'Filter', name: nil
 = form_tag patches_path, method: :get do
   = label_tag :location
-  = text_field_tag :location, placeholder: 'Location, e.g. Liversedge'
-  = submit_tag 'Search'
+  = text_field_tag :location, '', placeholder: 'Location, e.g. Liversedge'
+  = submit_tag 'Search', name: nil
 - if @patches
   %ul
     - @patches.each do |patch|
       %li
         %span.owner= link_to patch.user.name, user_path(patch.user)
+        %span.distance= pluralize(patch.distance.round(1), 'mile') << ' away'
         %span.location= patch.location
         %span.patch_type= patch.patch_type
         %span.duration= patch.duration
+
 - else
   %div Sorry, no patches to display
