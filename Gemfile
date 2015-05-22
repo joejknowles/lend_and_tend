@@ -16,6 +16,8 @@ gem 'bootstrap-sass', '~> 3.3.4'
 # Simpler HTML markup language
 gem 'haml', '~> 4.0.5'
 gem 'haml-rails', '~> 0.9'
+# Use geocoder for managing location data
+gem 'geocoder'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

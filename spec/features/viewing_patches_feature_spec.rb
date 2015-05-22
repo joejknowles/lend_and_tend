@@ -10,10 +10,10 @@ feature 'To view available patches' do
 
   context 'authenticated user' do
     before do
-      add_patch('EC4M 8AD', 'Window sill', '1')
-      add_patch('EH15 9PO', 'Window sill', '2')
-      add_patch('SW11 4AE', 'Front garden', '1')
-      add_patch('ND2 7LM', 'Roof garden', '2')
+      add_patch('EC4M 8AD', 'Window sill', '1') # London
+      add_patch('EH11 2AB', 'Window sill', '2') # Edinburgh
+      add_patch('SW11 4AE', 'Front garden', '1') # London
+      add_patch('YO10 3DD', 'Roof garden', '2') # York
       visit '/'
       join_with_email
     end
@@ -31,7 +31,7 @@ feature 'To view available patches' do
       click_button 'Filter'
       expect(page).to have_content 'SW11 4AE'
       expect(page).not_to have_content 'EC4M 8AD'
-      expect(page).not_to have_content 'ND2 7LM'
+      expect(page).not_to have_content 'YO10 3DD'
     end
 
     scenario 'applies project duration filter' do
@@ -40,7 +40,7 @@ feature 'To view available patches' do
       click_button 'Filter'
       expect(page).not_to have_content 'SW11 4AE'
       expect(page).not_to have_content 'EC4M 8AD'
-      expect(page).to have_content 'ND2 7LM'
+      expect(page).to have_content 'YO10 3DD'
     end
 
     scenario 'applies multiple filters at the same time' do
@@ -48,10 +48,22 @@ feature 'To view available patches' do
       select 'Window sill', from: 'Patch type'
       select '1-2 year', from: 'Offer period'
       click_button 'Filter'
-      expect(page).to have_content 'EH15 9PO'
+      expect(page).to have_content 'EH11 2AB'
       expect(page).not_to have_content 'SW11 4AE'
       expect(page).not_to have_content 'EC4M 8AD'
-      expect(page).not_to have_content 'ND2 7LM'
+      expect(page).not_to have_content 'YO10 3DD'
+    end
+
+    context 'geocoder enabled' do
+      scenario 'filters results by distance' do
+        visit '/patches'
+        fill_in 'Location', with: 'London'
+        click_button 'Search'
+        expect(page).not_to have_content 'EH11 2AB'
+        expect(page).to have_content 'SW11 4AE'
+        expect(page).to have_content 'EC4M 8AD'
+        expect(page).not_to have_content 'YO10 3DD'
+      end
     end
   end
 

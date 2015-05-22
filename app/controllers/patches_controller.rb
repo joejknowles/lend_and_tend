@@ -8,6 +8,8 @@ class PatchesController < ApplicationController
       @patches = Patch.filtered_by_type(params[:patch_type]).includes(:user)
     elsif params[:offer_period] && params[:offer_period] != ''
       @patches = Patch.filtered_by_duration(params[:offer_period]).includes(:user)
+    elsif params[:location].present?
+      @patches = Patch.near(params[:location], 40)
     else
       @patches = Patch.all.includes(:user)
     end
