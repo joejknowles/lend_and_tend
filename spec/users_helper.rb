@@ -19,3 +19,16 @@ def join_and_add_patch
   fill_in 'Description', with: 'Triangle shaped, overlooking river'
   click_button 'List my patch'
 end
+
+def join_and_login_admin
+  User.create(name: 'Test',
+              email: 'test@test.com',
+              password: 'testtest',
+              password_confirmation: 'testtest',
+              admin: true)
+  visit '/'
+  click_link 'Log in'
+  fill_in 'Email', with: 'test@test.com'
+  fill_in 'Password', with: 'testtest'
+  click_button 'Log in'
+end
