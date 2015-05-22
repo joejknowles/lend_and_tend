@@ -13,7 +13,7 @@
     - @patches.each do |patch|
       %li
         %span.owner= link_to patch.user.name, user_path(patch.user)
-        %span.distance= pluralize(patch.distance.round(1), 'mile') << ' away'
+        %span.distance= pluralize(patch.distance.round(1), 'mile') << ' away' if patch.respond_to? :distance
         %span.location= patch.location
         %span.patch_type= patch.patch_type
         %span.duration= patch.duration

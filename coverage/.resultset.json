@@ -25,6 +25,10 @@
         1,
         null
       ],
+      "/Users/josephknowles/Projects/lend_and_tend/app/helpers/homepage_images_helper.rb": [
+        1,
+        null
+      ],
       "/Users/josephknowles/Projects/lend_and_tend/app/helpers/patches_helper.rb": [
         1,
         null
@@ -35,6 +39,56 @@
       ],
       "/Users/josephknowles/Projects/lend_and_tend/app/helpers/users_helper.rb": [
         1,
+        null
+      ],
+      "/Users/josephknowles/Projects/lend_and_tend/app/controllers/homepage_images_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        11,
+        null,
+        null,
+        null
+      ],
+      "/Users/josephknowles/Projects/lend_and_tend/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        62,
+        50,
+        45,
+        null,
         null
       ],
       "/Users/josephknowles/Projects/lend_and_tend/app/controllers/patches_controller.rb": [
@@ -76,22 +130,6 @@
         null,
         null
       ],
-      "/Users/josephknowles/Projects/lend_and_tend/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        54,
-        40,
-        38,
-        null,
-        null
-      ],
       "/Users/josephknowles/Projects/lend_and_tend/app/controllers/static_controller.rb": [
         1,
         1,
@@ -123,6 +161,12 @@
         1,
         null,
         null,
+        null
+      ],
+      "/Users/josephknowles/Projects/lend_and_tend/app/models/homepage_image.rb": [
+        1,
+        1,
+        1,
         null
       ],
       "/Users/josephknowles/Projects/lend_and_tend/app/models/patch.rb": [
@@ -157,6 +201,6 @@
         null
       ]
     },
-    "timestamp": 1432307709
+    "timestamp": 1432324135
   }
 }

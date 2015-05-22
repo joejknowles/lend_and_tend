@@ -16,6 +16,7 @@ describe Patch, type: :model do
 
   it 'fetches coordinates when given a postcode' do
     subject.update(patch_type: 'Window sill', location: 'YO10 3DD', duration: '1')
+    sleep 2
     expect(subject.latitude).to eq(53.95503009999999)
     expect(subject.longitude).to eq(-1.0405632)
   end
