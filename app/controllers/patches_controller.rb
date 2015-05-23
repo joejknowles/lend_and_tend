@@ -3,7 +3,7 @@ class PatchesController < ApplicationController
 
   def index
     filter_params = params.permit(:duration, :patch_type).reject { |k,v| v == '' }
-    @patches = Patch.all.where(filter_params).includes(:user)
+    @patches = Patch.where(filter_params).includes(:user).paginate(page: params[:page], per_page: 10)
   end
 
   def create
