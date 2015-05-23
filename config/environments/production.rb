@@ -1,4 +1,17 @@
 Rails.application.configure do
+  # Setup for paperclip to upload directly to AWS
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['LT_S3_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  },
+  url: ':s3_domain_url',
+  :path => '/:class/:attachment/:id_partition/:style/:filename'
+}
+
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
