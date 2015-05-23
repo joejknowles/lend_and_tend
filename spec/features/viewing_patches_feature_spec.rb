@@ -53,6 +53,13 @@ feature 'To view available patches' do
       expect(page).not_to have_content 'EC4M 8AD'
       expect(page).not_to have_content 'ND2 7LM'
     end
+
+    scenario 'sees paginated results' do
+      7.times { add_patch('EC4M 8AD', 'Window sill', '1') }
+      visit '/patches'
+      expect(page).to have_selector('ul', count: 1)
+      expect(page).to have_selector('li', count: 10)
+    end
   end
 
   scenario 'unauthenticated user is redirected to log in page' do
