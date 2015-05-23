@@ -7,6 +7,19 @@ class Patch < ActiveRecord::Base
   validates_presence_of :patch_type
   validates_presence_of :duration
 
-  # scope :filtered_by_type, lambda { |patch_type| where patch_type: patch_type }
-  # scope :filtered_by_duration, lambda { |duration| where duration: duration }
+  def self.location_sort(params, max_distance)
+    return near(params[:location],
+                max_distance).reorder(
+                  'distance') if params[:location].present?
+    self
+  end
+
+  def self.filter_results(params)
+    search_filter_params = params.permit(
+      :duration, :patch_type).reject { |_k, v| v == '' }
+    where(
+      search_filter_params).includes(
+        :user).paginate(page: params[:page],
+                        per_page: 10)
+  end
 end
