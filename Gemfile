@@ -11,6 +11,10 @@ gem 'sass-rails', '~> 5.0'
 gem 'devise'
 # Provides facebook login
 gem 'omniauth-facebook'
+# Adds new users to Mailchimp list
+gem 'devise_campaignable'
+# Undocumented dependency for devise campaignable
+gem 'gibbon'
 # Bootstrap for easier layout of pages
 gem 'bootstrap-sass', '~> 3.3.4'
 # Simpler HTML markup language
