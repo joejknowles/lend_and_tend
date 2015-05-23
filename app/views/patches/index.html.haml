@@ -13,6 +13,7 @@
         %span.location= patch.location
         %span.patch_type= patch.patch_type
         %span.duration= patch.duration
+        %span.in_use= patch.in_use ? 'taken' : 'free'
   = will_paginate @patches
 - else
   %div Sorry, no patches to display
