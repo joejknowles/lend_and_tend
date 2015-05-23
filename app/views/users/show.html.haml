@@ -1,0 +1,24 @@
+%div.container
+  %div.row
+    %div.col-md-3
+      %img{src: 'http://placehold.it/250x250'}
+    %div.col-md-9
+      %h1.user_profile_header= @user.name
+      %p= link_to 'Edit profile', users_edit_profile_path
+
+      %p
+        Space available:
+        - if @user.patches.first
+          %p= @user.patches.first.patch_type
+          %p= @user.patches.first.description
+        -elsif current_user
+          %p
+            You are not offering any patches yet:
+            =link_to 'Click here to add one', new_patch_path
+        -else
+          This user has no patches to share
+
+%p= @user.about_me
+
+
+%p= @user.email

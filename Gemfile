@@ -7,13 +7,29 @@ gem 'rails', '4.2.1'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Provides user management and OAuth
+gem 'devise'
+# Provides facebook login
+gem 'omniauth-facebook'
+# Adds new users to Mailchimp list
+gem 'devise_campaignable'
+# Undocumented dependency for devise campaignable
+gem 'gibbon'
+# Bootstrap for easier layout of pages
+gem 'bootstrap-sass', '~> 3.3.4'
+# Simpler HTML markup language
+gem 'haml', '~> 4.0.5'
+gem 'haml-rails', '~> 0.9'
+# Facilitates image uploads
+gem 'paperclip'
+# CDN for images
+gem 'aws-sdk-v1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -42,6 +58,15 @@ group :development, :test do
 
   # Interface testing DSL
   gem 'capybara'
+
+  # Keeping test database clean
+  gem 'database_cleaner'
+
+  # Remote test coverage measuring suite
+  gem 'coveralls'
+
+  # Use shoulda for database testing matchers
+  gem 'shoulda'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
