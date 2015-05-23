@@ -6,8 +6,10 @@
         null,
         null,
         1,
+        1,
         null,
         1,
+        null,
         null,
         1,
         null,
@@ -85,9 +87,9 @@
         1,
         null,
         1,
-        62,
-        50,
-        45,
+        65,
+        52,
+        47,
         null,
         null
       ],
@@ -96,16 +98,17 @@
         1,
         null,
         1,
-        14,
-        1,
-        13,
-        1,
-        12,
-        1,
-        11,
+        15,
+        6,
+        15,
         1,
         null,
-        10,
+        1,
+        null,
+        15,
+        15,
+        null,
+        null,
         null,
         null,
         null,
@@ -179,8 +182,8 @@
         1,
         1,
         null,
-        3,
-        3,
+        null,
+        null,
         null
       ],
       "/Users/josephknowles/Projects/lend_and_tend/app/controllers/users/omniauth_callbacks_controller.rb": [
@@ -201,6 +204,6 @@
         null
       ]
     },
-    "timestamp": 1432324135
+    "timestamp": 1432409246
   }
 }
