@@ -11,6 +11,10 @@ gem 'sass-rails', '~> 5.0'
 gem 'devise'
 # Provides facebook login
 gem 'omniauth-facebook'
+# Adds new users to Mailchimp list
+gem 'devise_campaignable'
+# Undocumented dependency for devise campaignable
+gem 'gibbon'
 # Bootstrap for easier layout of pages
 gem 'bootstrap-sass', '~> 3.3.4'
 # Simpler HTML markup language
@@ -34,6 +38,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+# Use for page pagination
+gem 'will_paginate'
 
 # Using puma as the server
 gem 'puma'

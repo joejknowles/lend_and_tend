@@ -36,7 +36,7 @@ feature 'To view available patches' do
 
     scenario 'applies project duration filter' do
       visit '/patches'
-      select '1-2 year', from: 'Offer period'
+      select '1-2 year', from: 'Duration'
       click_button 'Filter'
       expect(page).not_to have_content 'SW11 4AE'
       expect(page).not_to have_content 'EC4M 8AD'
@@ -46,12 +46,19 @@ feature 'To view available patches' do
     scenario 'applies multiple filters at the same time' do
       visit '/patches'
       select 'Window sill', from: 'Patch type'
-      select '1-2 year', from: 'Offer period'
+      select '1-2 year', from: 'Duration'
       click_button 'Filter'
       expect(page).to have_content 'EH15 9PO'
       expect(page).not_to have_content 'SW11 4AE'
       expect(page).not_to have_content 'EC4M 8AD'
       expect(page).not_to have_content 'ND2 7LM'
+    end
+
+    scenario 'sees paginated results' do
+      7.times { add_patch('EC4M 8AD', 'Window sill', '1') }
+      visit '/patches'
+      expect(page).to have_selector('ul', count: 1)
+      expect(page).to have_selector('li', count: 10)
     end
   end
 

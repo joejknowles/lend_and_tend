@@ -2,15 +2,8 @@ class PatchesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if params[:patch_type] && params[:patch_type] != '' && params[:offer_period] && params[:offer_period] != ''
-      @patches = Patch.filtered_by_type(params[:patch_type]).filtered_by_duration(params[:offer_period]).includes(:user)
-    elsif params[:patch_type] && params[:patch_type] != ''
-      @patches = Patch.filtered_by_type(params[:patch_type]).includes(:user)
-    elsif params[:offer_period] && params[:offer_period] != ''
-      @patches = Patch.filtered_by_duration(params[:offer_period]).includes(:user)
-    else
-      @patches = Patch.all.includes(:user)
-    end
+    filter_params = params.permit(:duration, :patch_type).reject { |k,v| v == '' }
+    @patches = Patch.where(filter_params).includes(:user).paginate(page: params[:page], per_page: 10)
   end
 
   def create
