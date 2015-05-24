@@ -4,8 +4,12 @@ feature 'To view available patches' do
   def add_patch(location = 'EC4M 8AD',
                 patch_type = 'Windowsill',
                 duration = '1')
-    user = User.first_or_create(name: 'Mr Tester', email: 'email@for.contact', password: 'secretpassword', password_confirmation: 'secretpassword')
-    Patch.create(location: location, patch_type: patch_type, duration: duration, user_id: user.id)
+    user = User.first_or_create(
+      name: 'Mr Tester', email: 'email@for.contact',
+      password: 'secretpassword', password_confirmation: 'secretpassword')
+    Patch.create(
+      location: location, patch_type: patch_type,
+      duration: duration, user_id: user.id)
   end
 
   context 'authenticated user' do
