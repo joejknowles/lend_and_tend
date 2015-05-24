@@ -33,4 +33,10 @@ feature 'Each user has their own profile page' do
     expect(page).to have_content "I'm testing lend and tend!"
   end
 
+  scenario 'is encouraged to fill in their profile after signup' do
+    visit '/'
+    user = join_with_email
+    expect(page).to have_content 'Your profile is empty. To get the most out of Lend & Tend please take a moment to add to your profile:'
+    expect(current_path).to eq "/users/#{user.id}"
+  end
 end

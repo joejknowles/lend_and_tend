@@ -7,6 +7,7 @@ def join_with_email(name = 'The Tester',
   fill_in 'join_password', with: password
   fill_in 'password_confirmation', with: password
   click_button 'Join in with Email'
+  User.find_by(email: 'testing@testing.test' )
 end
 
 def join_and_add_patch

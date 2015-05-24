@@ -4,22 +4,22 @@ feature 'User Management' do
 
   context 'User is not signed in' do
 
-    it 'should see "Join with Email" link' do
+    scenario 'should see "Join with Email" link' do
       visit '/'
       expect(page).to have_button 'Join In!'
     end
 
-    it 'should see "Log in" link' do
+    scenario 'should see "Log in" link' do
       visit '/'
       expect(page).to have_button 'Log In!'
     end
 
-    it 'should not see "Log out" link' do
+    scenario 'should not see "Log out" link' do
       visit '/'
       expect(page).not_to have_link 'Log out'
     end
 
-    it 'should not see "My profile" link' do
+    scenario 'should not see "My profile" link' do
       visit '/'
       expect(page).not_to have_link 'My profile'
     end
@@ -34,22 +34,22 @@ feature 'User Management' do
       join_with_email
     end
 
-    it 'should not see "Join with Email" link' do
+    scenario 'should not see "Join with Email" link' do
       visit '/'
       expect(page).not_to have_link 'Join with Email'
     end
 
-    it 'should not see "Log in" link' do
+    scenario 'should not see "Log in" link' do
       visit '/'
       expect(page).not_to have_link 'Log in'
     end
 
-    it 'should see "Log out" link' do
+    scenario 'should see "Log out" link' do
       visit '/'
       expect(page).to have_link 'Log out'
     end
 
-    it 'should see "My profile" link' do
+    scenario 'should see "My profile" link' do
       visit '/'
       expect(page).to have_link 'My profile'
     end
@@ -63,20 +63,20 @@ feature 'User Management' do
       OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new provider: 'facebook', uid: '12345', info: { name: 'Tester', email: 'test@test.com', image: 'http://image.images.com' }
     end
 
-    it 'when logged out can see "Join with Facebook" link' do
+    scenario 'when logged out can see "Join with Facebook" link' do
       visit '/'
       click_button 'Join In!'
       expect(page).to have_selector '#fb_btn'
     end
 
-    it 'can login with facebook' do
+    scenario 'can login with facebook' do
       visit '/'
       click_button 'Join In!'
       click_button'Join in with Facebook'
       expect(page).to have_content 'Successfully authenticated from Facebook account.'
     end
 
-    it 'when logged in cannot see "Join"/"Log in" links' do
+    scenario 'when logged in cannot see "Join"/"Log in" links' do
       visit '/'
       click_button 'Join In!'
       click_button 'Join in with Facebook'
@@ -85,18 +85,17 @@ feature 'User Management' do
       expect(page).not_to have_content 'Log in'
     end
 
-    it 'can logout' do
+    scenario 'can logout' do
       visit '/'
       click_button 'Join In!'
       click_button 'Join in with Facebook'
       click_link 'Log out'
       expect(page).to have_content 'Signed out successfully.'
     end
-
   end
 
   context 'User sign up' do
-    it 'user is asked for name when signing up by email' do
+    scenario 'user is asked for name when signing up by email' do
       visit '/'
       click_button 'Join In!'
       fill_in 'user_name', with: 'The Tester'
