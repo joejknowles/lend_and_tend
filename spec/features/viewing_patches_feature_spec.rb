@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'To view available patches' do
   def add_patch(location = 'EC4M 8AD',
-                patch_type = 'Window sill',
+                patch_type = 'Windowsill',
                 duration = '1')
     user = User.first_or_create(name: 'Mr Tester', email: 'email@for.contact', password: 'secretpassword', password_confirmation: 'secretpassword')
     Patch.create(location: location, patch_type: patch_type, duration: duration, user_id: user.id)
@@ -10,8 +10,8 @@ feature 'To view available patches' do
 
   context 'authenticated user' do
     before do
-      add_patch('EC4M 8AD', 'Window sill', '1') # London
-      add_patch('EH11 2AB', 'Window sill', '2') # Edinburgh
+      add_patch('EC4M 8AD', 'Windowsill', '1') # London
+      add_patch('EH11 2AB', 'Windowsill', '2') # Edinburgh
       add_patch('SW11 4AE', 'Front garden', '1') # London
       add_patch('YO10 3DD', 'Roof garden', '2') # York
       visit '/'
@@ -21,7 +21,7 @@ feature 'To view available patches' do
     scenario 'views all advertised patches' do
       visit '/patches'
       expect(page).to have_content 'EC4M 8AD'
-      expect(page).to have_content 'Window sill'
+      expect(page).to have_content 'Windowsill'
       expect(page).to have_content '1'
     end
 
@@ -45,7 +45,7 @@ feature 'To view available patches' do
 
     scenario 'applies multiple filters at the same time' do
       visit '/patches'
-      select 'Window sill', from: 'Patch type'
+      select 'Windowsill', from: 'Patch type'
       select '1-2 year', from: 'Duration'
       click_button 'Filter'
       expect(page).to have_content 'EH11 2AB'
@@ -67,7 +67,7 @@ feature 'To view available patches' do
     end
 
     scenario 'sees paginated results' do
-      7.times { add_patch('EC4M 8AD', 'Window sill', '1') }
+      7.times { add_patch('EC4M 8AD', 'Windowsill', '1') }
       visit '/patches'
       expect(page).to have_selector('ul', count: 1)
       expect(page).to have_selector('li', count: 10)
