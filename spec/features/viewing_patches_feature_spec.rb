@@ -28,7 +28,7 @@ feature 'To view available patches' do
     scenario 'applies filter to see only particular type' do
       visit '/patches'
       select 'Front garden', from: 'Patch type'
-      click_button 'Filter'
+      click_button 'Search'
       expect(page).to have_content 'SW11 4AE'
       expect(page).not_to have_content 'EC4M 8AD'
       expect(page).not_to have_content 'YO10 3DD'
@@ -37,7 +37,7 @@ feature 'To view available patches' do
     scenario 'applies project duration filter' do
       visit '/patches'
       select '1-2 year', from: 'Duration'
-      click_button 'Filter'
+      click_button 'Search'
       expect(page).not_to have_content 'SW11 4AE'
       expect(page).not_to have_content 'EC4M 8AD'
       expect(page).to have_content 'YO10 3DD'
@@ -47,7 +47,7 @@ feature 'To view available patches' do
       visit '/patches'
       select 'Windowsill', from: 'Patch type'
       select '1-2 year', from: 'Duration'
-      click_button 'Filter'
+      click_button 'Search'
       expect(page).to have_content 'EH11 2AB'
       expect(page).not_to have_content 'SW11 4AE'
       expect(page).not_to have_content 'EC4M 8AD'
