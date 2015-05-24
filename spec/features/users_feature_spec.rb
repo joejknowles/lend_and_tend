@@ -73,7 +73,7 @@ feature 'User Management' do
       visit '/'
       click_button 'Join In!'
       click_button'Join in with Facebook'
-      expect(page).to have_content 'Successfully authenticated from Facebook account.'
+      expect(page).to have_content 'You were successfully authenticated using Facebook'
     end
 
     scenario 'when logged in cannot see "Join"/"Log in" links' do
