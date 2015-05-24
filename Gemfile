@@ -20,6 +20,8 @@ gem 'bootstrap-sass', '~> 3.3.4'
 # Simpler HTML markup language
 gem 'haml', '~> 4.0.5'
 gem 'haml-rails', '~> 0.9'
+# Use geocoder for managing location data
+gem 'geocoder'
 # Facilitates image uploads
 gem 'paperclip'
 # CDN for images
