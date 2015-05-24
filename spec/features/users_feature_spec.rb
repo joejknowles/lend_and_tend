@@ -6,12 +6,12 @@ feature 'User Management' do
 
     it 'should see "Join with Email" link' do
       visit '/'
-      expect(page).to have_link 'Join with Email'
+      expect(page).to have_button 'Join In!'
     end
 
     it 'should see "Log in" link' do
       visit '/'
-      expect(page).to have_link 'Log in'
+      expect(page).to have_button 'Log In!'
     end
 
     it 'should not see "Log out" link' do
@@ -65,18 +65,21 @@ feature 'User Management' do
 
     it 'when logged out can see "Join with Facebook" link' do
       visit '/'
-      expect(page).to have_content 'Join with Facebook'
+      click_button 'Join In!'
+      expect(page).to have_selector '#fb_btn'
     end
 
     it 'can login with facebook' do
       visit '/'
-      click_link 'Join with Facebook'
+      click_button 'Join In!'
+      click_button'Join in with Facebook'
       expect(page).to have_content 'Successfully authenticated from Facebook account.'
     end
 
     it 'when logged in cannot see "Join"/"Log in" links' do
       visit '/'
-      click_link 'Join with Facebook'
+      click_button 'Join In!'
+      click_button 'Join in with Facebook'
       expect(page).not_to have_content 'Join with Facebook'
       expect(page).not_to have_content 'Join with Email'
       expect(page).not_to have_content 'Log in'
@@ -84,7 +87,8 @@ feature 'User Management' do
 
     it 'can logout' do
       visit '/'
-      click_link 'Join with Facebook'
+      click_button 'Join In!'
+      click_button 'Join in with Facebook'
       click_link 'Log out'
       expect(page).to have_content 'Signed out successfully.'
     end
@@ -94,12 +98,12 @@ feature 'User Management' do
   context 'User sign up' do
     it 'user is asked for name when signing up by email' do
       visit '/'
-      click_link 'Join with Email'
-      fill_in 'Name', with: 'The Tester'
-      fill_in 'Email', with: 'test@test.com'
-      fill_in 'Password', with: 'supersecret'
-      fill_in 'Password confirmation', with: 'supersecret'
-      click_button 'Join'
+      click_button 'Join In!'
+      fill_in 'user_name', with: 'The Tester'
+      fill_in 'join_email', with: 'test@test.com'
+      fill_in 'join_password', with: 'supersecret'
+      fill_in 'password_confirmation', with: 'supersecret'
+      click_button 'Join in with Email'
       expect(page).to have_content 'Welcome! You have signed up successfully.'
     end
   end

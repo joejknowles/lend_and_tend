@@ -1,12 +1,12 @@
 def join_with_email(name = 'The Tester',
                     email = 'testing@testing.test',
                     password = 'testtest')
-  click_link 'Join with Email'
-  fill_in 'Name', with: name
-  fill_in 'Email', with: email
-  fill_in 'Password', with: password
-  fill_in 'Password confirmation', with: password
-  click_button 'Join'
+  click_button 'Join In!'
+  fill_in 'user[name]', with: name
+  fill_in 'join_email', with: email
+  fill_in 'join_password', with: password
+  fill_in 'password_confirmation', with: password
+  click_button 'Join in with Email'
 end
 
 def join_and_add_patch
@@ -27,8 +27,8 @@ def join_and_login_admin
               password_confirmation: 'testtest',
               admin: true)
   visit '/'
-  click_link 'Log in'
-  fill_in 'Email', with: 'test@test.com'
-  fill_in 'Password', with: 'testtest'
+  click_button 'Log In!'
+  fill_in 'login_email', with: 'test@test.com'
+  fill_in 'login_password', with: 'testtest'
   click_button 'Log in'
 end
