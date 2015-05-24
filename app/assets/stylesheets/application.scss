@@ -59,3 +59,37 @@
   font-style: italic;
   font-size: 0.7em;
 }
+
+// Profile
+
+.profile_photo {
+  max-width: 100%;
+  display: inline;
+}
+
+.user_profile_header {
+  margin-top: 0px;
+}
+
+.profile_container {
+  margin-top: 2em;
+}
+
+.profile_pic_container {
+  text-align: center;
+}
+
+.message_user_btn {
+  margin: auto;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.garden_pic {
+  display: inline;
+  max-width: 100%;
+}
+
+.garden_headers {
+  display: inline;
+}
