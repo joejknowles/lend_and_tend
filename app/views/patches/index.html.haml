@@ -3,8 +3,6 @@
   = select_tag :patch_type, options_for_select([['All', '']] + patch_types_list)
   = label_tag :duration
   = select_tag :duration, options_for_select([['All', ''], ['0-1 year', 1], ['1-2 year', 2]])
-  = submit_tag 'Filter', name: nil
-= form_tag patches_path, method: :get do
   = label_tag :location
   = text_field_tag :location, '', placeholder: 'Location, e.g. Liversedge'
   = submit_tag 'Search', name: nil
