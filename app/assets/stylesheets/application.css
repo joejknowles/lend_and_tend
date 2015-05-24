@@ -14,3 +14,18 @@
  * file per style scope.
  *
  */
+
+// Login Forms
+
+body {
+  background-color: red;
+}
+
+.login_button {
+  float: right;
+  display: inline;
+}
+
+.login_form {
+  display: inline-block;
+}

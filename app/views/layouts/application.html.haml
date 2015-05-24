@@ -16,9 +16,14 @@
     -if alert
       %p.alert= alert
     %span= link_to 'Lend & Tend', root_path
-    - if current_user
+    - if user_signed_in?
       %span.view_profile= link_to 'My profile', user_path(current_user)
       %span= link_to 'View patches', patches_path
       =link_to 'List a patch', new_patch_path
-
+      = link_to 'Log out', destroy_user_session_path, method: :delete
+    - else
+      = link_to 'Join with Email', new_user_registration_path
+      = link_to 'Join with Facebook', user_omniauth_authorize_path(:facebook)
+      = render 'users/login'
+      %div.login_button= button_to 'Log in', new_user_session_path, id: 'login_button'
     = yield

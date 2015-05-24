@@ -15,3 +15,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// Login Form
+  $(document).ready(function(){
+    $('#login_form').hide();
+    $('#login_button').click(function(){
+      $(this).hide();
+      $('#login_form').show();
+      return false;
+    });
+
+
+  });
