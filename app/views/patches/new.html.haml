@@ -2,7 +2,7 @@
   = f.label :location
   = f.text_field :location, placeholder: "Postcode, e.g. 'WF12 7ED'"
   = f.label :patch_type, 'What sort of space would you like to offer?'
-  = f.select :patch_type, [['Hanging baskets', 'Hanging baskets'], ['Window sill', 'Window sill'], ['Patio', 'Patio'], ['Roof garden', 'Roof garden'], ['Front garden', 'Front garden'], ['Back yard', 'Back yard'], ['Lawn', 'Lawn'], ['Patch in your garden', 'Patch in your garden'], ['Other', 'Other'] ]
+  = f.select :patch_type, patch_types_list
   = f.label :duration, 'How long can you offer this space?'
   = f.select :duration, [['0-1 year', 1], ['1-2 year', 2]]
   = f.label :description

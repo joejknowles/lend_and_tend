@@ -1,6 +1,6 @@
 = form_tag patches_path, method: :get do
   = label_tag :patch_type, 'Patch type'
-  = select_tag :patch_type, options_for_select([['All', ''],'Hanging baskets', 'Window sill', 'Patio', 'Roof garden', 'Front garden', 'Back yard', 'Lawn', 'Patch in your garden', 'Other'])
+  = select_tag :patch_type, options_for_select([['All', '']] + patch_types_list)
   = label_tag :duration
   = select_tag :duration, options_for_select([['All', ''], ['0-1 year', 1], ['1-2 year', 2]])
   = submit_tag 'Filter', name: nil
