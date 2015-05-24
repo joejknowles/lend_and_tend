@@ -12,5 +12,7 @@
 !/log/.keep
 /tmp
 
-/coverage/*
+/coverage
 .DS_Store
+
+/public/system/homepage_images

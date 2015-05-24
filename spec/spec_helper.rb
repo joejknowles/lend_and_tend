@@ -22,6 +22,18 @@ require 'coveralls'
 Coveralls.wear!('rails')
 
 RSpec.configure do |config|
+  config.before(:suite) do
+    # set geocoder to test version of lookup to avoid asynchronous calls
+    Geocoder.configure(lookup: :test)
+    Geocoder::Lookup::Test.add_stub(
+      "YO10 3DD", [
+        {
+          'latitude'     => 53.95503009999999,
+          'longitude'    => -1.0405632,
+        }
+      ]
+    )
+  end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
