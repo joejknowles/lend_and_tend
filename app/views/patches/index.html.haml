@@ -1,36 +1,42 @@
 .container-fluid
-  .row
+  .row.filter-row
     .col-xs-3
     .col-xs-6
-      = form_tag patches_path, method: :get do
+      = form_tag patches_path, method: :get, class: 'form-inline' do
         = label_tag :patch_type, 'Patch type'
-        = select_tag :patch_type, options_for_select([['All', '']] + patch_types_list)
+        = select_tag :patch_type, options_for_select([['All', '']] + patch_types_list), class: 'selectpicker'
         = label_tag :duration
         = select_tag :duration, options_for_select([['All', ''], ['0-1 year', 1], ['1-2 year', 2]])
-        = label_tag :location
-        = text_field_tag :location, '', placeholder: 'Location, e.g. Liversedge'
-        = submit_tag 'Search', name: nil
+        .input-group
+          = label_tag :location, 'Location', class: 'hidden'
+          %span.input-group-addon.glyphicon.glyphicon-map-marker
+          = text_field_tag :location, '', placeholder: 'Location, e.g. Liversedge', class: 'form-control'
+          %span.input-group-btn
+            = submit_tag 'Search', name: nil, class: 'btn btn-md btn-success'
   .row
     .col-xs-2
     .col-xs-8
       - if @patches
+        .row.list-title
+          .col-xs-2 Location
+          .col-xs-2 Type
+          .col-xs-2 How long?
+          .col-xs-3 Who is offering it?
+          .col-xs-1 Status
+          .col-xs-2 How far?
         %ul.list-unstyled
-          .row.list-title
-            .col-xs-2 Location
-            .col-xs-3 Type
-            .col-xs-2 How long?
-            .col-xs-3 Who is offering it?
-            .col-xs-1 Status
-            .col-xs-1 How far?
           - @patches.each do |patch|
             %li
               .row
                 %span.location.col-xs-2= patch.location
-                %span.patch_type.col-xs-3= patch.patch_type
+                %span.patch_type.col-xs-2= patch.patch_type
                 %span.duration.col-xs-2= patch.duration
                 %span.owner.col-xs-3= link_to patch.user.name, user_path(patch.user)
                 %span.in_use.col-xs-1= patch.in_use ? 'taken' : 'free'
-                %span.distance.col-xs-1= pluralize(patch.distance.round(1), 'mile') << ' away' if patch.respond_to? :distance
-        = will_paginate @patches
+                %span.distance.col-xs-2= pluralize(patch.distance.round(1), 'mile') if patch.respond_to? :distance
+        .row
+          .col-xs-4
+          .col-xs-4
+            = pagination_links @patches
       - else
         %div Sorry, no patches to display
