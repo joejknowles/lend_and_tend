@@ -5,7 +5,8 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rails'
-require 'helpers/users'
+require_relative './users_helper'
+Capybara.default_wait_time = 3
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -54,6 +55,50 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+  config.before(:suite) do
+    # set geocoder to test version of lookup to avoid asynchronous calls
+    Geocoder.configure(lookup: :test)
+    Geocoder::Lookup::Test.add_stub(
+      "YO10 3DD", [
+        {
+          'latitude'     => 53.95503009999999,
+          'longitude'    => -1.0405632
+        }
+      ]
+    )
+    Geocoder::Lookup::Test.add_stub(
+      'EC4M 8AD', [
+        {
+          'latitude'     => 51.5072,
+          'longitude'    => 0.1275
+        }
+      ]
+    )
+    Geocoder::Lookup::Test.add_stub(
+      'EH11 2AB', [
+        {
+          'latitude'     => 53.95503009999999,
+          'longitude'    => -1.0405632
+        }
+      ]
+    )
+    Geocoder::Lookup::Test.add_stub(
+      'SW11 4AE', [
+        {
+          'latitude'     => 51.5072,
+          'longitude'    => 0.1275
+        }
+      ]
+    )
+    Geocoder::Lookup::Test.add_stub(
+      'London', [
+        {
+          'latitude'     => 51.5072,
+          'longitude'    => 0.1275
+        }
+      ]
+    )
+  end
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.

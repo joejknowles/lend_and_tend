@@ -2,14 +2,16 @@ class PatchesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @patches = Patch.all
+    @patches = Patch.location_sort(params, 40)
+    @patches = @patches.filter_results(params)
   end
 
   def create
     @patch = Patch.new patch_params
     if @patch.save
-      flash.notice = "You have successfully added your #{ @patch.patch_type } patch."
-      redirect_to '/'
+      flash.notice = "You have successfully"\
+      " added your #{ @patch.patch_type } patch."
+      redirect_to '/patches'
     else
       flash[:errors] = @patch.errors.full_messages
       redirect_to '/patches/new'
@@ -20,7 +22,11 @@ class PatchesController < ApplicationController
     @patch = Patch.new
   end
 
+  protected
+
   def patch_params
-    params.require(:patch).permit(:location, :patch_type, :duration)
+    permitted_params = params.require(:patch).permit(
+      :location, :patch_type, :duration, :description)
+    permitted_params.merge(user_id: current_user.id)
   end
 end

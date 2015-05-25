@@ -11,11 +11,21 @@ gem 'sass-rails', '~> 5.0'
 gem 'devise'
 # Provides facebook login
 gem 'omniauth-facebook'
+# Adds new users to Mailchimp list
+gem 'devise_campaignable'
+# Undocumented dependency for devise campaignable
+gem 'gibbon'
 # Bootstrap for easier layout of pages
 gem 'bootstrap-sass', '~> 3.3.4'
 # Simpler HTML markup language
 gem 'haml', '~> 4.0.5'
 gem 'haml-rails', '~> 0.9'
+# Use geocoder for managing location data
+gem 'geocoder'
+# Facilitates image uploads
+gem 'paperclip'
+# CDN for images
+gem 'aws-sdk-v1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -30,6 +40,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+# Use for page pagination
+gem 'will_paginate'
 
 # Using puma as the server
 gem 'puma'
@@ -48,6 +61,9 @@ group :development, :test do
   # This is our main testing language
   gem 'rspec-rails'
 
+  # Used by rspec for tests dependent on JS
+  gem 'selenium-webdriver'
+
   # Interface testing DSL
   gem 'capybara'
 
@@ -59,6 +75,9 @@ group :development, :test do
 
   # Use shoulda for database testing matchers
   gem 'shoulda'
+
+  # Active model mocking gem
+  gem 'rspec-activemodel-mocks'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

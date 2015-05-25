@@ -14,3 +14,93 @@
  * file per style scope.
  *
  */
+
+// Homepage images
+
+.img{
+  background-image: url('https://photos-5.dropbox.com/t/2/AADMaholVLXDW1Rb8OwJDE34KbkWdvS2i8EeJsbcFyqLiQ/12/134460480/jpeg/32x32/1/1432551600/0/2/IMG_8176.jpg/CMDojkAgASACIAMgBCAFIAYoASgC/AtemsPpkHNvxcyv9BuTkqxlOXMoM6B7Dub6UN5zsq4E?size=1280x960&size_mode=2');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.img-sm{
+  height: 200px;
+}
+
+.image-spacer {
+text-align: center;
+  margin:auto;
+  height: 200px;
+}
+
+.center-items {
+  padding: 30px;
+}
+
+.logo-homepage {
+  max-width:95%;
+  margin-bottom: 5%;
+}
+
+// Nav
+
+.links-right {
+  display:inline-block;
+  float: right;
+}
+
+.links-left {
+  display:inline-block;
+  text-align: left;
+}
+
+.header-links a {
+  margin-right:10px;
+}
+
+// Header
+
+.join_login_buttons {
+  float: right;
+}
+
+// Join & Login Form
+
+.fb_btn_container {
+  margin: auto;
+  text-align: center;
+}
+
+.fb_btn {
+  background-color: #3B5998;
+  color: white;
+  width: 100%
+}
+
+.join_btn {
+  width: 100%;
+}
+
+.join_inputs {
+  margin-bottom: 1em;
+}
+
+.join_or {
+  text-align: center;
+  margin-bottom: 1em;
+  font-style: italic;
+}
+
+.join_legals {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.7em;
+}
+
+.login_forgot_prompt {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.7em;
+}
+
