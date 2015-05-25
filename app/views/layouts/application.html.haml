@@ -8,7 +8,7 @@
     = csrf_meta_tags
   %body
     .wrapper
-      .navbar.navbar-default
+      .navbar.navbar-default.navbar-custom
         .container
           .navbar-header
             %button.navbar-toggle.collapsed{ 'aria-controls' => 'navbar',
@@ -23,18 +23,24 @@
           .collapse.navbar-collapse#navbar
             %ul.nav.navbar-nav.navbar-right
               %li
+                - if current_user
+                  = link_to 'My profile', user_path(current_user)
+              %li
                 - if user_signed_in?
                   = link_to 'Log out', destroy_user_session_path, method: :delete
                 - else
                   = link_to 'Log in', new_user_session_path
       #main
         = yield
-        .errors
-          - if flash[:errors]
+      .errors
+        - if flash[:errors]
+          .errors
             - flash[:errors].each do |error|
               %p.error= error
-        %p.notice= notice
-        %p.alert= alert
+        - if notice
+          %p.notice= notice
+        - if alert
+          %p.alert= alert
       .push
     .footer
       .container
@@ -57,3 +63,9 @@
                   %a{ href: '#' } in
                 %li
                   %a{ href: '#' } t
+
+    -# %span= link_to 'Lend & Tend', root_path
+    - if current_user
+      -# %span.view_profile= link_to 'My profile', user_path(current_user)
+      -# %span= link_to 'View patches', patches_path
+      -# = link_to 'List a patch', new_patch_path

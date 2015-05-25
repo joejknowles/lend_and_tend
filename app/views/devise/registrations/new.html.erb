@@ -1,6 +1,6 @@
 <div class="container">
   <div class="auth-forms">
-  <h2>Sign up</h2>
+  <h1>Sign up</h1>
 
   <%= form_for(resource,
               as: resource_name,
@@ -8,13 +8,18 @@
               html: {  role: 'form' }) do |f| %>
     <%= devise_error_messages! %>
 
-    <div class="field form-group">
-      <%= f.label :email, class: 'control-label' %><br />
-      <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-    </div>
+  <div class="field form-group">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+  </div>
 
     <div class="field form-group">
-      <%= f.label :password, class: 'control-label'  %>
+      <%= f.label :password  %>
       <% if @validatable %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
@@ -22,12 +27,12 @@
     </div>
 
     <div class="field form-group">
-      <%= f.label :password_confirmation, class: 'control-label'  %><br />
+      <%= f.label :password_confirmation  %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
     </div>
 
     <div class="actions form-group">
-      <%= f.submit "Join", class: 'btn btn-default' %>
+      <%= f.submit "Join", class: 'btn btn-default btn-custom' %>
     </div>
   <% end %>
 

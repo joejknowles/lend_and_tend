@@ -1,0 +1,45 @@
+%div.main-content-box
+  %div.row
+    %div.col-md-3
+      %img{ src: 'http://placehold.it/200x200', class: 'border-box' }
+    %div.col-md-6
+      %h1.user_profile_header= @user.name
+    .col-md-3
+      %p
+        Tender
+  .row
+    .col-md-3
+      %p.center-everything= @user.email
+      -# users social icons
+      %p Instagram Pin tw
+
+      %p= link_to 'Edit profile', users_edit_profile_path
+    .col-md-9
+      .row
+        .col-md-12
+          %p
+            Bio:
+            %span= @user.about_me
+      .row
+        .col-md-8.border-box
+          .col-md-8
+            %p
+              - if @user.patches.first
+                Space available:
+                = @user.patches.first.patch_type
+                %h5 Description
+                %p= @user.patches.first.description
+              - elsif current_user
+                %p
+                  You are not offering any patches yet:
+                  = link_to 'Click here to add one', new_patch_path
+              - else
+                This user has no patches to share
+          .col-md-4
+            %img{ src: 'http://placehold.it/100x100', class: 'border-box' }
+        .col-md-4
+      .row
+        .col-md-12
+          %img{ src: 'http://placehold.it/150x150' }
+          %img{ src: 'http://placehold.it/150x150' }
+          %img{ src: 'http://placehold.it/150x150' }

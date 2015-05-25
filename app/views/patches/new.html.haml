@@ -1,8 +1,22 @@
-= form_for @patch do |f|
-  = f.label :location
-  = f.text_field :location, placeholder: "Postcode, e.g. 'WF12 7ED'"
-  = f.label :patch_type, 'What sort of space would you like to offer?'
-  = f.select :patch_type, [['Hanging baskets', 'Hanging baskets'], ['Window sill', 'Window sill'], ['Patio', 'Patio'], ['Roof garden', 'Roof garden'], ['Front garden', 'Front garden'], ['Back yard', 'Back yard'], ['Lawn', 'Lawn'], ['Patch in your garden', 'Patch in your garden'], ['Other', 'Other'] ]
-  = f.label :duration, 'How long can you offer this space?'
-  = f.select :duration, [['0-1 year', 1], ['1-2 year', 2]]
-  = f.submit 'List my patch'
+.header-box
+  %h1 Tell us about your new patch
+.main-content-box
+  .row
+  = form_for @patch do |f|
+    .row
+      .col-md-4.form-group
+        = f.label :patch_type, 'What sort of space would you like to offer?'
+        = f.select :patch_type, [['Hanging baskets', 'Hanging baskets'], ['Window sill', 'Window sill'], ['Patio', 'Patio'], ['Roof garden', 'Roof garden'], ['Front garden', 'Front garden'], ['Back yard', 'Back yard'], ['Lawn', 'Lawn'], ['Patch in your garden', 'Patch in your garden'], ['Other', 'Other'] ], {}, { class: 'form-control' }
+      .col-md-4.form-group
+        = f.label :duration, 'How long can you offer this space?'
+        = f.select :duration, [['0-1 year', 1], ['1-2 year', 2]],{}, { class: 'form-control' }
+      .col-md-4.form-group
+        = f.label :location
+        = f.text_field :location, placeholder: "Postcode, e.g. 'WF12 7ED'", class: 'form-control'
+    .row
+      .col-md-8.form-group
+        = f.label :description
+        = f.text_area :description, class: 'form-control'
+    .row
+      .col-md-4.form-group
+        = f.submit 'List my patch', class: 'btn btn-default btn-custom'
