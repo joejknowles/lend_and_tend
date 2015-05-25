@@ -1,3 +1,9 @@
 // Place all the styles related to the patches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+li {
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid green;
+}
