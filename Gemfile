@@ -61,6 +61,9 @@ group :development, :test do
   # This is our main testing language
   gem 'rspec-rails'
 
+  # Used by rspec for tests dependent on JS
+  gem 'selenium-webdriver'
+
   # Interface testing DSL
   gem 'capybara'
 
