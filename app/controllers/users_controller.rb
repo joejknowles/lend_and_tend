@@ -12,5 +12,4 @@ class UsersController < ApplicationController
     current_user.update about_me
     redirect_to user_path(current_user)
   end
-
 end
