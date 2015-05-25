@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   resources :patches
 
-  resources :users, only: [ :show ]
+  resources :users, only: [ :show ] do
+    resources :user_emails, only: [:new, :create]
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
