@@ -7,8 +7,8 @@ class UserEmailsController < ApplicationController
   end
 
   def create
-
-    redirect_to user_path(@user)
+    UserMailer.match_request(@user, current_user, params[:your_message]).deliver_now
+    redirect_to user_path(@user), notice: "Message sent!"
   end
 
   def user_to_be_messaged

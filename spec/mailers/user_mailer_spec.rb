@@ -25,7 +25,7 @@ RSpec.describe UserMailer, type: :mailer do
     end
 
     it 'is sent from clients email address' do
-      expect(email.from.first).to eq 'garden.guardianship@gmail.com'
+      expect(email.from.first).to eq 'lendandtendnoreply@gmail.com'
     end
 
 end
