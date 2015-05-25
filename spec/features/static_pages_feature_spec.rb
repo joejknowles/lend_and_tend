@@ -4,7 +4,7 @@ feature 'Static Pages' do
 
   it 'shows the homepage as root' do
     visit '/'
-    expect(page).to have_content 'Lend and Tend'
+    expect(page).to have_selector('.logo-homepage')
   end
 
   it 'has a "About us" page' do

@@ -1,0 +1,11 @@
+/ Button triggers modal
+%button.btn.btn-primary.btn-lg{'data-toggle' => 'modal', 'data-target' => '#LoginModal'}
+  Log In!
+
+
+/ Modal
+%div.modal.fade{'id' => "LoginModal", 'tabindex'=> "-1", 'role' => "dialog", 'aria-labelledby' => "myModalLabel", 'aria-hidden' => "true" }
+  %div.modal-dialog.modal-sm
+    %div.modal-content
+      %div.modal-body
+        = render 'users/login_form'

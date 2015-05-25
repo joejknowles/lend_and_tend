@@ -1,4 +1,5 @@
 class StaticController < ApplicationController
+
   def index
   end
 
@@ -10,4 +11,5 @@ class StaticController < ApplicationController
 
   def terms
   end
+
 end
