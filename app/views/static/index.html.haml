@@ -9,10 +9,11 @@
     .col-xs-6
       .image-spacer
         .center-items
-          = image_tag 'lendlogo.png', class: 'logo', alt: 'Lend and Tend'
+          = image_tag 'lendlogo.png', class: 'logo logo-homepage', alt: 'Lend and Tend'
           - unless user_signed_in?
-            %button.btn.btn-default.center-block
-              Join in
+            %div.center-block
+              = render 'users/join_in_button'
+              = render 'users/login_button'
     .col-xs-3.img.img-sm
   .row
     .col-xs-3.img.img-sm

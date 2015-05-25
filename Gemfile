@@ -61,6 +61,9 @@ group :development, :test do
   # This is our main testing language
   gem 'rspec-rails'
 
+  # Used by rspec for tests dependent on JS
+  gem 'selenium-webdriver'
+
   # Interface testing DSL
   gem 'capybara'
 
@@ -72,6 +75,9 @@ group :development, :test do
 
   # Use shoulda for database testing matchers
   gem 'shoulda'
+
+  # Active model mocking gem
+  gem 'rspec-activemodel-mocks'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

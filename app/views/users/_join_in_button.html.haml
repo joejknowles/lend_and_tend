@@ -1,0 +1,11 @@
+/ Button triggers modal
+%button.btn.btn-success.btn-lg{'data-toggle' => 'modal', 'data-target' => '#JoinModal'}
+  Join In!
+
+
+/ Modal
+%div.modal.fade{'id' => "JoinModal", 'tabindex'=> "-1", 'role' => "dialog", 'aria-labelledby' => "myModalLabel", 'aria-hidden' => "true" }
+  %div.modal-dialog.modal-sm
+    %div.modal-content
+      %div.modal-body
+        = render 'users/new_user_form'
