@@ -15,9 +15,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-console.log('hello guys');
-
-$('.selectpicker').selectpicker();
-
-
