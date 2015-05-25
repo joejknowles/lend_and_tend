@@ -1,10 +1,19 @@
-= form_for @patch do |f|
-  = f.label :location
-  = f.text_field :location, placeholder: "Postcode, e.g. 'WF12 7ED'"
-  = f.label :patch_type, 'What sort of space would you like to offer?'
-  = f.select :patch_type, patch_types_list
-  = f.label :duration, 'How long can you offer this space?'
-  = f.select :duration, [['0-1 year', 1], ['1-2 year', 2]]
-  = f.label :description
-  = f.text_area :description
-  = f.submit 'List my patch'
+.container-fluid
+  .row
+    .col-xs-4
+    .col-xs-4
+      = form_for @patch do |f|
+        .form-group
+          = f.label :location, 'Where is your patch?'
+          = f.text_field :location, placeholder: "Postcode, e.g. 'WF12 7ED'", class: 'form-control'
+        .form-group
+          = f.label :patch_type, 'What sort of space would you like to offer?'
+          = f.select :patch_type, patch_types_list, class: 'form-control'
+        .form-group
+          = f.label :duration, 'How long can you offer this space?'
+          = f.select :duration, [['0-1 year', 1], ['1-2 year', 2]], class: 'form-control'
+        .form-group
+          = f.label :description
+          = f.text_area :description, class: 'form-control'
+        .form-group
+          = f.submit 'List my patch', class: 'btn btn-md btn-success'

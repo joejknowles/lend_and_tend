@@ -1,16 +1,17 @@
 .container-fluid
-  .row.filter-row
+  .row
     .col-xs-3
     .col-xs-6
-      = form_tag patches_path, method: :get, class: 'form-inline' do
+      = form_tag patches_path, method: :get, class: 'form-inline filter-form' do
         = label_tag :patch_type, 'Patch type'
         = select_tag :patch_type, options_for_select([['All', '']] + patch_types_list), class: 'selectpicker'
         = label_tag :duration
         = select_tag :duration, options_for_select([['All', ''], ['0-1 year', 1], ['1-2 year', 2]])
         .input-group
           = label_tag :location, 'Location', class: 'hidden'
-          %span.input-group-addon.glyphicon.glyphicon-map-marker
           = text_field_tag :location, '', placeholder: 'Location, e.g. Liversedge', class: 'form-control'
+          %span.input-group-addon
+            %span.glyphicon.glyphicon-map-marker
           %span.input-group-btn
             = submit_tag 'Search', name: nil, class: 'btn btn-md btn-success'
   .row
