@@ -23,4 +23,5 @@ feature 'Users can mail other users' do
     expect { click_button 'Send message' }.to change{ ActionMailer::Base.deliveries.count }.by 1
     expect(page).to have_content 'Message sent!'
   end
+
 end

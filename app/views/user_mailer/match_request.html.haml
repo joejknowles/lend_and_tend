@@ -1,1 +1,11 @@
-=@user_message
+%p="Hi, from Lend & Tend! The user #{@user_from.name} has requested we send you the below message:"
+
+%p= @user_message
+
+%p='---------------------------'
+
+%p
+  ="To reply to your patch match, just "
+  = mail_to(@user_from.email, 'reply to this email')
+  = ". If you found this email offensive, please be sure to let us know at:"
+  = mail_to 'garden.guardianship@gmail.com'
