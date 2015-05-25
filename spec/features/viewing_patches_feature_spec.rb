@@ -23,6 +23,7 @@ feature 'To view available patches' do
       expect(page).to have_content 'EC4M 8AD'
       expect(page).to have_content 'Windowsill'
       expect(page).to have_content '1'
+      expect(page).to have_content 'free'
     end
 
     scenario 'applies filter to see only particular type' do
