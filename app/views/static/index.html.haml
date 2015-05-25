@@ -1,22 +1,66 @@
-.container-fluid
+.container-fluid#index-header
   .row
-    .col-xs-3.img.img-sm
-    .col-xs-3.img.img-sm
-    .col-xs-3.img.img-sm
-    .col-xs-3.img.img-sm
+    .col-sm-2
+      img
+    .col-sm-2
+      img
+    .col-sm-4
+      img
+    .col-sm-2
+      img
+    .col-sm-2
+      img
   .row
-    .col-xs-3.img.img-sm
-    .col-xs-6
-      .image-spacer
-        .center-items
-          = image_tag 'lendlogo.png', class: 'logo logo-homepage', alt: 'Lend and Tend'
-          - unless user_signed_in?
-            %div.center-block
-              = render 'users/join_in_button'
-              = render 'users/login_button'
-    .col-xs-3.img.img-sm
+    .col-sm-2.vcenter-outer
+      .vcenter-inner
+        %h3
+          Lendr
+        %p
+          Get your Garden Gardened
+          = link_to 'List a patch', new_patch_path
+    .col-sm-8
+      = image_tag 'lendlogo.png', class: 'logo logo-homepage', alt: 'Lend and Tend'
+      %h2
+        Growing allotment-like communities amongst those without allotments.
+      - unless user_signed_in?
+        %div.center-block
+          = render 'users/join_in_button'
+          = render 'users/login_button'
+
+    .col-sm-2.vcenter-outer
+      .vcenter-inner
+        %h3
+          Tendr
+        %p
+          Get Gardening with a Garden Guardianship
+          = link_to 'View patches', patches_path
   .row
-    .col-xs-3.img.img-sm
-    .col-xs-3.img.img-sm
-    .col-xs-3.img.img-sm
-    .col-xs-3.img.img-sm
+    .col-sm-2
+      img
+    .col-sm-2
+      img
+    .col-sm-4
+      img
+    .col-sm-2
+      img
+    .col-sm-2
+      img
+.container
+  .row
+    .col-sm-2
+    .col-sm-8.summary
+      %p
+        Quisque sagittis orci quis egestas volutpat. Sed imperdiet aliquam nulla
+        a accumsan. Proin maximus nisi et mauris lobortis condimentum. Morbi
+        massa erat, vulputate a posuere non, porttitor at justo. Ut fringilla
+        aliquet augue non auctor. In hac habitasse platea dictumst.
+        Nam lobortis vitae justo id dignissim. Duis molestie sollicitudin
+        magna nec auctor.
+    .col-sm-2
+  .row
+    .col-sm-6
+      .social-feed
+        Twitter
+    .col-sm-6
+      .social-feed
+        Instagram
