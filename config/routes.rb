@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'static#index'
 
+  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks'}
+
   get '/about_us' => 'static#about_us'
   get '/faq' => 'static#faq'
   get '/terms' => 'static#terms'
@@ -12,8 +14,6 @@ Rails.application.routes.draw do
   resources :homepage_images
 
   resources :patches
-
-  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :users, only: [ :show ]
 

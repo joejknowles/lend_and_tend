@@ -20,7 +20,8 @@
             .col-xs-3 Type
             .col-xs-2 How long?
             .col-xs-3 Who is offering it?
-            .col-xs-2 How far?
+            .col-xs-1 Status
+            .col-xs-1 How far?
           - @patches.each do |patch|
             %li
               .row
@@ -28,7 +29,8 @@
                 %span.patch_type.col-xs-3= patch.patch_type
                 %span.duration.col-xs-2= patch.duration
                 %span.owner.col-xs-3= link_to patch.user.name, user_path(patch.user)
-                %span.distance.col-xs-2= pluralize(patch.distance.round(1), 'mile') << ' away' if patch.respond_to? :distance
+                %span.in_use.col-xs-1= patch.in_use ? 'taken' : 'free'
+                %span.distance.col-xs-1= pluralize(patch.distance.round(1), 'mile') << ' away' if patch.respond_to? :distance
         = will_paginate @patches
       - else
         %div Sorry, no patches to display
