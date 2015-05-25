@@ -76,6 +76,9 @@ group :development, :test do
   # Use shoulda for database testing matchers
   gem 'shoulda'
 
+  # Active model mocking gem
+  gem 'rspec-activemodel-mocks'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
