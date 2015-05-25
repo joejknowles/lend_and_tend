@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .container-fluid#index-header
   .row
     .col-sm-2
@@ -20,13 +19,14 @@
           Get your Garden Gardened
           = link_to 'List a patch', new_patch_path
     .col-sm-8
-      %h1
-        Lend and Tend
+      = image_tag 'lendlogo.png', class: 'logo logo-homepage', alt: 'Lend and Tend'
       %h2
         Growing allotment-like communities amongst those without allotments.
       - unless user_signed_in?
-        = link_to 'Join with Email', new_user_registration_path
-        = link_to 'Join with Facebook', user_omniauth_authorize_path(:facebook)
+        %div.center-block
+          = render 'users/join_in_button'
+          = render 'users/login_button'
+
     .col-sm-2.vcenter-outer
       .vcenter-inner
         %h3
@@ -64,27 +64,3 @@
     .col-sm-6
       .social-feed
         Instagram
-=======
-.container-fluid
-  .row
-    .col-xs-3.img.img-sm
-    .col-xs-3.img.img-sm
-    .col-xs-3.img.img-sm
-    .col-xs-3.img.img-sm
-  .row
-    .col-xs-3.img.img-sm
-    .col-xs-6
-      .image-spacer
-        .center-items
-          = image_tag 'lendlogo.png', class: 'logo logo-homepage', alt: 'Lend and Tend'
-          - unless user_signed_in?
-            %div.center-block
-              = render 'users/join_in_button'
-              = render 'users/login_button'
-    .col-xs-3.img.img-sm
-  .row
-    .col-xs-3.img.img-sm
-    .col-xs-3.img.img-sm
-    .col-xs-3.img.img-sm
-    .col-xs-3.img.img-sm
->>>>>>> 947ecb86b6b644c63733eb7afa16604191e8acd8

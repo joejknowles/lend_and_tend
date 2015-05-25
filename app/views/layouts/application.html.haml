@@ -18,29 +18,32 @@
               %span.icon-bar
               %span.icon-bar
               %span.icon-bar
-            %a.navbar-brand{ href: '/' } Lend & Tend
+            = link_to image_tag('lendlogo.png'), root_path, class: 'logo logo-header navbar-header'
 
           .collapse.navbar-collapse#navbar
             %ul.nav.navbar-nav.navbar-right
               %li
                 - if current_user
                   = link_to 'My profile', user_path(current_user)
-              %li
-                - if user_signed_in?
                   = link_to 'Log out', destroy_user_session_path, method: :delete
+                - elsif !current_page? '/'
+                  %div.join_login_buttons
+                    = render 'users/join_in_button'
+                    = render 'users/login_button'
                 - else
-                  = link_to 'Log in', new_user_session_path
+                  Change me!
       #main
         = yield
       .errors
         - if flash[:errors]
           .errors
             - flash[:errors].each do |error|
-              %p.error= error
+              %p.error.alert.alert-danger= error
         - if notice
-          %p.notice= notice
-        - if alert
-          %p.alert= alert
+          %p.notice.alert.alert-success= notice
+        -if alert
+          %p.alert.alert-warning= alert
+        .block
       .push
     .footer
       .container
@@ -115,4 +118,3 @@
   /   -if alert
   /     %p.alert.alert-warning= alert
   / = yield
->>>>>>> 947ecb86b6b644c63733eb7afa16604191e8acd8
