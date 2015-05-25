@@ -3,23 +3,33 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title LendAndTend
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    .container
+      = link_to image_tag('lendlogo.png'), root_path, class: 'logo-home navbar-header'
+      - if current_user
+        .header-links.links-left
+          %span.nav=link_to 'List a patch', new_patch_path
+          %span.nav= link_to 'View patches', patches_path
+        .header-links.links-right
+          %span.nav.view_profile= link_to 'My profile', user_path(current_user)
+          %span.nav= link_to 'Log out', destroy_user_session_path, method: :delete
+      - else
+        = link_to 'Log in', new_user_session_path
+        = link_to 'Join', new_user_registration_path
+
     - if flash[:errors]
-      .errors
+      .alert.alert-danger
         - flash[:errors].each do |error|
           %p.error= error
     - if notice
-      %p.notice= notice
-    -if alert
-      %p.alert= alert
-    %span= link_to 'Lend & Tend', root_path
-    - if current_user
-      %span.view_profile= link_to 'My profile', user_path(current_user)
-      %span= link_to 'View patches', patches_path
-      =link_to 'List a patch', new_patch_path
-      = link_to 'Log out', destroy_user_session_path, method: :delete
-
-    = yield
+      .alert.alert-success
+        %p.notice= notice
+    - if alert
+      .alert.alert-danger
+        %p.alert= alert
+    .block
+    .container--main
+      = yield

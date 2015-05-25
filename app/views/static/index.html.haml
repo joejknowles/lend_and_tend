@@ -1,6 +1,21 @@
-%h1 Lend and Tend
-
-- unless user_signed_in?
-  = link_to 'Log in', new_user_session_path
-  = link_to 'Join with Email', new_user_registration_path
-  = link_to 'Join with Facebook', user_omniauth_authorize_path(:facebook)
+.container-fluid
+  .row
+    .col-xs-3.img.img-sm
+    .col-xs-3.img.img-sm
+    .col-xs-3.img.img-sm
+    .col-xs-3.img.img-sm
+  .row
+    .col-xs-3.img.img-sm
+    .col-xs-6
+      .image-spacer
+        .center-items
+          = image_tag 'lendlogo.png', class: 'logo', alt: 'Lend and Tend'
+          - unless user_signed_in?
+            %button.btn.btn-default.center-block
+              Join in
+    .col-xs-3.img.img-sm
+  .row
+    .col-xs-3.img.img-sm
+    .col-xs-3.img.img-sm
+    .col-xs-3.img.img-sm
+    .col-xs-3.img.img-sm
