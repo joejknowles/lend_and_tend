@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'rspec/active_model/mocks'
 
 describe Patch, type: :model do
   it { is_expected.to have_db_column(:location) }
@@ -20,14 +21,11 @@ describe Patch, type: :model do
   it { is_expected.to belong_to(:user) }
 
   it '\'in use\' defaults to be false' do
-    user = User.create(name: 'Test',
-                       email: 'test@test.com',
-                       password: 'testtest',
-                       password_confirmation: 'testtest')
+    stub_user = stub_model(User).as_new_record
     patch = described_class.create(location: 'SW11 4AE',
                                   patch_type: 'Window sill',
                                   duration: '1',
-                                  user_id: user.id)
+                                  user_id: stub_user.id)
     expect(patch.in_use).to be false
   end
 
