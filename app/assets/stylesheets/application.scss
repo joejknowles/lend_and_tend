@@ -21,11 +21,7 @@
 // Homepage images
 //
 // .img{
-// <<<<<<< HEAD
-//   background-image: url('https://photos-5.dropbox.com/t/2/AADMaholVLXDW1Rb8OwJDE34KbkWdvS2i8EeJsbcFyqLiQ/12/134460480/jpeg/32x32/1/1432551600/0/2/IMG_8176.jpg/CMDojkAgASACIAMgBCAFIAYoASgC/AtemsPpkHNvxcyv9BuTkqxlOXMoM6B7Dub6UN5zsq4E?size=1280x960&size_mode=2');
-// =======
 //   background-image: url('http://placehold.it/150x150');
-// >>>>>>> 8f71041a4fc432b2fbb3a818533eabe02352e842
 //   background-size: cover;
 //   background-position: 50% 50%;
 //   background-repeat: no-repeat;
@@ -36,7 +32,7 @@
 // }
 //
 // .image-spacer {
-// text-align: center;
+//   text-align: center;
 //   margin:auto;
 //   height: 200px;
 // }
@@ -128,6 +124,8 @@
 .profile_pic_container {
   text-align: center;
 }
+
+@import "patches";
 
 .message_user_btn {
   margin: auto;
