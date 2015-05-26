@@ -33,7 +33,7 @@
   %div.row
     %div.col-sm-4
       %div.profile_pic_container
-        %img.profile_photo{src: 'http://placehold.it/250x250'}
+        = image_tag @user.user_avatar.image.url(:medium)
         -unless current_user == @user
           %div.message_user_btn
             =button_to 'Match? Get in touch!', new_user_user_email_path(@user), method: :get, class: ['btn','btn-warning']

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526140004) do
+ActiveRecord::Schema.define(version: 20150526173741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,18 @@ ActiveRecord::Schema.define(version: 20150526140004) do
 
   add_index "patches", ["user_id"], name: "index_patches_on_user_id", using: :btree
 
+  create_table "user_avatars", force: :cascade do |t|
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "user_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "user_avatars", ["user_id"], name: "index_user_avatars_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -78,4 +90,5 @@ ActiveRecord::Schema.define(version: 20150526140004) do
 
   add_foreign_key "patch_images", "patches"
   add_foreign_key "patches", "users"
+  add_foreign_key "user_avatars", "users"
 end

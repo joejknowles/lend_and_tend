@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :patches
   has_many :patch_images, through: :patches
+  has_one :user_avatar
   validates_presence_of :name
 
   devise :database_authenticatable, :registerable,
