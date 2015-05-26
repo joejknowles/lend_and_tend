@@ -1,19 +1,19 @@
 .container-fluid#index-header
   .row
-    .col-sm-2.home_img{:style => "background-image: url(#{@photos[0].image.url(:medium)})"}
+    .col-sm-2.home_img#homeImg1{:style => "background-image: url(#{@photos[0].image.url(:medium)})"}
 
-    .col-sm-2.home_img{:style => "background-image: url(#{@photos[1].image.url(:medium)})"}
+    .col-sm-2.home_img#homeImg2{:style => "background-image: url(#{@photos[1].image.url(:medium)})"}
 
-    .col-sm-2.home_img{:style => "background-image: url(#{@photos[2].image.url(:medium)})"}
+    .col-sm-2.home_img#homeImg3{:style => "background-image: url(#{@photos[2].image.url(:medium)})"}
 
-    .col-sm-2.home_img{:style => "background-image: url(#{@photos[3].image.url(:medium)})"}
+    .col-sm-2.home_img#homeImg4{:style => "background-image: url(#{@photos[3].image.url(:medium)})"}
 
-    .col-sm-2.home_img{:style => "background-image: url(#{@photos[4].image.url(:medium)})"}
+    .col-sm-2.home_img#homeImg5{:style => "background-image: url(#{@photos[4].image.url(:medium)})"}
 
-    .col-sm-2.home_img{:style => "background-image: url(#{@photos[5].image.url(:medium)})"}
+    .col-sm-2.home_img#homeImg6{:style => "background-image: url(#{@photos[5].image.url(:medium)})"}
 
   .row
-    .col-sm-2.vcenter-outer.home_img{:style => "background-image: url(#{@photos[6].image.url(:medium)})"}
+    .col-sm-2.vcenter-outer.home_img#homeImg7{:style => "background-image: url(#{@photos[6].image.url(:medium)})"}
 
       .vcenter-inner.lendr_home_img
         %h3
@@ -30,7 +30,7 @@
           = render 'users/join_in_button'
           = render 'users/login_button'
 
-    .col-sm-2.vcenter-outer.home_img{:style => "background-image: url(#{@photos[7].image.url(:medium)})"}
+    .col-sm-2.vcenter-outer.home_img#homeImg8{:style => "background-image: url(#{@photos[7].image.url(:medium)})"}
 
       .vcenter-inner.tendr_home_img
         %h3
@@ -39,17 +39,17 @@
           Get Gardening with a Garden Guardianship
           = link_to 'View patches', patches_path
   .row
-    .col-sm-2.home_img{:style => "background-image: url(#{@photos[8].image.url(:medium)})"}
+    .col-sm-2.home_img#homeImg9{:style => "background-image: url(#{@photos[8].image.url(:medium)})"}
 
-    .col-sm-2.home_img{:style => "background-image: url(#{@photos[9].image.url(:medium)})"}
+    .col-sm-2.home_img#homeImg10{:style => "background-image: url(#{@photos[9].image.url(:medium)})"}
 
-    .col-sm-2.home_img{:style => "background-image: url(#{@photos[10].image.url(:medium)})"}
+    .col-sm-2.home_img#homeImg11{:style => "background-image: url(#{@photos[10].image.url(:medium)})"}
 
-    .col-sm-2.home_img{:style => "background-image: url(#{@photos[11].image.url(:medium)})"}
+    .col-sm-2.home_img#homeImg12{:style => "background-image: url(#{@photos[11].image.url(:medium)})"}
 
-    .col-sm-2.home_img{:style => "background-image: url(#{@photos[12].image.url(:medium)})"}
+    .col-sm-2.home_img#homeImg13{:style => "background-image: url(#{@photos[12].image.url(:medium)})"}
 
-    .col-sm-2.home_img{:style => "background-image: url(#{@photos[13].image.url(:medium)})"}
+    .col-sm-2.home_img#homeImg14{:style => "background-image: url(#{@photos[13].image.url(:medium)})"}
 
 .container
   .row
@@ -72,3 +72,8 @@
       .social-feed
         <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hashtag/LendAndTend" data-widget-id="603155369238646784">#LendAndTend Tweets</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+= javascript_tag do
+  = "window.imageUrls ="
+  = raw @other_photos.to_json
