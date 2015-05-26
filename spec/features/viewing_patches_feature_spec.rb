@@ -70,15 +70,15 @@ feature 'To view available patches' do
         expect(page).not_to have_content 'YO10 3DD'
       end
     end
-<<<<<<< HEAD
-
-    scenario 'sees paginated results' do
-      7.times { add_patch('EC4M 8AD', 'Windowsill', '1') }
-      visit '/patches'
-      expect(page).to have_selector('ul', count: 1)
-      expect(page).to have_selector('li', count: 10)
-    end
-=======
+# <<<<<<< HEAD
+#
+#     scenario 'sees paginated results' do
+#       7.times { add_patch('EC4M 8AD', 'Windowsill', '1') }
+#       visit '/patches'
+#       expect(page).to have_selector('ul', count: 1)
+#       expect(page).to have_selector('li', count: 10)
+#     end
+# =======
     # test needs refactoring
     # scenario 'sees paginated results' do
     #   7.times { add_patch('EC4M 8AD', 'Windowsill', '1') }
@@ -87,7 +87,6 @@ feature 'To view available patches' do
     #   # expect(page).to have_selector('ul', count: 1)
     #   expect(page).to have_selector('li', count: 10)
     # end
->>>>>>> 8893a489b623cb7435e5b016ed10f468619335df
   end
 
   scenario 'unauthenticated user is redirected to log in page' do

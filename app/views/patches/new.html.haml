@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-= form_for @patch do |f|
-  = f.label :location
-  = f.text_field :location, placeholder: "Postcode, e.g. 'WF12 7ED'"
-  = f.label :patch_type, 'What sort of space would you like to offer?'
-  = f.select :patch_type, patch_types_list
-  = f.label :duration, 'How long can you offer this space?'
-  = f.select :duration, [['0-1 year', 1], ['1-2 year', 2]]
-  = f.label :description
-  = f.text_area :description
-  = f.submit 'List my patch'
-=======
 .header-box
   %h1 Tell us about your new patch
 .main-content-box
@@ -32,4 +20,3 @@
     .row
       .col-md-4.form-group
         = f.submit 'List my patch', class: 'btn btn-default btn-custom'
->>>>>>> 8893a489b623cb7435e5b016ed10f468619335df
