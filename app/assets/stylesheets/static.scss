@@ -6,11 +6,32 @@ $secondary-color: rgba(0, 205, 0, 1);
 $secondary-color-opaque: lighten(rgba(19, 205, 0, 0.6), 30%);
 $max-main-width: 960px;
 
-h1 {
+.home-header {
   font-size: 2.5em;
+  font-family: 'Mrs Sheppards', cursive;
 }
+
+.home-jumbo {
+  background-color: #EED2EE;
+  text-align: center;
+  color: white;
+}
+
+
+
 h2 {
   font-size: 1.5em;
+  margin-bottom: 2em;
+}
+
+.what_is {
+  text-align: center;
+  margin-bottom: 7em;
+  font-size: 1.5em;
+}
+
+.photo_wall {
+  margin-bottom: 7em;
 }
 
 @mixin padding-sides($padding:10px) {
@@ -119,7 +140,7 @@ body {
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  height: 170px;
+  height: 200px;
 }
 
 .home-img-container {
@@ -136,7 +157,6 @@ body {
 //homepage header styles
 #index-header {
   div {
-    /*@include placeholder-box(120px);*/
     text-align:center;
   }
 
@@ -154,7 +174,8 @@ body {
 }
 
 .social-feed {
-  @include placeholder-box(250px);
+  /*@include placeholder-box(250px);*/
   @extend .center-everything;
   width: 60%;
+  margin-bottom: 7em;
 }
