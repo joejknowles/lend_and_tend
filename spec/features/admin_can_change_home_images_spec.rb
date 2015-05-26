@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Admin can add homepage images to database' do
 
-  scenario 'can upload image' do
+  scenario 'can upload image', skip_before: true do
     join_and_login_admin
     visit '/homepage_images'
     click_link 'Add new image to the homepage'
@@ -12,7 +12,7 @@ feature 'Admin can add homepage images to database' do
     expect(page).to have_css("img[src*='test.gif']")
   end
 
-  scenario 'Can remove image' do
+  scenario 'Can remove image', skip_before: true do
     join_and_login_admin
     visit '/homepage_images'
     click_link 'Add new image to the homepage'
