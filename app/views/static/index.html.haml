@@ -1,4 +1,13 @@
-
+.jumbotron
+  .container{style: "text-align: center;"}
+    %h1
+      Lend And Tend
+    %h2
+      Growing allotment-like communities amongst those without allotments.
+    - unless user_signed_in?
+      %div.center-block
+        = render 'users/join_in_button'
+        = render 'users/login_button'
 .container#index-header
   .row
     .col-sm-2.home-img-container
@@ -7,48 +16,17 @@
     .col-sm-2.home-img-container
       .home_img#homeImg2{:style => "background-image: url(#{@photos[1].image.url(:medium)})"}
 
-    .col-sm-2
-    / .home-img-container
-    / .home_img#homeImg3{:style => "background-image: url(#{@photos[2].image.url(:medium)})"}
+    .col-sm-2.home-img-container
+      .home_img#homeImg3{:style => "background-image: url(#{@photos[2].image.url(:medium)})"}
 
-    .col-sm-2
-    /.home-img-container
-    /.home_img#homeImg4{:style => "background-image: url(#{@photos[3].image.url(:medium)})"}
+    .col-sm-2.home-img-container
+      .home_img#homeImg4{:style => "background-image: url(#{@photos[3].image.url(:medium)})"}
 
     .col-sm-2.home-img-container
       .home_img#homeImg5{:style => "background-image: url(#{@photos[4].image.url(:medium)})"}
 
     .col-sm-2.home-img-container
       .home_img#homeImg6{:style => "background-image: url(#{@photos[5].image.url(:medium)})"}
-
-  .row
-    .col-sm-2.home-img-container
-      .vcenter-outer.home_img#homeImg7{:style => "background-image: url(#{@photos[6].image.url(:medium)})"}
-
-        .vcenter-inner.lendr_home_img
-          %h3
-            Lendr
-          %p
-            Get your Garden Gardened
-            = link_to 'List a patch', new_patch_path
-    .col-sm-8
-      = image_tag 'lendlogo.png', class: 'logo logo-homepage', alt: 'Lend and Tend'
-      %h2
-        Growing allotment-like communities amongst those without allotments.
-      - unless user_signed_in?
-        %div.center-block
-          = render 'users/join_in_button'
-          = render 'users/login_button'
-
-    .col-sm-2.home-img-container
-      .vcenter-outer.home_img#homeImg8{:style => "background-image: url(#{@photos[7].image.url(:medium)})"}
-
-        .vcenter-inner.tendr_home_img
-          %h3
-            Tendr
-          %p
-            Get Gardening with a Garden Guardianship
-            = link_to 'View patches', patches_path
   .row
     .col-sm-2.home-img-container
       .home_img#homeImg9{:style => "background-image: url(#{@photos[8].image.url(:medium)})"}
@@ -56,13 +34,11 @@
     .col-sm-2.home-img-container
       .home_img#homeImg10{:style => "background-image: url(#{@photos[9].image.url(:medium)})"}
 
-    .col-sm-2
-    /.home-img-container
-    /.home_img#homeImg11{:style => "background-image: url(#{@photos[10].image.url(:medium)})"}
+    .col-sm-2.home-img-container
+      .home_img#homeImg11{:style => "background-image: url(#{@photos[10].image.url(:medium)})"}
 
-    .col-sm-2
-    /.home-img-container
-    /.home_img#homeImg12{:style => "background-image: url(#{@photos[11].image.url(:medium)})"}
+    .col-sm-2.home-img-container
+      .home_img#homeImg12{:style => "background-image: url(#{@photos[11].image.url(:medium)})"}
 
     .col-sm-2.home-img-container
       .home_img#homeImg13{:style => "background-image: url(#{@photos[12].image.url(:medium)})"}
