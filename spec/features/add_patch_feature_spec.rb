@@ -28,6 +28,15 @@ feature 'Add a patch' do
       expect(current_path).to eq '/patches/new'
     end
 
+    scenario 'add a patch with an image' do
+      visit '/patches/new'
+      select 'Hanging basket', from: 'What sort of space would you like to offer?'
+      select '0-1 year', from: 'How long can you offer this space?'
+      attach_file 'Image', 'public/test.gif'
+      click_button 'List my patch'
+      expect(page).to have_css "img[src*='test.gif']"
+    end
+
     xscenario 'validates postcode is correct' do
     end
   end

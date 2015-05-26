@@ -20,6 +20,8 @@ describe Patch, type: :model do
 
   it { is_expected.to belong_to(:user) }
 
+  it { is_expected.to have_attached_file(:image) }
+
   it '\'in use\' defaults to be false' do
     stub_user = stub_model(User).as_new_record
     patch = described_class.create(location: 'SW11 4AE',
@@ -34,6 +36,12 @@ describe Patch, type: :model do
                    location: 'YO10 3DD', duration: '1')
     expect(subject.latitude).to eq(53.95503009999999)
     expect(subject.longitude).to eq(-1.0405632)
+  end
+
+  it 'validates image file type' do
+    expect(subject).to validate_attachment_content_type(:image)
+      .allowing('image/png', 'image/gif', 'image/jpg', 'image/jpeg')
+      .rejecting('text/plain', 'text/xml')
   end
 
   xit 'selects locations in a given radius' do
