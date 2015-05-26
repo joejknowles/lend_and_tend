@@ -10,6 +10,25 @@ def join_with_email(name = 'The Tester',
   User.find_by(email: 'testing@testing.test' )
 end
 
+<<<<<<< HEAD
+=======
+def create_two_users(name1, name2)
+  User.create(name: name1,
+              email: 'test@test.com',
+              password: 'testtest',
+              password_confirmation: 'testtest')
+  User.create(name: name2,
+              email: 'test2@test2.com',
+              password: 'test2test2',
+              password_confirmation: 'test2test2')
+  visit '/'
+  click_button 'Log In!'
+  fill_in 'login_email', with: 'test@test.com'
+  fill_in 'login_password', with: 'testtest'
+  click_button 'Log in'
+end
+
+>>>>>>> 8893a489b623cb7435e5b016ed10f468619335df
 def join_and_add_patch
   visit '/'
   join_with_email
@@ -32,4 +51,8 @@ def join_and_login_admin
   fill_in 'login_email', with: 'test@test.com'
   fill_in 'login_password', with: 'testtest'
   click_button 'Log in'
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 8893a489b623cb7435e5b016ed10f468619335df

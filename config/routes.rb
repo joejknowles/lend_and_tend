@@ -12,11 +12,19 @@ Rails.application.routes.draw do
   put '/users/edit_profile' => 'users#update_profile'
 
   resources :homepage_images
+<<<<<<< HEAD
 
   resources :patches
 
   resources :users, only: [ :show ]
 
+=======
+  resources :patches
+
+  resources :users, only: [ :show ] do
+    resources :user_emails, only: [:new, :create]
+  end
+>>>>>>> 8893a489b623cb7435e5b016ed10f468619335df
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
