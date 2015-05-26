@@ -12,15 +12,8 @@
 !/log/.keep
 /tmp
 
-<<<<<<< HEAD
-coverage/*
-.DS_Store
-
-/public/system/homepage_images
-=======
 coverage
 .DS_Store
-system/homepage_images
 
-/public/system/homepage_images
->>>>>>> 8893a489b623cb7435e5b016ed10f468619335df
+public/system/
+>>>>>>> 8bcd5098e54b81fc2a765685fe8a23b76bc7dff5
