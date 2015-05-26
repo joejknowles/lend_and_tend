@@ -114,13 +114,19 @@ body {
   margin: 0;
 }
 
- .home_img{
-   background-image: url('http://s0.geograph.org.uk/photos/24/78/247898_35e96af5.jpg');
-   background-size: cover;
-   background-position: 50% 50%;
-   background-repeat: no-repeat;
-   height: 170px;
- }
+.home_img{
+  background-image: url('http://s0.geograph.org.uk/photos/24/78/247898_35e96af5.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 170px;
+}
+
+.home-img-container {
+  background-color: black;
+  height: 170px;
+  padding: 0;
+}
 
 .lendr_home_img, .tendr_home_img {
   height: 100%;
