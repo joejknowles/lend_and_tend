@@ -1,18 +1,20 @@
 .container-fluid#index-header
   .row
-    .col-sm-2
-      img
-    .col-sm-2
-      img
-    .col-sm-4
-      img
-    .col-sm-2
-      img
-    .col-sm-2
-      img
+    .col-sm-2.home_img
+
+    .col-sm-2.home_img
+
+    .col-sm-2.home_img
+
+    .col-sm-2.home_img
+
+    .col-sm-2.home_img
+
+    .col-sm-2.home_img
+
   .row
-    .col-sm-2.vcenter-outer
-      .vcenter-inner
+    .col-sm-2.vcenter-outer.home_img
+      .vcenter-inner.lendr_home_img
         %h3
           Lendr
         %p
@@ -27,24 +29,26 @@
           = render 'users/join_in_button'
           = render 'users/login_button'
 
-    .col-sm-2.vcenter-outer
-      .vcenter-inner
+    .col-sm-2.vcenter-outer.home_img
+      .vcenter-inner.tendr_home_img
         %h3
           Tendr
         %p
           Get Gardening with a Garden Guardianship
           = link_to 'View patches', patches_path
   .row
-    .col-sm-2
-      img
-    .col-sm-2
-      img
-    .col-sm-4
-      img
-    .col-sm-2
-      img
-    .col-sm-2
-      img
+    .col-sm-2.home_img
+
+    .col-sm-2.home_img
+
+    .col-sm-2.home_img
+
+    .col-sm-2.home_img
+
+    .col-sm-2.home_img
+
+    .col-sm-2.home_img
+
 .container
   .row
     .col-sm-2
@@ -60,7 +64,9 @@
   .row
     .col-sm-6
       .social-feed
-        Twitter
+        <a class="twitter-timeline" href="https://twitter.com/LendandTend" data-widget-id="600973716793745408">Tweets by @LendandTend</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     .col-sm-6
       .social-feed
-        Instagram
+        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hashtag/LendAndTend" data-widget-id="603155369238646784">#LendAndTend Tweets</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

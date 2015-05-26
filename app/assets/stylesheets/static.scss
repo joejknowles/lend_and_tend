@@ -107,18 +107,23 @@ body {
 
 }
 .vcenter-outer {
-  padding:10px;
+  /*padding:10px;*/
+  padding: 0;
 }
 
 .vcenter-inner {
   margin: 0 auto;
-  max-width:300px;
+}
+
+.lendr_home_img, .tendr_home_img {
+  height: 100%;
+  background-color: rgba(216, 191, 216, 0.8);
 }
 
 //homepage header styles
 #index-header {
   div {
-    @include placeholder-box(120px);
+    /*@include placeholder-box(120px);*/
     text-align:center;
   }
 
