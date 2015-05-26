@@ -28,4 +28,10 @@ patch_types_list.each do |type|
   end
 end
 
+HomepageImage.create(
+    image_file_name: "026.jpg",
+    image_content_type: "image/jpeg",
+    image_file_size: 584918,
+    image_updated_at: "2015-05-26 11:23:11")
+
 puts "Database successfully seeded"
