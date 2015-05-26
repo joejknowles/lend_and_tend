@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
 
   def index
+    @photos = HomepageImage.all
   end
 
   def about_us

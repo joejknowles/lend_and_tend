@@ -1,19 +1,20 @@
 .container-fluid#index-header
   .row
-    .col-sm-2.home_img
+    .col-sm-2.home_img{:style => "background-image: url(#{@photos[0].image.url(:medium)})"}
 
-    .col-sm-2.home_img
+    .col-sm-2.home_img{:style => "background-image: url(#{@photos[1].image.url(:medium)})"}
 
-    .col-sm-2.home_img
+    .col-sm-2.home_img{:style => "background-image: url(#{@photos[2].image.url(:medium)})"}
 
-    .col-sm-2.home_img
+    .col-sm-2.home_img{:style => "background-image: url(#{@photos[3].image.url(:medium)})"}
 
-    .col-sm-2.home_img
+    .col-sm-2.home_img{:style => "background-image: url(#{@photos[4].image.url(:medium)})"}
 
-    .col-sm-2.home_img
+    .col-sm-2.home_img{:style => "background-image: url(#{@photos[5].image.url(:medium)})"}
 
   .row
-    .col-sm-2.vcenter-outer.home_img
+    .col-sm-2.vcenter-outer.home_img{:style => "background-image: url(#{@photos[6].image.url(:medium)})"}
+
       .vcenter-inner.lendr_home_img
         %h3
           Lendr
@@ -29,7 +30,8 @@
           = render 'users/join_in_button'
           = render 'users/login_button'
 
-    .col-sm-2.vcenter-outer.home_img
+    .col-sm-2.vcenter-outer.home_img{:style => "background-image: url(#{@photos[7].image.url(:medium)})"}
+
       .vcenter-inner.tendr_home_img
         %h3
           Tendr
@@ -37,17 +39,17 @@
           Get Gardening with a Garden Guardianship
           = link_to 'View patches', patches_path
   .row
-    .col-sm-2.home_img
+    .col-sm-2.home_img{:style => "background-image: url(#{@photos[8].image.url(:medium)})"}
 
-    .col-sm-2.home_img
+    .col-sm-2.home_img{:style => "background-image: url(#{@photos[9].image.url(:medium)})"}
 
-    .col-sm-2.home_img
+    .col-sm-2.home_img{:style => "background-image: url(#{@photos[10].image.url(:medium)})"}
 
-    .col-sm-2.home_img
+    .col-sm-2.home_img{:style => "background-image: url(#{@photos[11].image.url(:medium)})"}
 
-    .col-sm-2.home_img
+    .col-sm-2.home_img{:style => "background-image: url(#{@photos[12].image.url(:medium)})"}
 
-    .col-sm-2.home_img
+    .col-sm-2.home_img{:style => "background-image: url(#{@photos[13].image.url(:medium)})"}
 
 .container
   .row
