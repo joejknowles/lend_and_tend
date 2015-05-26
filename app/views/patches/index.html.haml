@@ -1,7 +1,6 @@
 .container-fluid
   .row
-    .col-xs-3
-    .col-xs-6
+    .col-xs-6.col-xs-offset-3
       = form_tag patches_path, method: :get, class: 'form-inline filter-form' do
         = label_tag :patch_type, 'Patch type'
         = select_tag :patch_type, options_for_select([['All', '']] + patch_types_list), class: 'selectpicker'
@@ -15,8 +14,7 @@
           %span.input-group-btn
             = submit_tag 'Search', name: nil, class: 'btn btn-md btn-success'
   .row
-    .col-xs-2
-    .col-xs-8
+    .col-xs-8.col-xs-offset-2
       - if @patches
         .row.list-title
           .col-xs-2 Location
@@ -36,8 +34,7 @@
                 %span.in_use.col-xs-1= patch.in_use ? 'taken' : 'free'
                 %span.distance.col-xs-2= pluralize(patch.distance.round(1), 'mile') if patch.respond_to? :distance
         .row
-          .col-xs-4
-          .col-xs-4
+          .col-xs-4.col-xs-offset-4
             = pagination_links @patches
       - else
         %div Sorry, no patches to display
