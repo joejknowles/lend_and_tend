@@ -9,7 +9,7 @@
         = render 'users/join_in_button'
         = render 'users/login_button'
 
-.container#index-header.photo_wall
+.container-fluid#index-header.photo_wall
   .row
     .col-sm-2.home-img-container
       .home_img#homeImg1{:style => "background-image: url(#{@photos[0].image.url(:medium)})"}
@@ -49,20 +49,14 @@
 
 .row
   .container
-    .what_is
+    .col-sm-12.col-md-6.col-lg-4
       %h2 What is Lend & Tend?
       %p Quisque sagittis orci quis egestas volutpat. Sed imperdiet aliquam nulla a accumsan. Proin maximus nisi et mauris lobortis condimentum. Morbi massa erat, vulputate a posuere non, porttitor at justo. Ut fringilla aliquet augue non auctor. In hac habitasse platea dictumst. Nam lobortis vitae justo id dignissim. Duis molestie sollicitudin magna nec auctor.
-
-.row
-  .container
-    .what_is
+    .col-sm-12.col-md-6.col-lg-4
       %h2 Is it for me?
       %p Quisque sagittis orci quis egestas volutpat. Sed imperdiet aliquam nulla a accumsan. Proin maximus nisi et mauris lobortis condimentum. Morbi massa erat, vulputate a posuere non, porttitor at justo. Ut fringilla aliquet augue non auctor. In hac habitasse platea dictumst. Nam lobortis vitae justo id dignissim. Duis molestie sollicitudin magna nec auctor.
-
-.row
-  .container
-    .what_is
-      %h2 What's the buzz?
+    .col-sm-12.col-md-6.col-lg-4
+      %h2 Is it for me?
       %p Quisque sagittis orci quis egestas volutpat. Sed imperdiet aliquam nulla a accumsan. Proin maximus nisi et mauris lobortis condimentum. Morbi massa erat, vulputate a posuere non, porttitor at justo. Ut fringilla aliquet augue non auctor. In hac habitasse platea dictumst. Nam lobortis vitae justo id dignissim. Duis molestie sollicitudin magna nec auctor.
 
 
