@@ -1,0 +1,26 @@
+//footer styles
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  @include size(100%,60px);
+  background-color: $primary-color;
+  @extend .top-border-only;
+  padding: 10px;
+
+  .nav > li > a{
+    padding: 0px 10px;
+  }
+  .nav > li:first-child {
+    padding: 0px 0px;
+  }
+
+}

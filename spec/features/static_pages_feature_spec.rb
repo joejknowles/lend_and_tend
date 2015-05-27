@@ -4,7 +4,7 @@ feature 'Static Pages' do
 
   it 'shows the homepage as root' do
     visit '/'
-    expect(page).to have_selector('.logo-homepage')
+    expect(page).to have_selector('.photo_wall')
   end
 
   it 'has a "About us" page' do

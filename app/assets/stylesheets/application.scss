@@ -3,6 +3,7 @@
 @import 'static';
 @import 'patches';
 @import 'forms';
+@import 'footer';
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -19,14 +20,55 @@
  */
 
 // Homepage images
+
+.img{
+  background-image: url('https://photos-5.dropbox.com/t/2/AADMaholVLXDW1Rb8OwJDE34KbkWdvS2i8EeJsbcFyqLiQ/12/134460480/jpeg/32x32/1/1432551600/0/2/IMG_8176.jpg/CMDojkAgASACIAMgBCAFIAYoASgC/AtemsPpkHNvxcyv9BuTkqxlOXMoM6B7Dub6UN5zsq4E?size=1280x960&size_mode=2');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.img-sm{
+  height: 200px;
+}
+
+.image-spacer {
+text-align: center;
+  margin:auto;
+  height: 200px;
+}
+
+.center-items {
+  padding: 30px;
+}
+
+.logo-homepage {
+  max-width:95%;
+  margin-bottom: 5%;
+}
+
+// Nav
+
+.links-right {
+  display:inline-block;
+  float: right;
+}
+
+.links-left {
+  display:inline-block;
+  text-align: left;
+}
+
+.header-links a {
+  margin-right:10px;
+}
+
+// Header
+
+.join_login_buttons {
+  float: right;
+}
 //
- .home_img{
-   background-image: url('http://s0.geograph.org.uk/photos/24/78/247898_35e96af5.jpg');
-   background-size: cover;
-   background-position: 50% 50%;
-   background-repeat: no-repeat;
-   height: 170px;
- }
 //
 // .img-sm{
 //   height: 200px;
@@ -68,7 +110,6 @@
 // .join_login_buttons {
 //   float: right;
 // }
-
 // Join & Login Form
 
 .fb_btn_container {
@@ -107,10 +148,12 @@
   font-style: italic;
   font-size: 0.7em;
 }
+
 // Profile
 
 .profile_photo {
-  max-width: 100%;
+  max-width:200px;
+  max-height:200px;
   display: inline;
 }
 
@@ -124,9 +167,9 @@
 
 .profile_pic_container {
   text-align: center;
+
 }
 
-@import "patches";
 
 .message_user_btn {
   margin: auto;

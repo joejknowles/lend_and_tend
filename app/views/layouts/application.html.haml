@@ -1,68 +1,10 @@
 !!!
 %html
   %head
-    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }/
-    %title LendAndTend
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
+    =render 'partials/meta_tags'
   %body
-    .wrapper
-      .navbar.navbar-default.navbar-custom
-        .container
-          .navbar-header
-            %button.navbar-toggle.collapsed{ 'aria-controls' => 'navbar',
-            'aria-expanded' => 'false', 'data-target' => '#navbar',
-            'data-toggle' => 'collapse', type: 'button' }
-              %span.sr-only Toggle navigation
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
-            = link_to image_tag('lendlogo.png'), root_path, class: 'logo logo-header navbar-header'
-
-          .collapse.navbar-collapse#navbar
-            %ul.nav.navbar-nav.navbar-right
-              %li
-                - if current_user
-                  = link_to 'My profile', user_path(current_user)
-                  = link_to 'Log out', destroy_user_session_path, method: :delete
-                - elsif !current_page? '/'
-                  %div.join_login_buttons
-                    = render 'users/join_in_button'
-                    = render 'users/login_button'
-                - else
-                  Change me!
-      #main
-        = yield
-      .errors
-        - if flash[:errors]
-          .errors
-            - flash[:errors].each do |error|
-              %p.error.alert.alert-danger= error
-        - if notice
-          %p.notice.alert.alert-success= notice
-        -if alert
-          %p.alert.alert-warning= alert
-        .block
-      .push
-    .footer
-      .container
-        .row
-          .col-sm-6
-            .vcenter-outer
-              %ul.nav.navbar-nav.vcenter-inner
-                %li
-                  = link_to 'About', about_us_path
-                %li
-                  = link_to 'Faq', faq_path
-                %li
-                  = link_to 'T&C', terms_path
-          .col-sm-6
-            .vcenter-outer
-              %ul.nav.navbar-nav.navbar-right.vcenter-inner
-                %li
-                  %a{ href: '#' } f
-                %li
-                  %a{ href: '#' } in
-                %li
-                  %a{ href: '#' } t
+    = render 'partials/nav'
+    = render 'partials/flash'
+    #main
+      = yield
+    =render 'partials/footer'

@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   has_many :patches, dependent: :destroy
   has_many :patch_images, through: :patches
+  has_one :user_avatar
 
   validates_presence_of :name
 
