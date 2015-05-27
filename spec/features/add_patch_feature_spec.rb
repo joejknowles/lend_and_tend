@@ -8,7 +8,7 @@ feature 'Add a patch' do
     end
 
     scenario 'succeeds with acceptable details' do
-      visit '/patches/new'
+      click_link 'Add Patch'
       fill_in 'Location', with: 'EC4M 8AD'
       select 'Hanging basket', from: 'What sort of space would you like to offer?'
       select '0-1 year', from: 'How long can you offer this space?'
