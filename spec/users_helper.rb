@@ -1,7 +1,7 @@
 def join_with_email(name = 'The Tester',
                     email = 'testing@testing.test',
                     password = 'testtest')
-  click_button 'Join In!'
+  click_button 'Join up'
   fill_in 'user[name]', with: name
   fill_in 'join_email', with: email
   fill_in 'join_password', with: password
@@ -20,10 +20,10 @@ def create_two_users(name1, name2)
               password: 'test2test2',
               password_confirmation: 'test2test2')
   visit '/'
-  click_button 'Log In!'
+  click_button 'launchloginmodal'
   fill_in 'login_email', with: 'test@test.com'
   fill_in 'login_password', with: 'testtest'
-  click_button 'Log in'
+  click_button 'login_btn'
 end
 
 def join_and_add_patch
@@ -44,8 +44,8 @@ def join_and_login_admin
               password_confirmation: 'testtest',
               admin: true)
   visit '/users/sign_up'
-  click_button 'Log In!'
+  click_button 'launchloginmodal'
   fill_in 'login_email', with: 'test@test.com'
   fill_in 'login_password', with: 'testtest'
-  click_button 'Log in'
+  click_button 'login_btn'
 end
