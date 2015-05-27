@@ -23,6 +23,7 @@ feature 'To view available patches' do
     end
 
     scenario 'views all advertised patches' do
+      click_link 'Find a Patch'
       visit '/patches'
       expect(page).to have_content 'EC4M 8AD'
       expect(page).to have_content 'Windowsill'
