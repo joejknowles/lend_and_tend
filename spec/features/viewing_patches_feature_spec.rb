@@ -27,7 +27,7 @@ feature 'To view available patches' do
       expect(page).to have_content 'EC4M 8AD'
       expect(page).to have_content 'Windowsill'
       expect(page).to have_content '1'
-      expect(page).to have_content 'free'
+      expect(page).to have_content 'available'
     end
 
     scenario 'applies filter to see only particular type' do
@@ -74,9 +74,7 @@ feature 'To view available patches' do
     scenario 'sees paginated results' do
       7.times { add_patch('EC4M 8AD', 'Windowsill', '1') }
       visit '/patches'
-
-      # expect(page).to have_selector('ul', count: 1)
-      expect(page).to have_css("li[class='listed-patch']", count: 10)
+      expect(page).to have_css("li[class='row listed-patch']", count: 10)
     end
   end
 

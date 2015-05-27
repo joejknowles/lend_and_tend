@@ -18,7 +18,7 @@
       - if @patches
         %ul.list-unstyled
           - @patches.each do |patch|
-            %li.row
+            %li.row.listed-patch
               .col-md-5.col-md-offset-1.text-box
                 %span= link_to patch.user.name, user_path(patch.user.name)
                 %span.patch-type can offer his/her #{patch.patch_type}
@@ -32,7 +32,7 @@
                   - else
                     %img{ src: 'http://placehold.it/100x100' }
               .col-md-3
-                = button_to "See #{patch.user.name.split(' ').first}'s profile", new_user_user_email_path(patch.user), method: :get, class: ['btn','btn-success', 'get-in-touch']
+                = button_to "See #{patch.user.name.split(' ').first}'s profile", user_path(patch.user), method: :get, class: ['btn','btn-success', 'get-in-touch']
         .row
           .col-xs-6.col-xs-offset-3
             = pagination_links @patches
