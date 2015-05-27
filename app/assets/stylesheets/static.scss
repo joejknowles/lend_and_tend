@@ -80,32 +80,7 @@ h2 {
   min-height: $min-height;
   border: 1px solid #f5f5f5;
 }
-//footer styles
-html {
-  position: relative;
-  min-height: 100%;
-}
 
-body {
-  margin-bottom: 60px;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  @include size(100%,60px);
-  background-color: $primary-color;
-  @extend .top-border-only;
-  padding: 10px;
-
-  .nav > li > a{
-    padding: 0px 10px;
-  }
-  .nav > li:first-child {
-    padding: 0px 0px;
-  }
-
-}
 .vcenter-outer {
   padding: 0;
 }
@@ -136,7 +111,6 @@ body {
 //homepage header styles
 #index-header {
   div {
-    /*@include placeholder-box(120px);*/
     text-align:center;
   }
 
