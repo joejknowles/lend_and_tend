@@ -22,16 +22,18 @@
 
           .collapse.navbar-collapse#navbar
             %ul.nav.navbar-nav.navbar-right
-              %li
-                - if current_user
+              - if current_user
+                %li
                   = link_to 'My profile', user_path(current_user)
+                %li
                   = link_to 'Log out', destroy_user_session_path, method: :delete
-                - elsif !current_page? '/'
-                  %div.join_login_buttons
-                    = render 'users/join_in_button'
-                    = render 'users/login_button'
-                - else
-                  Change me!
+              - elsif !current_page? '/'
+                %li.join_login_buttons
+                  = render 'users/join_in_button'
+                %li
+                  = render 'users/login_button'
+              - else
+                Change me!
       #main
         = yield
       .errors
