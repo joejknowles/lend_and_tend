@@ -8,21 +8,33 @@ $max-main-width: 960px;
 
 .home-header {
   font-size: 2.5em;
-  font-family: 'Mrs Sheppards', cursive;
 }
 
 .home-jumbo {
-  background-color: #EED2EE;
+  background-color: rgba(0, 160, 0, 0.6);
   text-align: center;
   color: white;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
-
+  z-index: 1;
+  height: 510px;
 }
 
+.home_img{
+  background-image: url('http://s0.geograph.org.uk/photos/24/78/247898_35e96af5.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 100%;
+}
 
+.home-img-container {
+ /* background-color: black;*/
+  height: 170px;
+  padding: 0;
+}
 
 h2 {
   font-size: 1.5em;
@@ -113,20 +125,6 @@ h2 {
 
 .vcenter-inner {
   margin: 0;
-}
-
-.home_img{
-  background-image: url('http://s0.geograph.org.uk/photos/24/78/247898_35e96af5.jpg');
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  height: 200px;
-}
-
-.home-img-container {
-  background-color: black;
-  height: 170px;
-  padding: 0;
 }
 
 .lendr_home_img, .tendr_home_img {
