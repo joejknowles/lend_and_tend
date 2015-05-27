@@ -1,5 +1,8 @@
 class Patch < ActiveRecord::Base
   belongs_to :user
+
+  has_many :patch_images, dependent: :destroy
+
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
 

@@ -31,7 +31,7 @@ feature 'User Management' do
 
     before do
       visit '/'
-      join_with_email
+      @user = join_with_email
     end
 
     scenario 'should not see "Join with Email" link' do
@@ -52,6 +52,12 @@ feature 'User Management' do
     scenario 'should see "My profile" link' do
       visit '/'
       expect(page).to have_link 'My profile'
+    end
+
+    scenario 'and deletes their account' do
+      visit "/users/#{@user.id}"
+      click_link 'delete my account'
+      expect(page).to have_content 'Your account was successfully removed.'
     end
 
   end

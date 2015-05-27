@@ -47,3 +47,5 @@
         %p Or not sure whether its a good idea yet? Read more about other users that have lended here.
       -else
         This user has no patches to share right now.
+  - if current_user == @user
+    = link_to 'delete my account', user_registration_path(current_user), method: :delete
