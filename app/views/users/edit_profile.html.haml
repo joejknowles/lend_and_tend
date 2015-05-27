@@ -1,6 +1,11 @@
+- placeholder_text = " Do you have or require tools? \n When would like to offer/or access a garden?  \n Do you have pets or children?   \n What would like from this this experience?   \n What's your occupation?  \n Include links to your social channels so people can see you...  \n What would you like done to your garden?  \n Or what would you like to grow?"
+
 = form_for current_user, url: users_edit_profile_path,  html: { method: :put } do |f|
   = f.label :about_me
-  = f.text_area :about_me, size: '50x6', placeholder: 'Do you smoke?'
+  = f.text_area :about_me, size: '70x9', placeholder: placeholder_text
   = f.label :image
   = f.file_field :image
   = f.submit 'Save profile'
+
+
+

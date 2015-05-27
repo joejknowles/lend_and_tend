@@ -3,7 +3,7 @@
   %head
     =render 'partials/meta_tags'
   %body
-    = render 'partials/nav'
+    = render 'partials/nav' unless current_page? '/'
     = render 'partials/flash'
     #main
       = yield
