@@ -63,4 +63,12 @@ feature 'Each user has their own profile page' do
     expect(page).to have_content 'Your profile is currently empty'
     expect(current_path).to eq "/users/#{user.id}"
   end
+
+  scenario 'which is unaccessible for unauthorized users' do
+    visit '/'
+    user = join_with_email
+    click_link 'Log out'
+    visit "/users/#{user.id}"
+    expect(page).to have_content 'You need to sign in or sign up before continuing.'
+  end
 end

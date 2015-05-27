@@ -43,7 +43,7 @@ def join_and_login_admin
               password: 'testtest',
               password_confirmation: 'testtest',
               admin: true)
-  visit '/'
+  visit '/users/sign_up'
   click_button 'Log In!'
   fill_in 'login_email', with: 'test@test.com'
   fill_in 'login_password', with: 'testtest'
