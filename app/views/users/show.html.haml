@@ -2,7 +2,12 @@
   %div.row
     %div.col-sm-4
       %div.profile_pic_container
-        %img.profile_photo{src: 'http://placehold.it/250x250'}
+        - if @user.user_avatar
+          = image_tag @user.user_avatar.image.url(:medium), class: 'profile_photo'
+          -if @user == current_user
+            = link_to 'Remove photo', user_avatar_path(@user.user_avatar), method: :delete
+        - else
+          %img.profile_photo{ src: 'http://placehold.it/250x250' }
         -unless current_user == @user
           %div.message_user_btn
             =button_to 'Match? Get in touch!', new_user_user_email_path(@user), method: :get, class: ['btn','btn-warning']
@@ -29,7 +34,9 @@
             %h4= @user.patches.first.patch_type
           %div.panel-body
             %div.col-xs-4
-              %img.garden_pic{src: 'http://placehold.it/150x150'}
+              - @user.patches.each do |patch|
+                - if patch.patch_images.first
+                  = image_tag patch.patch_images.first.image.url(:thumb)
             %div.col-xs-8
             %h5.garden_headers About
             %p= @user.patches.first.description

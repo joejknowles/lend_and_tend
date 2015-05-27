@@ -32,4 +32,5 @@ RSpec.describe User, type: :model do
     user.save
     expect(user.admin).to be false
   end
+  it { is_expected.to have_one(:user_avatar) }
 end

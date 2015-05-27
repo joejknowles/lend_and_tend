@@ -29,24 +29,23 @@
     .col-sm-2.home-img-container.hidden-xs
       .home_img#homeImg6.hidden-xs{:style => "background-image: url(#{@photos[5].image.url(:medium)})"}
   .row
-    .col-sm-2.home-img-container.hidden-xs
-      .home_img#homeImg9.hidden-xs{:style => "background-image: url(#{@photos[8].image.url(:medium)})"}
+    .col-sm-2.home-img-container
+      .home_img#homeImg7{:style => "background-image: url(#{@photos[6].image.url(:medium)})"}
 
-    .col-sm-2.home-img-container.hidden-xs
-      .home_img#homeImg10.hidden-xs{:style => "background-image: url(#{@photos[9].image.url(:medium)})"}
+    .col-sm-2.home-img-container
+      .home_img#homeImg8{:style => "background-image: url(#{@photos[7].image.url(:medium)})"}
 
-    .col-sm-2.home-img-container.hidden-xs
-      .home_img#homeImg11.hidden-xs{:style => "background-image: url(#{@photos[10].image.url(:medium)})"}
+    .col-sm-2.home-img-container
+      .home_img#homeImg9{:style => "background-image: url(#{@photos[8].image.url(:medium)})"}
 
-    .col-sm-2.home-img-container.hidden-xs
-      .home_img#homeImg12.hidden-xs{:style => "background-image: url(#{@photos[11].image.url(:medium)})"}
+    .col-sm-2.home-img-container
+      .home_img#homeImg10{:style => "background-image: url(#{@photos[9].image.url(:medium)})"}
 
-    .col-sm-2.home-img-container.hidden-xs
-      .home_img#homeImg13.hidden-xs{:style => "background-image: url(#{@photos[12].image.url(:medium)})"}
+    .col-sm-2.home-img-container
+      .home_img#homeImg11{:style => "background-image: url(#{@photos[10].image.url(:medium)})"}
 
-    .col-sm-2.home-img-container.hidden-xs
-      .home_img#homeImg14.hidden-xs{:style => "background-image: url(#{@photos[13].image.url(:medium)})"}
-
+    .col-sm-2.home-img-container
+      .home_img#homeImg12{:style => "background-image: url(#{@photos[11].image.url(:medium)})"}
 .row
   .container
     .col-sm-12.col-md-6.col-lg-4
@@ -60,16 +59,8 @@
       %p Quisque sagittis orci quis egestas volutpat. Sed imperdiet aliquam nulla a accumsan. Proin maximus nisi et mauris lobortis condimentum. Morbi massa erat, vulputate a posuere non, porttitor at justo. Ut fringilla aliquet augue non auctor. In hac habitasse platea dictumst. Nam lobortis vitae justo id dignissim. Duis molestie sollicitudin magna nec auctor.
 
 
-  .row
-    .col-sm-6
-      .social-feed
-        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/LendandTend" data-widget-id="603314736726409216">Tweets by @LendandTend</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    .col-sm-6
-      .social-feed
-        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hashtag/LendAndTend" data-widget-id="603155369238646784">#LendAndTend Tweets</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
+= javascript_include_tag params[:controller]
 
 = javascript_tag do
   = "window.imageUrls ="

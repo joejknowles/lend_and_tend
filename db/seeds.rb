@@ -1,66 +1,78 @@
-require './app/helpers/patches_helper'
+if Rails.env.development?
+  require './app/helpers/patches_helper'
+  include PatchesHelper
 
-include PatchesHelper
+  User.create(admin: true,
+              name: 'admin',
+              password: 'adminadmin',
+              password_confirmation: 'adminadmin',
+              email: 'admin@admin.com')
 
-User.create(admin: true,
-            name: 'admin',
-            password: 'adminadmin',
-            password_confirmation: 'adminadmin',
-            email: 'admin@admin.com')
+  users = %w(Bob Fred Jess Nora Richard)
+  users = users.inject([]) do |list, name|
+    list << User.create(name: name,
+                        email: "#{name}@test.com",
+                        password: 'testtest',
+                        password_confirmation: 'testtest')
+  end
 
-users = %w(Bob Fred Jess Nora Richard)
-users = users.inject([]) do |list, name|
-  list << User.create(name: name,
-                      email: "#{name}@test.com",
-                      password: 'testtest',
-                      password_confirmation: 'testtest')
-end
-locations = [
-  'YO10 3DD',
-  'WF12 7ED',
-  'ML8 5ST',
-  'DL17 0LP',
-  'LL24 0EW',
-  'SA35 0BG',
-  'SN14 6JP',
-  'B21 8AS'
-]
-patch_types_list.each do |type|
-  users.each do |user|
-    Patch.create(patch_type: type,
-                 user: user,
-                 location: locations.sample,
-                 duration: 1)
+  locations = [
+    'YO10 3DD',
+    'WF12 7ED',
+    'ML8 5ST',
+    'DL17 0LP',
+    'LL24 0EW',
+    'SA35 0BG',
+    'SN14 6JP',
+    'B21 8AS'
+  ]
+
+  patch_types_list.each do |type|
+    users.each do |user|
+      Patch.create(patch_type: type,
+                   user: user,
+                   location: locations.sample,
+                   duration: 1)
+    end
   end
 end
 
 HomepageImage.create(
-    image_file_name: "026.jpg",
-    image_content_type: "image/jpeg",
-    image_file_size: 584918,
-    image_updated_at: "2015-05-26 11:23:11")
+ created_at: "2015-05-27 09:57:30",
+ updated_at: "2015-05-27 09:57:30",
+ image_file_name: "026.jpg",
+ image_content_type: "image/jpeg",
+ image_file_size: 584918, image_updated_at: "2015-05-27 09:57:30")
 
-HomepageImage.create(image_file_name: "028.jpg", image_content_type: "image/jpeg", image_file_size: 512883, image_updated_at: "2015-05-26 11:44:33")
+HomepageImage.create(
+ created_at: "2015-05-27 09:57:51",
+ updated_at: "2015-05-27 09:57:51",
+ image_file_name: "028.jpg",
+ image_content_type: "image/jpeg",
+ image_file_size: 512883,
+ image_updated_at: "2015-05-27 09:57:50")
 
-HomepageImage.create(image_file_name: "040.jpg", image_content_type: "image/jpeg", image_file_size: 385182, image_updated_at: "2015-05-26 11:44:54")
-
-HomepageImage.create(image_file_name: "058.jpg", image_content_type: "image/jpeg", image_file_size: 381231, image_updated_at: "2015-05-26 11:45:11")
-
-HomepageImage.create(image_file_name: "059.jpg", image_content_type: "image/jpeg", image_file_size: 425269, image_updated_at: "2015-05-26 11:46:20")
-
-HomepageImage.create(image_file_name: "060.jpg", image_content_type: "image/jpeg", image_file_size: 401267, image_updated_at: "2015-05-26 11:46:41")
-
-HomepageImage.create(id: 8, image_file_name: "063.jpg", image_content_type: "image/jpeg", image_file_size: 572000, image_updated_at: "2015-05-26 11:47:18")
-
-HomepageImage.create(id: 10, image_file_name: "064.jpg", image_content_type: "image/jpeg", image_file_size: 589498, image_updated_at: "2015-05-26 11:48:00")
-
-HomepageImage.create(id: 12, image_file_name: "079.jpg", image_content_type: "image/jpeg", image_file_size: 934590, image_updated_at: "2015-05-26 11:49:07")
-
-HomepageImage.create(id: 13,    image_file_name: "150.jpg",image_content_type: "image/jpeg",  image_file_size: 612431, image_updated_at: "2015-05-26 11:49:35")
-
-HomepageImage.create(id: 14, image_file_name: "IMG_2846.jpg", image_content_type: "image/jpeg", image_file_size: 775910, image_updated_at: "2015-05-26 11:49:55")
-HomepageImage.create(id: 15, image_file_name: "IMG_2853.jpg", image_content_type: "image/jpeg", image_file_size: 2486380, image_updated_at: "2015-05-26 11:50:23")
-HomepageImage.create(id: 16, image_file_name: "IMG_6086.jpg", image_content_type: "image/jpeg", image_file_size: 2842422, image_updated_at: "2015-05-26 11:51:11")
-HomepageImage.create(id: 17, image_file_name: "IMG_7259.jpg", image_content_type: "image/jpeg", image_file_size: 2294067, image_updated_at: "2015-05-26 11:52:19")
+HomepageImage.create(created_at: "2015-05-27 09:58:13", updated_at: "2015-05-27 09:58:13", image_file_name: "040.jpg", image_content_type: "image/jpeg", image_file_size: 385182, image_updated_at: "2015-05-27 09:58:13")
+HomepageImage.create(created_at: "2015-05-27 09:58:32", updated_at: "2015-05-27 09:58:32", image_file_name: "058.jpg", image_content_type: "image/jpeg", image_file_size: 381231, image_updated_at: "2015-05-27 09:58:31")
+HomepageImage.create(created_at: "2015-05-27 09:58:45", updated_at: "2015-05-27 09:58:45", image_file_name: "060.jpg", image_content_type: "image/jpeg", image_file_size: 401267, image_updated_at: "2015-05-27 09:58:45")
+HomepageImage.create(created_at: "2015-05-27 09:59:54", updated_at: "2015-05-27 09:59:54", image_file_name: "062.jpg", image_content_type: "image/jpeg", image_file_size: 272470, image_updated_at: "2015-05-27 09:59:53")
+HomepageImage.create(created_at: "2015-05-27 10:00:17", updated_at: "2015-05-27 10:00:17", image_file_name: "063.jpg", image_content_type: "image/jpeg", image_file_size: 572000, image_updated_at: "2015-05-27 10:00:17")
+HomepageImage.create(created_at: "2015-05-27 10:00:39", updated_at: "2015-05-27 10:00:39", image_file_name: "079.jpg", image_content_type: "image/jpeg", image_file_size: 934590, image_updated_at: "2015-05-27 10:00:38")
+HomepageImage.create(created_at: "2015-05-27 10:01:13", updated_at: "2015-05-27 10:01:13", image_file_name: "150.jpg", image_content_type: "image/jpeg", image_file_size: 612431, image_updated_at: "2015-05-27 10:01:13")
+HomepageImage.create(created_at: "2015-05-27 10:01:40", updated_at: "2015-05-27 10:01:40", image_file_name: "IMG_2846.jpg", image_content_type: "image/jpeg", image_file_size: 775910, image_updated_at: "2015-05-27 10:01:40")
+HomepageImage.create(created_at: "2015-05-27 10:02:16", updated_at: "2015-05-27 10:02:16", image_file_name: "IMG_2853.jpg", image_content_type: "image/jpeg", image_file_size: 2486380, image_updated_at: "2015-05-27 10:02:15")
+HomepageImage.create(created_at: "2015-05-27 10:03:14", updated_at: "2015-05-27 10:03:14", image_file_name: "IMG_2856.jpg", image_content_type: "image/jpeg", image_file_size: 2131208, image_updated_at: "2015-05-27 10:03:13")
+HomepageImage.create(image_file_name: "IMG_6086.jpg", image_content_type: "image/jpeg", image_file_size: 2842422, image_updated_at: "2015-05-27 10:04:01")
+HomepageImage.create(image_file_name: "IMG_6102.jpg", image_content_type: "image/jpeg", image_file_size: 1813970, image_updated_at: "2015-05-27 10:05:03")
+HomepageImage.create(image_file_name: "IMG_7014.jpg", image_content_type: "image/jpeg", image_file_size: 1174039, image_updated_at: "2015-05-27 10:05:42")
+HomepageImage.create(image_file_name: "IMG_7259.jpg", image_content_type: "image/jpeg", image_file_size: 2294067, image_updated_at: "2015-05-27 10:06:29")
+HomepageImage.create(image_file_name: "IMG_7615.jpg", image_content_type: "image/jpeg", image_file_size: 2030257, image_updated_at: "2015-05-27 10:07:33")
+HomepageImage.create(image_file_name: "IMG_7677.jpg", image_content_type: "image/jpeg", image_file_size: 297807, image_updated_at: "2015-05-27 10:08:47")
+HomepageImage.create(image_file_name: "IMG_8176.jpg", image_content_type: "image/jpeg", image_file_size: 1161455, image_updated_at: "2015-05-27 10:09:21")
+HomepageImage.create(image_file_name: "IMG_8177.jpg", image_content_type: "image/jpeg", image_file_size: 1331886, image_updated_at: "2015-05-27 10:09:50")
+HomepageImage.create(image_file_name: "IMG_8359.jpg", image_content_type: "image/jpeg", image_file_size: 1803378, image_updated_at: "2015-05-27 10:10:46")
+HomepageImage.create(image_file_name: "IMG_8896.jpg", image_content_type: "image/jpeg", image_file_size: 386025, image_updated_at: "2015-05-27 10:11:24")
+HomepageImage.create(image_file_name: "IMG_9425.jpg", image_content_type: "image/jpeg", image_file_size: 124296, image_updated_at: "2015-05-27 10:11:44")
+HomepageImage.create(image_file_name: "STA70829.jpg", image_content_type: "image/jpeg", image_file_size: 1889360, image_updated_at: "2015-05-27 10:12:00")
 
 puts "Database successfully seeded"

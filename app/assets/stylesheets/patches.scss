@@ -2,16 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.list-unstyled li {
-  padding-bottom: 1.5em;
-  margin-bottom: 1.5em;
-  border-bottom: 2px solid #CCCCCC;
-  text-align: center;
+.list-unstyled {
+
+  li {
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+    border-bottom: 2px solid #CCCCCC;
+    text-align: center;
+  }
+
+  li:first-child {
+    padding-top: 1.5em;
+  }
 }
 
-li:first-child {
-  padding-top: 1.5em;
-}
+
 
 .list-title {
   background: black;
