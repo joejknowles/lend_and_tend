@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    =render 'partials/meta_tags'
+  %body
+    = render 'partials/nav'
+    = render 'partials/flash'
+    #main
+      = yield
+    =render 'partials/footer'
