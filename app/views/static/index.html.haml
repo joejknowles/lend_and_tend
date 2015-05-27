@@ -6,8 +6,8 @@
       Make friends, food & colour with others around you!
     - unless user_signed_in?
       %div.center-block
-        = render 'users/join_in_button'
-        = render 'users/login_button'
+        %button.btn.btn-success.btn-lg{'data-toggle' => 'modal', 'data-target' => '#JoinModal'}Join up
+        %button.btn.btn-primary.btn-lg{'data-toggle' => 'modal', 'data-target' => '#LoginModal'}Log in
 
 .container-fluid#index-header.photo_wall
   .row
@@ -65,17 +65,40 @@
       .home_img#homeImg11{:style => "background-image: url(#{@photos[10].image.url(:medium)})"}
 .row
   .container
-    .col-sm-12.col-md-4.col-lg-4
+    .col-sm-12.col-md-4.col-lg-4.what_is
       %h2 What is Lend & Tend?
       %p Quisque sagittis orci quis egestas volutpat. Sed imperdiet aliquam nulla a accumsan. Proin maximus nisi et mauris lobortis condimentum. Morbi massa erat, vulputate a posuere non, porttitor at justo. Ut fringilla aliquet augue non auctor. In hac habitasse platea dictumst. Nam lobortis vitae justo id dignissim. Duis molestie sollicitudin magna nec auctor.
-    .col-sm-12.col-md-4.col-lg-4
+    .col-sm-12.col-md-4.col-lg-4.what_is
       %h2 Is it for me?
       %p Quisque sagittis orci quis egestas volutpat. Sed imperdiet aliquam nulla a accumsan. Proin maximus nisi et mauris lobortis condimentum. Morbi massa erat, vulputate a posuere non, porttitor at justo. Ut fringilla aliquet augue non auctor. In hac habitasse platea dictumst. Nam lobortis vitae justo id dignissim. Duis molestie sollicitudin magna nec auctor.
-    .col-sm-12.col-md-4.col-lg-4
+    .col-sm-12.col-md-4.col-lg-4.what_is
       %h2 Is it for me?
       %p Quisque sagittis orci quis egestas volutpat. Sed imperdiet aliquam nulla a accumsan. Proin maximus nisi et mauris lobortis condimentum. Morbi massa erat, vulputate a posuere non, porttitor at justo. Ut fringilla aliquet augue non auctor. In hac habitasse platea dictumst. Nam lobortis vitae justo id dignissim. Duis molestie sollicitudin magna nec auctor.
 
+      .row
+    .col-sm-6
+      .social-feed
+        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/LendandTend" data-widget-id="603314736726409216">Tweets by @LendandTend</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
+    .col-sm-6
+      .social-feed
+        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hashtag/LendAndTend" data-widget-id="603155369238646784">#LendAndTend Tweets</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+/ Modal
+%div.modal.fade{'id' => "LoginModal", 'tabindex'=> "-1", 'role' => "dialog", 'aria-labelledby' => "myModalLabel", 'aria-hidden' => "true" }
+  %div.modal-dialog.modal-sm
+    %div.modal-content
+      %div.modal-body
+        = render 'users/login_form'
+
+/ Modal
+%div.modal.fade{'id' => "JoinModal", 'tabindex'=> "-1", 'role' => "dialog", 'aria-labelledby' => "myModalLabel", 'aria-hidden' => "true" }
+  %div.modal-dialog.modal-sm
+    %div.modal-content
+      %div.modal-body
+        = render 'users/new_user_form'
 
 = javascript_include_tag params[:controller]
 
