@@ -4,7 +4,11 @@
       Lend & Tend
     %h2
       Make friends, food & colour with others around you!
-    - unless user_signed_in?
+    - if user_signed_in?
+      %div.center-block
+        = button_to 'Add patch', new_patch_path, class: 'btn btn-success btn-lg home-logged-in-btn', method: :get
+        = button_to 'View patches', patches_path, class: ' btn btn-primary btn-lg', method: :get
+    - else
       %div.center-block
         %button.btn.btn-success.btn-lg{'data-toggle' => 'modal', 'data-target' => '#JoinModal'}Join up
         %button.btn.btn-primary.btn-lg{'data-toggle' => 'modal', 'data-target' => '#LoginModal'}Log in
@@ -67,24 +71,35 @@
   .container
     .col-sm-12.col-md-4.col-lg-4.what_is
       %h2 What is Lend & Tend?
-      %p Quisque sagittis orci quis egestas volutpat. Sed imperdiet aliquam nulla a accumsan. Proin maximus nisi et mauris lobortis condimentum. Morbi massa erat, vulputate a posuere non, porttitor at justo. Ut fringilla aliquet augue non auctor. In hac habitasse platea dictumst. Nam lobortis vitae justo id dignissim. Duis molestie sollicitudin magna nec auctor.
+      %p
+        See unused gardens around you? Wish you had a garden yourself?
+        Do you have a garden but no time or can’t manage? 
+        How about Lending and Tending? 
+        Garden Owners, offer some of your garden to someone who'd like space to grow. 
+        Get the garden-less gardening! PatchMatch™ On your grounds. 
+        Help a neighbour with maintenance, crop swap in your community, grow. Locally!
+        Find allotment-like space without the wait. 
+        Tend to a garden for someone who’s Lending their garden. 
+        Join Lend and Tend! 
+        A new way to make Gardening Friends. 
+
     .col-sm-12.col-md-4.col-lg-4.what_is
       %h2 Is it for me?
       %p Quisque sagittis orci quis egestas volutpat. Sed imperdiet aliquam nulla a accumsan. Proin maximus nisi et mauris lobortis condimentum. Morbi massa erat, vulputate a posuere non, porttitor at justo. Ut fringilla aliquet augue non auctor. In hac habitasse platea dictumst. Nam lobortis vitae justo id dignissim. Duis molestie sollicitudin magna nec auctor.
     .col-sm-12.col-md-4.col-lg-4.what_is
-      %h2 Is it for me?
+      %h2 What's the buzz?
       %p Quisque sagittis orci quis egestas volutpat. Sed imperdiet aliquam nulla a accumsan. Proin maximus nisi et mauris lobortis condimentum. Morbi massa erat, vulputate a posuere non, porttitor at justo. Ut fringilla aliquet augue non auctor. In hac habitasse platea dictumst. Nam lobortis vitae justo id dignissim. Duis molestie sollicitudin magna nec auctor.
 
-      .row
-    .col-sm-6
-      .social-feed
-        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/LendandTend" data-widget-id="603314736726409216">Tweets by @LendandTend</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+.row
+  .col-sm-6
+    .social-feed
+      <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/LendandTend" data-widget-id="603314736726409216">Tweets by @LendandTend</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-    .col-sm-6
-      .social-feed
-        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hashtag/LendAndTend" data-widget-id="603155369238646784">#LendAndTend Tweets</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  .col-sm-6
+    .social-feed
+      <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hashtag/LendAndTend" data-widget-id="603155369238646784">#LendAndTend Tweets</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 / Modal
 %div.modal.fade{'id' => "LoginModal", 'tabindex'=> "-1", 'role' => "dialog", 'aria-labelledby' => "myModalLabel", 'aria-hidden' => "true" }

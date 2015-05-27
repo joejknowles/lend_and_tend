@@ -10,6 +10,8 @@ $max-main-width: 960px;
   font-size: 2.5em;
 }
 
+
+
 .home-jumbo {
   background-color: rgba(0, 160, 0, 0.6);
   text-align: center;
@@ -33,6 +35,10 @@ $max-main-width: 960px;
 
 .center-block {
   letter-spacing: 1em;
+}
+
+.center-block form {
+  display: inline;
 }
 
 .home-img-container {
