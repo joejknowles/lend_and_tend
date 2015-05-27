@@ -2,7 +2,7 @@
   %h1 Tell us about your new patch
 .main-content-box
   .row
-  = form_for @patch do |f|
+  = form_for @patch, html: { multipart: true } do |f|
     .row
       .col-md-4.form-group
         = f.label :patch_type, 'What sort of space would you like to offer?'
@@ -17,6 +17,10 @@
       .col-md-8.form-group
         = f.label :description
         = f.text_area :description, class: 'form-control'
+    .row
+      .col-md-12.form-group
+        = f.label :image
+        = f.file_field :image
     .row
       .col-md-4.form-group
         = f.submit 'List my patch', class: 'btn btn-default btn-custom'

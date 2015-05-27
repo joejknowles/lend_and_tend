@@ -27,6 +27,11 @@ Capybara.default_wait_time = 3
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+
+  #Added to provide images for homepage
+  # config.before do |example|
+
+  # end
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -37,6 +42,8 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
+    # Seeds database with hompage images
+    load("#{Rails.root}/db/seeds.rb")
   end
 
   config.before(:each) do
