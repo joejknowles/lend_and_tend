@@ -1,9 +1,9 @@
 .errors
   - if flash[:errors]
-    .errors
+    .errors.alert-dismissable{class: ('home-alert' if current_page? '/')}
       - flash[:errors].each do |error|
         %p.error.alert.alert-danger= error
   - if notice
-    %p.notice.alert.alert-success= notice
+    %p.notice.alert.alert-success.alert-dismissable{class: ('home-alert' if current_page? '/')}= notice
   -if alert
-    %p.alert.alert-warning= alert
+    %p.alert.alert-warning.alert-dismissable{class: ('home-alert' if current_page? '/')}= alert
