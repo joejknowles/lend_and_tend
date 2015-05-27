@@ -29,7 +29,9 @@
             %h4= @user.patches.first.patch_type
           %div.panel-body
             %div.col-xs-4
-              %img.garden_pic{src: 'http://placehold.it/150x150'}
+              - @user.patches.each do |patch|
+                - if patch.patch_images.first
+                  = image_tag patch.patch_images.first.image.url(:thumb)
             %div.col-xs-8
             %h5.garden_headers About
             %p= @user.patches.first.description
