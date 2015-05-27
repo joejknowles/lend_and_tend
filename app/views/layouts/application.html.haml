@@ -32,8 +32,6 @@
                     = render 'users/login_button'
                 - else
                   Change me!
-      #main
-        = yield
       .errors
         - if flash[:errors]
           .errors
@@ -43,6 +41,8 @@
           %p.notice.alert.alert-success= notice
         -if alert
           %p.alert.alert-warning= alert
+      #main
+        = yield
         .block
       .push
     .footer
