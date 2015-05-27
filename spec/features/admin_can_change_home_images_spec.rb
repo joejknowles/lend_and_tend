@@ -19,7 +19,9 @@ feature 'Admin can add homepage images to database' do
     attach_file 'Image', 'public/test.gif'
     click_button 'Add photo'
     expect(page).to have_css("img[src*='test.gif']")
-    click_link 'Remove photo'
+    within('.homepage-image-uploads .col-sm-6:last-child') do
+      click_link 'Remove photo'
+    end
     expect(current_path).to eq '/homepage_images'
     expect(page).not_to have_css("img[src*='test.gif']")
     expect(page).to have_content 'Photo removed!'

@@ -8,7 +8,7 @@
       %div.center-block
         = render 'users/join_in_button'
         = render 'users/login_button'
-.container#index-header
+.container#index-header.photo_wall
   .row
     .col-sm-2.home-img-container
       .home_img#homeImg1{:style => "background-image: url(#{@photos[0].image.url(:medium)})"}
