@@ -9,19 +9,12 @@
     border-top: 2px solid #00cd00;
     text-align: center;
     font-size: 1.2em;
-    text-align: left;
+    text-align: center;
   }
 }
 
-.list-title {
-  background: #00cd00;
-  color: #EEEEEE;
-  text-align: center;
-  padding-bottom: 1.5em;
-  padding-top: 1.5em;
-  border-radius: 0.3em;
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
+.text-box {
+  text-align: left;
 }
 
 .disabled {
@@ -41,6 +34,9 @@
 
 .filter-form {
   padding: 1.5em;
-  border: 1px solid #00cd00;
-  margin: 1.5em;
+  border: 2px solid #00cd00;
+  margin: 2.5em;
+  border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
 }
