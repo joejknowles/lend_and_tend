@@ -19,7 +19,7 @@ feature 'Static Pages' do
 
   it 'has an "Terms and Conditions" page' do
     visit '/terms'
-    expect(page).to have_content 'Terms and Conditions'
+    expect(page).to have_content 'Please care for us, as we grow!'
   end
 
 end
