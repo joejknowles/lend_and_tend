@@ -39,16 +39,26 @@ describe Patch, type: :model do
   end
 
   it 'selects locations in a given radius' do
-    described_class.create(location: 'YO10 3DD', patch_type: 'Windowsill', duration: '1')
+    described_class.create(location: 'YO10 3DD',
+                           patch_type: 'Windowsill', duration: '1')
     results = described_class.location_sort({ location: 'YO10 3PP' }, 10)
     expect(results.length).to eq 1
     expect(results.first.location).to eq 'YO10 3DD'
   end
 
   it "doesn't select locations outside given radius" do
-    described_class.create(location: 'YO10 3DD', patch_type: 'Windowsill', duration: '1')
+    described_class.create(location: 'YO10 3DD',
+                           patch_type: 'Windowsill', duration: '1')
     results = described_class.location_sort({ location: 'SW11 4AE' }, 10)
     expect(results).to be_empty
+  end
+
+  it 'returns whole relation if no location is given' do
+    described_class.create(location: 'YO10 3DD',
+                           patch_type: 'Windowsill', duration: '1')
+    results = described_class.location_sort({}, 10)
+    expect(results.first.location).to eq 'YO10 3DD'
+    expect(results).to be described_class
   end
 
 end
