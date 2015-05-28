@@ -20,7 +20,7 @@ describe Patch, type: :model do
 
   it { is_expected.to belong_to(:user) }
 
-  it { is_expected.to have_many(:patch_images) }
+  it { is_expected.to have_many(:patch_images).dependent(:destroy) }
 
   it '\'in use\' defaults to be false' do
     stub_user = stub_model(User).as_new_record

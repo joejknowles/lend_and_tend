@@ -3,7 +3,7 @@
 .footer
   .container
     .row
-      .col-sm-6
+      .col-xs-4
         .vcenter-outer
           %ul.nav.navbar-nav.vcenter-inner
             %li
@@ -12,12 +12,20 @@
               = link_to 'Faq', faq_path
             %li
               = link_to 'T&C', terms_path
-      .col-sm-6
+      .col-xs-4
+        With thanks to
+        %a{href: "http://www.princes-trust.org.uk/"}
+          The Princes Trust
+        &
+        %a{href: "http://www.makersacademy.com/"}
+          Makers Academy
+      .col-xs-4
         .vcenter-outer
-          %ul.nav.navbar-nav.navbar-right.vcenter-inner
-            %li
-              %a{ href: '#' } f
-            %li
-              %a{ href: '#' } in
-            %li
-              %a{ href: '#' } t
+          %img{src: 'https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-facebook.svg', class: 'social-footer'}
+          %img{src: 'https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-linkedin.svg', class: 'social-footer'}
+          %a{href: "https://twitter.com/lendandtend"}
+            %img{src: 'https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-twitter.svg', class: 'social-footer'}
+
+
+
+
