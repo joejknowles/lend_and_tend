@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Augis/Projects/lend_and_tend/app/models/user.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/models/user.rb": [
         1,
         null,
         null,
@@ -27,7 +27,7 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/helpers/application_helper.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/helpers/application_helper.rb": [
         1,
         null,
         1,
@@ -53,7 +53,7 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/helpers/devise_helper.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/helpers/devise_helper.rb": [
         1,
         null,
         null,
@@ -70,11 +70,11 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/helpers/homepage_images_helper.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/helpers/homepage_images_helper.rb": [
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/helpers/pagination_helper.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/helpers/pagination_helper.rb": [
         1,
         1,
         1,
@@ -127,7 +127,7 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/helpers/patches_helper.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/helpers/patches_helper.rb": [
         1,
         1,
         null,
@@ -146,23 +146,23 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/helpers/static_helper.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/helpers/static_helper.rb": [
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/helpers/user_avatars_helper.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/helpers/user_avatars_helper.rb": [
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/helpers/user_emails_helper.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/helpers/user_emails_helper.rb": [
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/helpers/users_helper.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/controllers/homepage_images_controller.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/controllers/homepage_images_controller.rb": [
         1,
         1,
         null,
@@ -196,7 +196,7 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/controllers/application_controller.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -217,7 +217,7 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/controllers/patches_controller.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/controllers/patches_controller.rb": [
         1,
         1,
         null,
@@ -256,7 +256,7 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/controllers/static_controller.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/controllers/static_controller.rb": [
         1,
         null,
         1,
@@ -275,7 +275,7 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/controllers/user_avatars_controller.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/controllers/user_avatars_controller.rb": [
         1,
         null,
         1,
@@ -284,7 +284,7 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/controllers/user_emails_controller.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/controllers/user_emails_controller.rb": [
         1,
         null,
         1,
@@ -304,7 +304,7 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/controllers/users_controller.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -332,7 +332,7 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/mailers/user_mailer.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/mailers/user_mailer.rb": [
         1,
         null,
         1,
@@ -342,19 +342,19 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/mailers/application_mailer.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/mailers/application_mailer.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/models/homepage_image.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/models/homepage_image.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/models/patch_image.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/models/patch_image.rb": [
         1,
         1,
         1,
@@ -364,7 +364,7 @@
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/models/patch.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/models/patch.rb": [
         1,
         1,
         null,
@@ -394,7 +394,7 @@
         null,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/models/user_avatar.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/models/user_avatar.rb": [
         1,
         1,
         1,
@@ -402,7 +402,7 @@
         1,
         null
       ],
-      "/Users/Augis/Projects/lend_and_tend/app/controllers/users/omniauth_callbacks_controller.rb": [
+      "/Users/josephknowles/Projects/lend_and_tend/app/controllers/users/omniauth_callbacks_controller.rb": [
         1,
         null,
         null,
@@ -420,6 +420,6 @@
         null
       ]
     },
-    "timestamp": 1432826256
+    "timestamp": 1432828549
   }
 }
