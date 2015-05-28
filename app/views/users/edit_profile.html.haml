@@ -1,9 +1,12 @@
+
+
+
 .header-box
   %h1 Tell us about yourself
-.main-content-box
+.main-content-box.container
   .row
-    .col-sm-4.edit-profile-pic.border-box
-      .row
+    .col-sm-4.edit-profile-pic
+      .row.border-box
         .col-xs-12
           - if @user.user_avatar
             = image_tag @user.user_avatar.image.url(:medium), class: 'profile_photo'
@@ -21,6 +24,9 @@
                 %br
                 - if @user.user_avatar
                   = link_to 'Remove photo', user_avatar_path(@user.user_avatar), method: :delete
+      .row
+        .col-xs-12
+          = link_to 'DANGER: delete my account', user_registration_path, method: :delete
     .col-sm-8
       - placeholder_text = " Do you have or require tools? \n When would like to offer/or access a garden?  \n Do you have pets or children?   \n What would like from this this experience?   \n What's your occupation?  \n Include links to your social channels so people can see you...  \n What would you like done to your garden?  \n Or what would you like to grow?"
       = form_for current_user, url: users_edit_profile_path,  html: { method: :put } do |f|
@@ -29,26 +35,3 @@
           = f.text_area :about_me, size: '50x6', class: 'form-control', placeholder: placeholder_text
         .form-group
           = f.submit 'Save profile', class: 'btn btn-default btn-custom'
-
-  -# .row
-  -#   .col-sm-4
-  -#     = form_for @user, url: users_edit_profile_path,  html: { method: :put } do |f|
-  -#       = f.label :image
-  -#       = f.file_field :image
-  -#       = f.submit 'Update photo', class: 'btn btn-default btn-custom'
-
-
--# -if @user == current_user
--#
--#   = link_to 'Remove photo', user_avatar_path(@user.user_avatar), method: :delete
--# =======
-
--#
--# = form_for current_user, url: users_edit_profile_path,  html: { method: :put } do |f|
--#   = f.label :about_me
--#   = f.text_area :about_me, size: '70x9', placeholder: placeholder_text
--#   = f.label :image
--#   = f.file_field :image
--#   = f.submit 'Save profile'
-
-= link_to 'DANGER: delete my account', user_registration_path, method: :delete

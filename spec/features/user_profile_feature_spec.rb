@@ -50,6 +50,7 @@ feature 'Each user has their own profile page' do
     attach_file 'Image', 'public/test2.gif'
     click_button 'Update photo'
     expect(page).to have_css("img[src*='test2.gif']")
+    click_button 'Add to my profile'
     click_link 'Remove photo'
     expect(page).not_to have_css("img[src*='test2.gif']")
   end

@@ -4,17 +4,16 @@
       %div.profile_pic_container
         - if @user.user_avatar
           = image_tag @user.user_avatar.image.url(:medium), class: 'profile_photo'
-          -if @user == current_user
-            = link_to 'Remove photo', user_avatar_path(@user.user_avatar), method: :delete
         - else
           %img.profile_photo{ src: 'http://placehold.it/250x250' }
-        -unless current_user == @user
+        - if current_user == @user
+          %p= button_to 'Add to my profile', users_edit_profile_path, method: :get, class: ['btn', 'btn-warning']
+        -else
           %div.message_user_btn
-            =button_to 'Match? Get in touch!', new_user_user_email_path(@user), method: :get, class: ['btn','btn-warning']
+            =button_to 'Match? Get in touch!', new_user_user_email_path(@user), method: :get, class: ['btn','btn-default', 'btn-custom']
     %div.col-sm-8
       %h1.user_profile_header= @user.name
-      - if current_user == @user
-        %p= button_to 'Add to my profile', users_edit_profile_path, method: :get, class: ['btn', 'btn-warning']
+
 
       - if @user.about_me?
         %p= @user.about_me
