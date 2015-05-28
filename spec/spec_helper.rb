@@ -30,7 +30,23 @@ RSpec.configure do |config|
       "YO10 3DD", [
         {
           'latitude'     => 53.95503009999999,
-          'longitude'    => -1.0405632,
+          'longitude'    => -1.0405632
+        }
+      ]
+    )
+    Geocoder::Lookup::Test.add_stub(
+      "YO10 3PP", [
+        {
+          'latitude'     => 53.95503509999999,
+          'longitude'    => -1.0405622
+        }
+      ]
+    )
+    Geocoder::Lookup::Test.add_stub(
+      "SW11 4AE", [
+        {
+          'latitude'     => 51.477,
+          'longitude'    => -0.166710
         }
       ]
     )

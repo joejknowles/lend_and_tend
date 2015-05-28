@@ -38,7 +38,17 @@ describe Patch, type: :model do
     expect(subject.longitude).to eq(-1.0405632)
   end
 
-  xit 'selects locations in a given radius' do
+  it 'selects locations in a given radius' do
+    described_class.create(location: 'YO10 3DD', patch_type: 'Windowsill', duration: '1')
+    results = described_class.location_sort({ location: 'YO10 3PP' }, 10)
+    expect(results.length).to eq 1
+    expect(results.first.location).to eq 'YO10 3DD'
+  end
+
+  it "doesn't select locations outside given radius" do
+    described_class.create(location: 'YO10 3DD', patch_type: 'Windowsill', duration: '1')
+    results = described_class.location_sort({ location: 'SW11 4AE' }, 10)
+    expect(results).to be_empty
   end
 
 end
