@@ -2,7 +2,9 @@
   %div.row
     %div.col-sm-4
       %div.profile_pic_container
-        - if @user.user_avatar
+        -if @user.image
+          = image_tag @user.image
+        - elsif @user.user_avatar
           = image_tag @user.user_avatar.image.url(:medium), class: 'profile_photo'
           -if @user == current_user
             = link_to 'Remove photo', user_avatar_path(@user.user_avatar), method: :delete

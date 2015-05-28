@@ -66,7 +66,7 @@ feature 'User Management' do
 
     before do
       OmniAuth.config.test_mode = true
-      OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new provider: 'facebook', uid: '12345', info: { name: 'Tester', email: 'test@test.com', image: 'http://image.images.com' }
+      OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new provider: 'facebook', uid: '12345', info: { name: 'Tester', email: 'test@test.com', image: 'https://placekitten.com/g/200/300' }
     end
 
     scenario 'when logged out can see "Join with Facebook" link' do
@@ -80,6 +80,13 @@ feature 'User Management' do
       click_button 'Join up'
       click_button'Join in with Facebook'
       expect(page).to have_content 'You were successfully authenticated using Facebook'
+    end
+
+    scenario 'can login with facebook' do
+      visit '/'
+      click_button 'Join up'
+      click_button'Join in with Facebook'
+      expect(page).to have_css("img[src*='/g/200/300']")
     end
 
     scenario 'when logged in cannot see "Join"/"launchloginmodal" links' do
