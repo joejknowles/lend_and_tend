@@ -56,6 +56,7 @@ feature 'User Management' do
 
     scenario 'and deletes their account' do
       visit "/users/#{@user.id}"
+      click_button 'Add to my profile'
       click_link 'delete my account'
       expect(page).to have_content 'Bye! Your account has been successfully cancelled. We hope to see you again soon.'
     end

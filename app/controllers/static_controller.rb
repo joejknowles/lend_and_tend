@@ -2,8 +2,8 @@ class StaticController < ApplicationController
 
   def index
     photos = HomepageImage.all.sample 30
-    @photos = photos[0..13]
-    @other_photos = photos[14..-1].map {|photo| 'url(' << photo.image.url(:medium) << ')' }
+    @photos = photos[0..17]
+    @other_photos = photos[18..-1].map {|photo| 'url(' << photo.image.url(:medium) << ')' }
   end
 
   def about_us
@@ -14,5 +14,4 @@ class StaticController < ApplicationController
 
   def terms
   end
-
 end

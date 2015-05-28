@@ -7,11 +7,11 @@
   = form_for @patch, html: { multipart: true } do |f|
     .row
       .col-md-4.form-group
-        = f.label :patch_type, 'What sort of space would you like to offer?'
-        = f.select :patch_type, patch_types_list, class: 'form-control'
+        = f.label :patch_type, 'Space to offer'
+        = f.select :patch_type, patch_types_list, {}, class: 'form-control'
       .col-md-4.form-group
         = f.label :duration, 'How long can you offer this space?'
-        = f.select :duration, [['0-1 year', 1], ['1-2 year', 2]],{}, { class: 'form-control' }
+        = f.select :duration, [['0-1 year', 1], ['1-2 year', 2]],{}, class: 'form-control'
       .col-md-4.form-group
         = f.label :location
         = f.text_field :location, placeholder: "Postcode, e.g. 'WF12 7ED'", class: 'form-control'
