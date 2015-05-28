@@ -33,7 +33,7 @@ feature 'To view available patches' do
     scenario 'applies filter to see only particular type' do
       visit '/patches'
       select 'Front garden', from: 'Patch type'
-      click_button 'Search'
+      click_button 'Find my match'
       expect(page).to have_content 'SW11 4AE'
       expect(page).not_to have_content 'EC4M 8AD'
       expect(page).not_to have_content 'YO10 3DD'
@@ -42,7 +42,7 @@ feature 'To view available patches' do
     scenario 'applies project duration filter' do
       visit '/patches'
       select '1-2 year', from: 'Duration'
-      click_button 'Search'
+      click_button 'Find my match'
       expect(page).not_to have_content 'SW11 4AE'
       expect(page).not_to have_content 'EC4M 8AD'
       expect(page).to have_content 'YO10 3DD'
@@ -52,7 +52,7 @@ feature 'To view available patches' do
       visit '/patches'
       select 'Windowsill', from: 'Patch type'
       select '1-2 year', from: 'Duration'
-      click_button 'Search'
+      click_button 'Find my match'
       expect(page).to have_content 'EH11 2AB'
       expect(page).not_to have_content 'SW11 4AE'
       expect(page).not_to have_content 'EC4M 8AD'
@@ -63,7 +63,7 @@ feature 'To view available patches' do
       scenario 'filters results by distance' do
         visit '/patches'
         fill_in 'Location', with: 'London'
-        click_button 'Search'
+        click_button 'Find my match'
         expect(page).not_to have_content 'EH11 2AB'
         expect(page).to have_content 'SW11 4AE'
         expect(page).to have_content 'EC4M 8AD'
