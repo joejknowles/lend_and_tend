@@ -1,0 +1,28 @@
+%div.container.profile_container
+  %div.row
+    %div.col-sm-4
+      %div.profile_pic_container
+        - if @user.user_avatar
+          = image_tag @user.user_avatar.image.url(:medium), class: 'profile_photo'
+          -if @user == current_user
+            = link_to 'Remove photo', user_avatar_path(@user.user_avatar), method: :delete
+        - else
+          %img.profile_photo{ src: 'http://placehold.it/250x250' }
+        -unless current_user == @user
+          %div.message_user_btn
+            =button_to 'Match? Get in touch!', new_user_user_email_path(@user), method: :get, class: ['btn','btn-warning']
+    %div.col-sm-8
+      %h1.user_profile_header= @user.name
+      - if current_user == @user
+        %p= button_to 'Add to my profile', users_edit_profile_path, method: :get, class: ['btn', 'btn-warning']
+
+      - if @user.about_me?
+        %p= @user.about_me
+      -elsif current_user == @user
+        %p.lead= 'Your profile is currently empty so nobody knows anything about you. To help keep Lend & Tend nice please take a moment to add to your profile!'
+      -else
+        %p.lead= 'This user is yet to add a bio.'
+      %h3
+        Space available:
+
+        =render 'partials/users_patch_listings'

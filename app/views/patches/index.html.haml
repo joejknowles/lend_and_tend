@@ -1,0 +1,43 @@
+.container
+  .row
+    .col-xs-10.col-xs-offset-1
+      = form_tag patches_path, method: :get, class: 'form-inline filter-form' do
+        .row
+          .col-xs-3.col-xs-offset-1.form-group
+            = label_tag :patch_type, 'Patch type'
+            = select_tag :patch_type, options_for_select([['All', '']] + patch_types_list), class: 'form-control'
+          .col-xs-2.form-group
+            = label_tag :duration
+            = select_tag :duration, options_for_select([['All', ''], ['0-1 year', 1], ['1-2 year', 2]]), class: 'form-control'
+          .col-xs-3.form-group
+            = label_tag :location, 'Location'
+            = text_field_tag :location, '', placeholder: 'Location, e.g. Shoreditch', class: 'form-control'
+          .col-xs-2.form-group.search-btn
+            = submit_tag 'Find patch', name: nil, class: 'btn btn-default btn-custom'
+  .row
+    .col-xs-10.col-xs-offset-1
+      - if @patches
+        %ul.list-unstyled
+          - @patches.each do |patch|
+            %li.row.listed-patch
+              .col-md-5.col-md-offset-1.text-box
+                %span= patch.user.name
+                %span.patch-type can offer his/her #{patch.patch_type}
+                %div This patch can be found at #{patch.location} and can be tended for #{ pluralize(patch.duration, 'year') }
+                %span It is curretly
+                %span.in_use= patch.in_use ? 'occupied' : 'available'
+                - if patch.respond_to? :distance
+                  %div This patch is only #{ pluralize(patch.distance.round(1), 'mile') } away
+              .col-md-3
+                .patch-image
+                  - if patch.patch_images.length > 0
+                    = image_tag patch.patch_images.sample.image.url(:thumb)
+                  - else
+                    %img{ src: 'http://placehold.it/100x100' }
+              .col-md-3
+                = button_to "See #{patch.user.name.split(' ').first}'s profile", user_path(patch.user), method: :get, class: 'btn btn-default btn-custom get-in-touch'
+        .row
+          .col-xs-6.col-xs-offset-3
+            = pagination_links @patches
+      - else
+        %div Sorry, no patches to display

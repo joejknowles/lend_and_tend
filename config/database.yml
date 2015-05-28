@@ -79,7 +79,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: lend_and_tend_production
-  username: lend_and_tend
-  password: <%= ENV['LEND_AND_TEND_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

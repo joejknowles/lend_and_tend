@@ -16,7 +16,27 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+require 'coveralls'
+require 'paperclip/matchers'
+
+Coveralls.wear!('rails')
+
 RSpec.configure do |config|
+  config.before(:suite) do
+    # set geocoder to test version of lookup to avoid asynchronous calls
+    Geocoder.configure(lookup: :test)
+    Geocoder::Lookup::Test.add_stub(
+      "YO10 3DD", [
+        {
+          'latitude'     => 53.95503009999999,
+          'longitude'    => -1.0405632,
+        }
+      ]
+    )
+  end
+
+  config.include Paperclip::Shoulda::Matchers
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
