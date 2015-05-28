@@ -31,25 +31,4 @@
         .form-group
           = f.submit 'Save profile', class: 'btn btn-default btn-custom'
 
-  -# .row
-  -#   .col-sm-4
-  -#     = form_for @user, url: users_edit_profile_path,  html: { method: :put } do |f|
-  -#       = f.label :image
-  -#       = f.file_field :image
-  -#       = f.submit 'Update photo', class: 'btn btn-default btn-custom'
-
-
--# -if @user == current_user
--#
--#   = link_to 'Remove photo', user_avatar_path(@user.user_avatar), method: :delete
--# =======
-
--#
--# = form_for current_user, url: users_edit_profile_path,  html: { method: :put } do |f|
--#   = f.label :about_me
--#   = f.text_area :about_me, size: '70x9', placeholder: placeholder_text
--#   = f.label :image
--#   = f.file_field :image
--#   = f.submit 'Save profile'
-
-= link_to 'DANGER: delete my account', user_registration_path, method: :delete
+= link_to 'DANGER: delete my account', user_registration_path, method: :delete, data: {confirm: "Are you sure you want to delete your profile and all your patches?"}
