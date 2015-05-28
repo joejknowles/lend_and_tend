@@ -26,8 +26,7 @@
       = form_for @user, url: users_edit_profile_path,  html: { method: :put } do |f|
         .form-group
           = f.label :about_me, class: 'sr-only'
-          = f.text_area :about_me, size: '50x6', class: 'form-control', placeholder: placeholder_text
+          = f.text_area :about_me, size: '50x11', class: 'form-control', placeholder: placeholder_text
         .form-group
           = f.submit 'Save profile', class: 'btn btn-default btn-custom'
-
-= link_to 'DANGER: delete my account', user_registration_path, method: :delete, data: {confirm: "Are you sure you want to delete your profile and all your patches?"}
+          = link_to 'DANGER: delete my account', user_registration_path, method: :delete, class: 'delete-account', data: {confirm: "Are you sure you want to delete your profile and all your patches?"}
