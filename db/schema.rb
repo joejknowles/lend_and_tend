@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 20150526173741) do
     t.string   "duration"
     t.integer  "user_id"
     t.string   "description"
-    t.boolean  "in_use",      default: false
     t.float    "latitude"
     t.float    "longitude"
+    t.boolean  "in_use",      default: false
   end
 
   add_index "patches", ["user_id"], name: "index_patches_on_user_id", using: :btree

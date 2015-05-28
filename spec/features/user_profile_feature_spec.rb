@@ -37,9 +37,8 @@ feature 'Each user has their own profile page' do
     join_with_email
     click_link 'My profile'
     click_button 'Add to my profile'
-    fill_in 'About me', with: "I'm testing lend and tend!"
     attach_file 'Image', 'public/test2.gif'
-    click_button 'Save profile'
+    click_button 'Update photo'
     expect(page).to have_css("img[src*='test2.gif']")
   end
 
@@ -48,10 +47,8 @@ feature 'Each user has their own profile page' do
     join_with_email
     click_link 'My profile'
     click_button 'Add to my profile'
-    fill_in 'About me', with: "I'm testing lend and tend!"
     attach_file 'Image', 'public/test2.gif'
-    click_button 'Save profile'
-
+    click_button 'Update photo'
     expect(page).to have_css("img[src*='test2.gif']")
     click_link 'Remove photo'
     expect(page).not_to have_css("img[src*='test2.gif']")

@@ -1,4 +1,13 @@
-=form_tag user_user_emails_path(@user) do
-  = label_tag :your_message, 'Your message'
-  = text_field_tag(:your_message)
-  = submit_tag('Send message')
+.header-box
+  %h1 Send a message
+.main-content-box
+  .msg-form
+    =form_tag user_user_emails_path(@user), role: 'form' do
+      .form-group
+        %ul
+          %li
+            = label_tag :your_message, 'Your message'
+          %li
+          = text_area_tag :your_message, nil, rows: 6, cols: 50, class: 'form-control'
+      .form-group
+        = submit_tag 'Send message', class:'btn btn-default btn-custom'

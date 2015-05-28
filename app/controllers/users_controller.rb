@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def edit_profile
+    @user = current_user
   end
 
   def update_profile

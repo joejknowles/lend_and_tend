@@ -175,7 +175,7 @@ text-align: center;
 }
 
 // Profile
-
+$profile-pic-container-width: 220px;
 .profile_photo {
   max-width:200px;
   max-height:200px;
@@ -192,9 +192,23 @@ text-align: center;
 
 .profile_pic_container {
   text-align: center;
-
+  max-width: $profile-pic-container-width;
 }
+.edit-profile-pic {
+  text-align:left;
+  max-width: $profile-pic-container-width;
+  border: 1px solid #CCC;
+    @include box-shadow(0px 1px 1px rgba(0, 0, 0, 0.075) inset) ;
 
+  img {
+    margin-bottom:10px;
+  }
+
+  a {
+    font-size: 0.9em;
+    margin-top:10px;
+  }
+}
 
 .message_user_btn {
   margin: auto;
