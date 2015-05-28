@@ -13,6 +13,8 @@
 /tmp
 
 coverage
+coverage/*
+/coverage/*
 .DS_Store
 
 /public/system/
