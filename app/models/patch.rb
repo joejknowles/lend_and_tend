@@ -4,17 +4,17 @@ class Patch < ActiveRecord::Base
   has_many :patch_images, dependent: :destroy
 
   geocoded_by :location
-  after_validation :geocode, if: :location_changed?
+  before_validation :geocode, if: :location_changed?
 
   validates_presence_of :location
   validates_presence_of :patch_type
   validates_presence_of :duration
+  validates_presence_of :longitude, message: "Please enter a valid location"
 
   def self.location_sort(params, max_distance)
     if params[:location].present?
       near(params[:location],
-                max_distance).reorder(
-                  'distance')
+           max_distance).reorder('distance')
     else
       self
     end

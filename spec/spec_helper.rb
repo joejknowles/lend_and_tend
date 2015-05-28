@@ -50,6 +50,14 @@ RSpec.configure do |config|
         }
       ]
     )
+    Geocoder::Lookup::Test.add_stub(
+      '6l gs nodhu pt a', [
+        {
+          'latitude'     => nil,
+          'longitude'    => nil
+        }
+      ]
+    )
   end
 
   config.include Paperclip::Shoulda::Matchers

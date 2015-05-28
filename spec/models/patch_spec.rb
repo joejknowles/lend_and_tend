@@ -15,6 +15,11 @@ describe Patch, type: :model do
 
   it { is_expected.to have_db_column(:latitude) }
   it { is_expected.to have_db_column(:longitude) }
+  it do
+    is_expected.to validate_presence_of(
+      :longitude).with_message(
+        "Please enter a valid location")
+  end
 
   it { is_expected.to have_db_column(:in_use) }
 
@@ -61,4 +66,10 @@ describe Patch, type: :model do
     expect(results).to be described_class
   end
 
+  it 'raises errors with invalid geolocations' do
+    bad_patch = described_class.new(location: '6l gs nodhu pt a',
+                                    patch_type: 'Windowsill', duration: '1')
+    expect(bad_patch.save).to be false
+    expect(bad_patch.errors.count).to be 1
+  end
 end
