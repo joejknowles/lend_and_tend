@@ -59,6 +59,7 @@ h2 {
   @include padding-sides;
 }
 .btn-custom {
+  background-color:$primary-color;
   &:hover {
     background-color: $primary-color;
     @extend .form-control:focus;
@@ -72,7 +73,7 @@ h2 {
   text-align:center;
 }
 .main-content-box {
-  width: $max-main-width;
+  max-width: $max-main-width;
   @extend .center;
   @extend .container;
   margin:15px auto 0 auto;
