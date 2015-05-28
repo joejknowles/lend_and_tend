@@ -17,9 +17,10 @@ class UsersController < ApplicationController
       end
       about_me = params.require(:user).permit(:about_me)
       current_user.update about_me
+      redirect_to user_path(current_user)
     else
       flash[:notice] = 'Please remember to attach a photo'
+      redirect_to '/users/edit_profile'
     end
-    redirect_to user_path(current_user)
   end
 end

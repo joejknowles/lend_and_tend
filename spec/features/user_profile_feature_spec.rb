@@ -61,6 +61,7 @@ feature 'Each user has their own profile page' do
     click_button 'Add to my profile'
     click_button 'Update photo'
     expect(page).to have_content 'Please remember to attach a photo'
+    expect(current_path).to eq '/users/edit_profile'
   end
 
   scenario 'is encouraged to fill in their profile after signup' do
