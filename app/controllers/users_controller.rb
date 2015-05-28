@@ -10,14 +10,21 @@ class UsersController < ApplicationController
   end
 
   def update_profile
-    if params[:user][:image]
-      image = params.require(:user).permit(:image)
-      UserAvatar.create(image.merge(user_id: current_user.id))
-    end
-
+    update_avatar if params[:user][:image]
     about_me = params.require(:user).permit(:about_me)
-
-    current_user.update about_me
-    redirect_to user_path(current_user)
+    if current_user.update about_me
+      flash[:notice] = "Profile Updated!"
+    else
+      flash[:notice] = "Something went wrong, please try again."
+    end
+      redirect_to user_path(current_user)
   end
+
+  private
+
+  def update_avatar
+    image = params.require(:user).permit(:image)
+    UserAvatar.create(image.merge(user_id: current_user.id))
+  end
+
 end

@@ -10,8 +10,13 @@ class HomepageImagesController < ApplicationController
   end
 
   def create
-    HomepageImage.create(image_from_params)
-    redirect_to homepage_images_path
+    if params[:homepage_image]
+      image = HomepageImage.new(image_from_params)
+      flash[:notice] = 'Something went wrong, please try again.' unless image.save
+    else
+      flash[:notice] = 'Something went wrong, please try again. Did you attatch an image?'
+    end
+      redirect_to homepage_images_path
   end
 
   def destroy
