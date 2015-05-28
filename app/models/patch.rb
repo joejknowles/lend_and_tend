@@ -11,10 +11,13 @@ class Patch < ActiveRecord::Base
   validates_presence_of :duration
 
   def self.location_sort(params, max_distance)
-    return near(params[:location],
+    if params[:location].present?
+      near(params[:location],
                 max_distance).reorder(
-                  'distance') if params[:location].present?
-    self
+                  'distance')
+    else
+      self
+    end
   end
 
   def self.filter_results(params)

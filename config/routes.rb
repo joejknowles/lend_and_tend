@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get '/users/edit_profile' => 'users#edit_profile'
   put '/users/edit_profile' => 'users#update_profile'
+  put '/users/update_avatar' => 'users#update_avatar'
 
   resources :homepage_images
   resources :patches

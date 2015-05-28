@@ -12,6 +12,15 @@ feature 'Admin can add homepage images to database' do
     expect(page).to have_css("img[src*='test.gif']")
   end
 
+  scenario 'notifies if image does not save', skip_before: true do
+    join_and_login_admin
+    visit '/homepage_images'
+    click_link 'Add new image to the homepage'
+    click_button 'Add photo'
+    expect(current_path).to eq '/homepage_images'
+    expect(page).to have_content 'Something went wrong, please try again. Did you attatch an image?'
+  end
+
   scenario 'Can remove image', skip_before: true do
     join_and_login_admin
     visit '/homepage_images'

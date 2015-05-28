@@ -22,23 +22,43 @@ describe Patch, type: :model do
 
   it { is_expected.to have_many(:patch_images).dependent(:destroy) }
 
+  let(:patch) do
+    described_class.create(location: 'YO10 3DD',
+                           patch_type: 'Windowsill', duration: '1')
+  end
+
   it '\'in use\' defaults to be false' do
     stub_user = stub_model(User).as_new_record
     patch = described_class.create(location: 'SW11 4AE',
-                                  patch_type: 'Window sill',
-                                  duration: '1',
-                                  user_id: stub_user.id)
+                                   patch_type: 'Window sill',
+                                   duration: '1',
+                                   user_id: stub_user.id)
     expect(patch.in_use).to be false
   end
 
   it 'fetches coordinates when given a postcode' do
-    subject.update(patch_type: 'Windowsill',
-                   location: 'YO10 3DD', duration: '1')
-    expect(subject.latitude).to eq(53.95503009999999)
-    expect(subject.longitude).to eq(-1.0405632)
+    expect(patch.latitude).to eq(53.95503009999999)
+    expect(patch.longitude).to eq(-1.0405632)
   end
 
-  xit 'selects locations in a given radius' do
+  it 'selects locations in a given radius' do
+    patch
+    results = described_class.location_sort({ location: 'YO10 3PP' }, 10)
+    expect(results.length).to eq 1
+    expect(results.first.location).to eq 'YO10 3DD'
+  end
+
+  it "doesn't select locations outside given radius" do
+    patch
+    results = described_class.location_sort({ location: 'SW11 4AE' }, 10)
+    expect(results).to be_empty
+  end
+
+  it 'returns whole relation if no location is given' do
+    patch
+    results = described_class.location_sort({}, 10)
+    expect(results.first.location).to eq 'YO10 3DD'
+    expect(results).to be described_class
   end
 
 end
