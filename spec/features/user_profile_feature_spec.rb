@@ -54,6 +54,16 @@ feature 'Each user has their own profile page' do
     expect(page).not_to have_css("img[src*='test2.gif']")
   end
 
+  scenario 'fails gracefully when user forgets to attach photo' do
+    visit '/'
+    join_with_email
+    click_link 'My profile'
+    click_button 'Add to my profile'
+    click_button 'Update photo'
+    expect(page).to have_content 'Please remember to attach a photo'
+    expect(current_path).to eq '/users/edit_profile'
+  end
+
   scenario 'is encouraged to fill in their profile after signup' do
     visit '/'
     user = join_with_email
