@@ -15,12 +15,10 @@
       %h1.user_profile_header= @user.name
       - if current_user == @user
         %p= button_to 'Add to my profile', users_edit_profile_path, method: :get, class: ['btn', 'btn-warning']
-      %h3 Lender
 
       - if @user.about_me?
         %p= @user.about_me
       -elsif current_user == @user
-        %span.label.label-warning Fill me in
         %p.lead= 'Your profile is currently empty so nobody knows anything about you. To help keep Lend & Tend nice please take a moment to add to your profile!'
       -else
         %p.lead= 'This user is yet to add a bio.'
@@ -28,5 +26,3 @@
         Space available:
 
         =render 'partials/users_patch_listings'
-  - if current_user == @user
-    = link_to 'delete my account', user_registration_path, method: :delete

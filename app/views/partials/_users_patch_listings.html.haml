@@ -24,9 +24,9 @@
         %span= patch.location
 
 -elsif current_user == @user
+  =link_to 'Add a patch', new_patch_path
   %p
-    You are not offering any patches yet, fancy helping someone local enjoy the outside, and meeting a new friend?
-    =link_to 'Click here to add one', new_patch_path
-  %p Or not sure whether its a good idea yet? Read more about other users that have lended here.
+    You are not offering any patches yet, fancy helping someone local enjoy the outside, and meeting a new friend add your outdoor space today.
+  %p Not sure whether its a good idea yet? Read more about other users that have lended here.
 -else
   This user has no patches to share right now.
