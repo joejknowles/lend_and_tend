@@ -6,12 +6,12 @@ feature 'User Management' do
 
     scenario 'should see "Join with Email" link' do
       visit '/'
-      expect(page).to have_button 'Join In!'
+      expect(page).to have_button 'Join up'
     end
 
-    scenario 'should see "Log in" link' do
+    scenario 'should see "launchloginmodal" link' do
       visit '/'
-      expect(page).to have_button 'Log In!'
+      expect(page).to have_button 'launchloginmodal'
     end
 
     scenario 'should not see "Log out" link' do
@@ -31,7 +31,7 @@ feature 'User Management' do
 
     before do
       visit '/'
-      join_with_email
+      @user = join_with_email
     end
 
     scenario 'should not see "Join with Email" link' do
@@ -39,19 +39,26 @@ feature 'User Management' do
       expect(page).not_to have_link 'Join with Email'
     end
 
-    scenario 'should not see "Log in" link' do
+    scenario 'should not see "launchloginmodal" link' do
       visit '/'
-      expect(page).not_to have_link 'Log in'
+      expect(page).not_to have_link 'launchloginmodal'
     end
 
     scenario 'should see "Log out" link' do
-      visit '/'
+      visit '/patches'
       expect(page).to have_link 'Log out'
     end
 
     scenario 'should see "My profile" link' do
-      visit '/'
+      visit '/patches'
       expect(page).to have_link 'My profile'
+    end
+
+    scenario 'and deletes their account' do
+      visit "/users/#{@user.id}"
+      click_button 'Add to my profile'
+      click_link 'delete my account'
+      expect(page).to have_content 'Bye! Your account has been successfully cancelled. We hope to see you again soon.'
     end
 
   end
@@ -65,29 +72,29 @@ feature 'User Management' do
 
     scenario 'when logged out can see "Join with Facebook" link' do
       visit '/'
-      click_button 'Join In!'
+      click_button 'Join up'
       expect(page).to have_selector '#fb_btn'
     end
 
     scenario 'can login with facebook' do
       visit '/'
-      click_button 'Join In!'
+      click_button 'Join up'
       click_button'Join in with Facebook'
       expect(page).to have_content 'You were successfully authenticated using Facebook'
     end
 
-    scenario 'when logged in cannot see "Join"/"Log in" links' do
+    scenario 'when logged in cannot see "Join"/"launchloginmodal" links' do
       visit '/'
-      click_button 'Join In!'
+      click_button 'Join up'
       click_button 'Join in with Facebook'
       expect(page).not_to have_content 'Join with Facebook'
       expect(page).not_to have_content 'Join with Email'
-      expect(page).not_to have_content 'Log in'
+      expect(page).not_to have_content 'launchloginmodal'
     end
 
     scenario 'can logout' do
       visit '/'
-      click_button 'Join In!'
+      click_button 'Join up'
       click_button 'Join in with Facebook'
       click_link 'Log out'
       expect(page).to have_content 'Signed out successfully.'
@@ -97,7 +104,7 @@ feature 'User Management' do
   context 'User sign up' do
     scenario 'user is asked for name when signing up by email' do
       visit '/'
-      click_button 'Join In!'
+      click_button 'Join up'
       fill_in 'user_name', with: 'The Tester'
       fill_in 'join_email', with: 'test@test.com'
       fill_in 'join_password', with: 'supersecret'

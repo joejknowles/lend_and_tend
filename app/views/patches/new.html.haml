@@ -1,3 +1,5 @@
+- placeholder_text = " When would like to offer access to your garden?  \n Do you have pets or children?   \n What would like from this this experience?   \n What would you like to see grown?  \n Include links to your social channels so people can see you...  \n How is the garden accessible?  \n Why is your space available? Time, no interest, new experiences..."
+
 .header-box
   %h1 Tell us about your new patch
 .main-content-box
@@ -16,7 +18,7 @@
     .row
       .col-md-8.form-group
         = f.label :description
-        = f.text_area :description, class: 'form-control'
+        = f.text_area :description, class: 'form-control', placeholder: placeholder_text, size: '200x9'
     .row
       .col-md-12.form-group
         = f.label :image

@@ -15,42 +15,14 @@
       %h1.user_profile_header= @user.name
       - if current_user == @user
         %p= button_to 'Add to my profile', users_edit_profile_path, method: :get, class: ['btn', 'btn-warning']
-      %h3 Lender
 
       - if @user.about_me?
         %p= @user.about_me
       -elsif current_user == @user
-        %span.label.label-warning Fill me in
         %p.lead= 'Your profile is currently empty so nobody knows anything about you. To help keep Lend & Tend nice please take a moment to add to your profile!'
       -else
         %p.lead= 'This user is yet to add a bio.'
       %h3
         Space available:
 
-      - if @user.patches.first
-
-        %div.panel.panel-default
-          %div.panel-heading
-            %h4= @user.patches.first.patch_type
-          %div.panel-body
-            %div.col-xs-4
-              - @user.patches.each do |patch|
-                - if patch.patch_images.first
-                  = image_tag patch.patch_images.first.image.url(:thumb)
-            %div.col-xs-8
-            %h5.garden_headers About
-            %p= @user.patches.first.description
-          %div.panel-footer
-            %div.col-xs-6
-              %h5.garden_headers How long for?
-              %span= "Upto #{pluralize(@user.patches.first.duration, 'year')}"
-            %div.col-xs-6
-            %h5.garden_headers Where is this cool patch?
-            %span= @user.patches.first.location
-      -elsif current_user == @user
-        %p
-          You are not offering any patches yet, fancy helping someone local enjoy the outside, and meeting a new friend?
-          =link_to 'Click here to add one', new_patch_path
-        %p Or not sure whether its a good idea yet? Read more about other users that have lended here.
-      -else
-        This user has no patches to share right now.
+        =render 'partials/users_patch_listings'
