@@ -2,3 +2,13 @@
   @extend .center;
   max-width: 300px;
 }
+
+.msg-form {
+  max-width:600px;
+  @extend .center;
+  ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+  }
+}
