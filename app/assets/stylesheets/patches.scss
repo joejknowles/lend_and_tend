@@ -5,43 +5,38 @@
 .list-unstyled {
 
   li {
-    padding-bottom: 1.5em;
-    margin-bottom: 1.5em;
-    border-bottom: 2px solid #CCCCCC;
+    padding: 2em 0em;
+    border-top: 2px solid #00cd00;
     text-align: center;
-  }
-
-  li:first-child {
-    padding-top: 1.5em;
+    font-size: 1.2em;
+    text-align: center;
   }
 }
 
-
-
-.list-title {
-  background: black;
-  color: #EEEEEE;
-  text-align: center;
-  padding-bottom: 1.5em;
-  padding-top: 1.5em;
-  border-radius: 0.3em;
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
+.text-box {
+  text-align: left;
 }
 
 .disabled {
   visibility: hidden;
 }
 
+.patch-type {
+  font-style: bold;
+}
+
 .pagination a {
   padding: 0.75em;
-  color: green;
+  color: #00cd00;
   font-weight: bold;
-  border: 1px solid green;
+  border: 1px solid #00cd00;
 }
 
 .filter-form {
-  padding: 1em;
-  border: 1px solid green;
-  margin: 1em;
+  padding: 1.5em;
+  border: 2px solid #00cd00;
+  margin: 2.5em;
+  border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
 }

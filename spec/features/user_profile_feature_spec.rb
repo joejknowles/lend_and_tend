@@ -3,7 +3,7 @@ feature 'Each user has their own profile page' do
   scenario 'User adds patch, can see it on their profile' do
     join_and_add_patch
     visit '/patches'
-    click_link 'The Tester'
+    click_button "See The's profile"
     expect(page).to have_content 'Space available: Hanging basket'
     expect(page).to have_content 'The Tester'
   end
@@ -11,7 +11,7 @@ feature 'Each user has their own profile page' do
   scenario 'User adds patch with further description, can see it on their profile' do
     join_and_add_patch
     visit '/patches'
-    click_link 'The Tester'
+    click_button "See The's profile"
     expect(page).to have_content 'Triangle shaped, overlooking river'
   end
 
