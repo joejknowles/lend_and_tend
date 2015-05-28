@@ -2,11 +2,13 @@
 class UserMailerPreview < ActionMailer::Preview
 
   def patch_match_alert
-    user = User.create(name: 'Mr Test',
+    user = User.create( id: 1,
+                name: 'Mr Test',
                 email: 'test@test.com',
                 password: 'testtest',
                 password_confirmation: 'testtest')
-    user2 = User.create(name: 'Mrs Test',
+    user2 = User.create( id: 2,
+                name: 'Mrs Test',
                 email: 'test2@test2.com',
                 password: 'test2test2',
                 password_confirmation: 'test2test2')
