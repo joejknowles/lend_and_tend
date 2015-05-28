@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   def update_avatar
     image = params.require(:user).permit(:image)
     UserAvatar.create(image.merge(user_id: current_user.id))
+    # When updating this method, handle un
   end
 
 end
