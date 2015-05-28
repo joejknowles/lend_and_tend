@@ -31,7 +31,7 @@ def join_and_add_patch
   join_with_email
   visit '/patches/new'
   fill_in 'Location', with: 'EC4M 8AD'
-  select 'Hanging basket', from: 'What sort of space would you like to offer?'
+  select 'Hanging basket', from: 'Space to offer'
   select '0-1 year', from: 'How long can you offer this space?'
   fill_in 'Description', with: 'Triangle shaped, overlooking river'
   click_button 'List my patch'
