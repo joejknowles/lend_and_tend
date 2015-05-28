@@ -1,12 +1,12 @@
+User.create(admin: true,
+            name: 'admin',
+            password: 'adminadmin',
+            password_confirmation: 'adminadmin',
+            email: 'admin@admin.com')
+
 if Rails.env.development?
   require './app/helpers/patches_helper'
   include PatchesHelper
-
-  User.create(admin: true,
-              name: 'admin',
-              password: 'adminadmin',
-              password_confirmation: 'adminadmin',
-              email: 'admin@admin.com')
 
   users = %w(Bob Fred Jess Nora Richard)
   users = users.inject([]) do |list, name|
