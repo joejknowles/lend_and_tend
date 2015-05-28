@@ -125,7 +125,7 @@ h2 {
 .main-content-box {
   width: $max-main-width;
   @extend .center;
-  @extend .container;
+  /*@extend .container;*/
   margin:15px auto 0 auto;
 }
 .header-box {
