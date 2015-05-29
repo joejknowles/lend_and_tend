@@ -1,0 +1,29 @@
+.wrapper
+  .navbar.navbar-default.navbar-custom
+    .container
+      .navbar-header
+        %button.navbar-toggle.collapsed{ 'aria-controls' => 'navbar',
+        'aria-expanded' => 'false', 'data-target' => '#navbar',
+        'data-toggle' => 'collapse', type: 'button' }
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = link_to image_tag('lendlogo.png'), root_path, class: 'logo logo-header navbar-header'
+
+      .collapse.navbar-collapse#navbar
+        %ul.nav.navbar-nav.navbar-right
+          - if current_user
+            %li
+              = link_to 'Find Patch', patches_path
+            %li
+              = link_to 'Add Patch', new_patch_path
+            %li
+              = link_to 'My profile', user_path(current_user)
+            %li
+              = link_to 'Log out', destroy_user_session_path, method: :delete
+          - elsif !current_page? '/'
+            %li.join_login_buttons
+              = render 'users/join_in_button'
+            %li.join_login_buttons
+              = render 'users/login_button'

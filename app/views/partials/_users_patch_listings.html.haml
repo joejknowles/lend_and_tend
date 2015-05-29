@@ -1,0 +1,32 @@
+- if @user.patches.any?
+  - @user.patches.each do | patch |
+
+    %div.panel.panel-default
+      %div.panel-heading
+        %h4= patch.patch_type
+      %div.panel-body
+        %div.col-xs-6
+          - if patch.patch_images.first
+            = image_tag patch.patch_images.first.image.url(:medium)
+          -else
+            %img{ src: 'http://placehold.it/250x250' }
+        %div.col-xs-6
+        %h5.garden_headers About
+        %p= patch.description
+      %div.panel-footer
+        %div.col-xs-6
+          %h5.garden_headers
+            How long for?
+          %span= "Upto #{pluralize(patch.duration, 'year')}"
+        %div.col-xs-6
+        %h5.garden_headers
+          Where is this cool patch?
+        %span= patch.location
+
+-elsif current_user == @user
+  =link_to 'Add a patch', new_patch_path
+  %p
+    You are not offering any patches yet, fancy helping someone local enjoy the outside, and meeting a new friend add your outdoor space today.
+  %p Not sure whether its a good idea yet? Read more about other users that have lended here.
+-else
+  This user has no patches to share right now.

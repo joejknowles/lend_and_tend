@@ -1,0 +1,30 @@
+.header-box
+  %h1 Profile
+.main-content-box.container.center
+  .col-sm-4.edit-profile-pic
+    .row
+      .col-xs-12.border-box
+        - if @user.user_avatar
+          = image_tag @user.user_avatar.image.url(:medium), class: 'profile_photo'
+        - else @user.image
+          = image_tag "#{@user.image}?type=large"
+
+    .row
+
+      - if current_user == @user
+        %p= button_to 'Add to my profile', users_edit_profile_path, method: :get, class: ['btn', 'btn-default', 'btn-custom']
+      -else
+        %div.message_user_btn
+          =button_to 'Match? Get in touch!', new_user_user_email_path(@user), method: :get, class: ['btn','btn-default', 'btn-custom']
+  .col-sm-8.about-box.border-box
+    %h1.user_profile_header= @user.name
+    - if @user.about_me?
+      %p= @user.about_me
+    -elsif current_user == @user
+      %p.lead= 'Your profile is currently empty so nobody knows anything about you. To help keep Lend & Tend nice please take a moment to add to your profile!'
+    -else
+      %p.lead= 'This user is yet to add a bio.'
+    %h3
+      Space available:
+
+      =render 'partials/users_patch_listings'

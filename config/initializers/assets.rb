@@ -1,8 +1,12 @@
 # Be sure to restart your server when you modify this file.
 
+#Precompile all custom assets (used to only show photowall js on home)
+%w( static ).each do |controller|
+  Rails.application.config.assets.precompile += ["#{controller}.js", "#{controller}.css"]
+end
+
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
-
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 
