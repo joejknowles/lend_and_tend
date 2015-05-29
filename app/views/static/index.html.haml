@@ -1,9 +1,9 @@
 .jumbotron.home-jumbo
   .container
     %h1.home-header
-      Lend & Tend
+      Lend and Tend
     %h2.home-subheader
-      Make friends, food & colour with others around you!
+      No Garden? No Problem! Help a neighbour, grow locally. Make Gardening Friends.
     - if user_signed_in?
       %div.center-block
         = button_to 'Add patch', new_patch_path, class: 'btn btn-success btn-lg home-logged-in-btn', method: :get
@@ -71,33 +71,63 @@
 .row
   .container
     .col-sm-12.col-md-4.col-lg-4.what_is
-      %h2 What is Lend & Tend?
-      %p
-        See unused gardens around you? Wish you had a garden yourself?
-        Do you have a garden but no time or can’t manage? 
-        How about Lending and Tending? 
-        Garden Owners, offer some of your garden to someone who'd like space to grow. 
-        Get the garden-less gardening! PatchMatch™ On your grounds. 
-        Help a neighbour with maintenance, crop swap in your community, grow. Locally!
-        Find allotment-like space without the wait. 
-        Tend to a garden for someone who’s Lending their garden. 
-        Join Lend and Tend! 
-        A new way to make Gardening Friends. 
+      %h2.subhead What is Lend & Tend?
+      %p See unused gardens around you? Wish you had a garden yourself? 
+      %p Maybe you already have a garden but no time to do any gardening or perhaps can’t manage it?  
+      %p How about Lending and Tending?  
+      %p Garden Owners, you can offer your garden or even just part of it to someone who'd like some space to grow.  We can get the garden-less gardening! 
+      %p Patch-Match…On your grounds.  
+      %p So help a neighbour with maintenance, or CropSwap in your community. Grow. Locally! Find allotment-like space without the wait.  
+      %p Tend to a garden for someone who’s Lending their garden.  Join Lend and Tend!  It’s a  new way to make Gardening Friends.      
 
     .col-sm-12.col-md-4.col-lg-4.what_is
-      %h2 Is it for me?
-      %p Quisque sagittis orci quis egestas volutpat. Sed imperdiet aliquam nulla a accumsan. Proin maximus nisi et mauris lobortis condimentum. Morbi massa erat, vulputate a posuere non, porttitor at justo. Ut fringilla aliquet augue non auctor. In hac habitasse platea dictumst. Nam lobortis vitae justo id dignissim. Duis molestie sollicitudin magna nec auctor.
+      %h2.subhead Is it for me?
+      %p{style: 'font-weight: bold;'} LEND! Got Room to Grow?
+      %ul
+        %li Do you have some outdoor space?
+        %li Do you find it difficult to maintain your outside space and could use a hand?
+        %li Have no time for gardening? Then there are plenty of people that’d love to use your outdoor space! 
+        %li Lend with Lend and Tend and you could either rent some of  your outdoor space or offer it to someone to Tend it and help maintain it.
+
+      %p{style: 'font-weight: bold;'} TEND! No Space to Spare?
+      %ul
+        %li Do you wish you had a garden or a bit more space outside to grow your own produce?
+        %li Do you want to spend more time in the fresh air to keep fit and active outside?
+        %li Could you help someone in your community with their garden in return for use of some of their outdoor space; Perhaps help with a bit of weeding, maintenance or watering  a neighbour's plants?
+
+      %p{style: 'font-weight: bold;'} -If you answered YES to any of these questions create your profile to find a Patch-Match. 
+
+
     .col-sm-12.col-md-4.col-lg-4.what_is
-      %h2 What's the buzz?
-      %p Quisque sagittis orci quis egestas volutpat. Sed imperdiet aliquam nulla a accumsan. Proin maximus nisi et mauris lobortis condimentum. Morbi massa erat, vulputate a posuere non, porttitor at justo. Ut fringilla aliquet augue non auctor. In hac habitasse platea dictumst. Nam lobortis vitae justo id dignissim. Duis molestie sollicitudin magna nec auctor.
+      %h2.subhead What's the buzz?
+      %p Not every one has access to a garden these days. There are also almost 90,000 people waiting for space on allotments in the U.K and I’ll bet you’ve noticed lots of unloved gardens near you that would love to see the shiny edge of a strimmer, or feel the air from a garden fork sifting through its side patches.
+      Perhaps you’ve coveted a garden you’ve passed? Or maybe you’ve wished you could have some extra help?
+
+      There is a way we can help each other out.
+
+      Gardening has been proven to de-stress, help us meditate, take stock and take in  much needed fresh air. Then there’s the fun and enjoyment of growing and eating your own delicious produce.
+      Also, in areas where a large majority of a neighbourhood is seen to tend to their gardens, it has been proven that those communities see a significant reduction in crime!
+
+      So with that what are you waiting for?
+
+      Join Lend and Tend and make gardening friends.
+      %p
+        Lend and Tend-
+      %p{style: 'font-style: italic;'} Cherish your garden or let someone else cherish it for you.
+
 
 .row
-  .col-sm-6
+  .col-md-4
     .social-feed
       <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/LendandTend" data-widget-id="603314736726409216">Tweets by @LendandTend</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-  .col-sm-6
+  .col-md-4
+    %div.video-container
+      .youtube-vid
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/pt-YhQDxRaM" frameborder="0" allowfullscreen></iframe>
+
+  .col-md-4
     .social-feed
       <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hashtag/LendAndTend" data-widget-id="603155369238646784">#LendAndTend Tweets</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
