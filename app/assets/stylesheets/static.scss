@@ -19,6 +19,9 @@ $shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $secondary-color-opaque;
   font-weight: bold;
 }
 
+.subheader {
+  font-weight: bold;
+}
 
 
 .home-jumbo {
@@ -181,10 +184,29 @@ h2 {
 }
 
 .social-feed {
-  /*@include placeholder-box(250px);*/
   @extend .center-everything;
   width: 60%;
   margin-bottom: 7em;
+}
+
+.youtube-vid {
+  margin-top: 8em;
+}
+
+.video-container {
+  position:relative;
+  padding-bottom:56.25%;
+  padding-top:30px;
+  height:0;
+  overflow:hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
 }
 
 // // Place all the styles related to the static controller here.
