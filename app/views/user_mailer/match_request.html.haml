@@ -1,4 +1,6 @@
-%p="Hi, from Lend & Tend! The user #{@user_from.name} has requested we send you the below message:"
+="Hi, from Lend & Tend! The user"
+= link_to "#{@user_from.name}", user_url(@user_from)
+= "has requested we send you the below message:"
 
 %p= @user_message
 

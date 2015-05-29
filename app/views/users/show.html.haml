@@ -4,10 +4,13 @@
       %div.profile_pic_container
         - if @user.user_avatar
           = image_tag @user.user_avatar.image.url(:medium), class: 'profile_photo'
-        - else
-          %img.profile_photo{ src: 'http://placehold.it/250x250' }
+        - else @user.image
+          = image_tag "#{@user.image}?type=large"
+        -# - else
+        -#   %img.profile_photo{ src: 'http://placehold.it/250x250' }
+
         - if current_user == @user
-          %p= button_to 'Add to my profile', users_edit_profile_path, method: :get, class: ['btn', 'btn-warning']
+          %p= button_to 'Add to my profile', users_edit_profile_path, method: :get, class: ['btn', 'btn-default', 'btn-custom']
         -else
           %div.message_user_btn
             =button_to 'Match? Get in touch!', new_user_user_email_path(@user), method: :get, class: ['btn','btn-default', 'btn-custom']

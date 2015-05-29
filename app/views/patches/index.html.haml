@@ -5,13 +5,13 @@
         .row
           .col-xs-3.col-xs-offset-1.form-group
             = label_tag :patch_type, 'Patch type'
-            = select_tag :patch_type, options_for_select([['All', '']] + patch_types_list), class: 'form-control'
+            = select_tag :patch_type, options_for_select(([['All', '']] + patch_types_list), params[:patch_type]), class: 'form-control'
           .col-xs-2.form-group
             = label_tag :duration
-            = select_tag :duration, options_for_select([['All', ''], ['0-1 year', 1], ['1-2 year', 2]]), class: 'form-control'
+            = select_tag :duration, options_for_select(([['All', ''], ['0-1 year', 1], ['1-2 year', 2]]), params[:duration]), class: 'form-control'
           .col-xs-3.form-group
             = label_tag :location, 'Location'
-            = text_field_tag :location, '', placeholder: 'Location, e.g. Shoreditch', class: 'form-control'
+            = text_field_tag :location, '', placeholder: 'Location, e.g. Shoreditch', value: params[:location], class: 'form-control'
           .col-xs-2.form-group.search-btn
             = submit_tag 'Find patch', name: nil, class: 'btn btn-default btn-custom'
   .row

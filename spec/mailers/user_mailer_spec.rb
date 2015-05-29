@@ -25,7 +25,7 @@ RSpec.describe UserMailer, type: :mailer do
     end
 
     it 'contains a note to say which user has sent the message and how to reply' do
-      expect(email.body.raw_source).to include "Hi, from Lend &amp; Tend! The user Mr Test has requested we send you the below message:"
+      expect(email.body.raw_source).to include "has requested we send you the below message:"
 
       expect(email.body.raw_source).to include "To reply to your patch match, just \n<a href=\"mailto:MrTest@test.com\">reply to this email</a>\n. If you found this email offensive, please be sure to let us know at:\n<a href=\"mailto:garden.guardianship@gmail.com\">garden.guardianship@gmail.com</a>\n</p>\n\n</body>\n</hmtl>\n"
     end

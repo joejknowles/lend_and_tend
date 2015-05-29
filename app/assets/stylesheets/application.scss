@@ -4,6 +4,7 @@
 @import 'patches';
 @import 'forms';
 @import 'footer';
+@import 'users';
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 
@@ -197,8 +198,8 @@ $profile-pic-container-width: 220px;
 .edit-profile-pic {
   text-align:left;
   max-width: $profile-pic-container-width;
-  border: 1px solid #CCC;
-    @include box-shadow(0px 1px 1px rgba(0, 0, 0, 0.075) inset) ;
+  // border: 1px solid #CCC;
+  //   @include box-shadow(0px 1px 1px rgba(0, 0, 0, 0.075) inset) ;
 
   img {
     margin-bottom:10px;
@@ -207,6 +208,12 @@ $profile-pic-container-width: 220px;
   a {
     font-size: 0.9em;
     margin-top:10px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0px;
+    padding:0px;
   }
 }
 
@@ -224,3 +231,230 @@ $profile-pic-container-width: 220px;
 .garden_headers {
   display: inline;
 }
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+// @import 'static';
+// @import 'patches';
+// @import 'forms';
+// @import 'footer';
+// @import 'users';
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+//
+//
+// /*
+//  * This is a manifest file that'll be compiled into application.css, which will include all the files
+//  * listed below.
+//  *
+//  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+//  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+//  *
+//  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+//  * compiled file so the styles you add here take precedence over styles defined in any styles
+//  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+//  * file per style scope.
+//  *
+//  */
+//
+//  // Font
+//
+// * {
+//   font-family: 'Open Sans', sans-serif;
+// }
+//
+//  // Flash Messages
+//
+//  .alert {
+//   width: 70%;
+//   margin: auto;
+//   margin-bottom: 1em;
+//  }
+//
+//  .home-alert {
+//   z-index: 9;
+//   position: absolute;
+//   width: 70%;
+//   left: 15%;
+//   right: 15%;
+//   top: 1em;
+//  }
+//
+// // Homepage images
+//
+// .img{
+//   background-image: url('https://photos-5.dropbox.com/t/2/AADMaholVLXDW1Rb8OwJDE34KbkWdvS2i8EeJsbcFyqLiQ/12/134460480/jpeg/32x32/1/1432551600/0/2/IMG_8176.jpg/CMDojkAgASACIAMgBCAFIAYoASgC/AtemsPpkHNvxcyv9BuTkqxlOXMoM6B7Dub6UN5zsq4E?size=1280x960&size_mode=2');
+//   background-size: cover;
+//   background-position: 50% 50%;
+//   background-repeat: no-repeat;
+// }
+//
+// .img-sm{
+//   height: 200px;
+// }
+//
+// .image-spacer {
+// text-align: center;
+//   margin:auto;
+//   height: 200px;
+// }
+//
+// .center-items {
+//   padding: 30px;
+// }
+//
+// .logo-homepage {
+//   max-width:95%;
+//   margin-bottom: 5%;
+// }
+//
+// // Nav
+//
+// .links-right {
+//   display:inline-block;
+//   float: right;
+// }
+//
+// .links-left {
+//   display:inline-block;
+//   text-align: left;
+// }
+//
+// .header-links a {
+//   margin-right:10px;
+// }
+//
+// // Header
+//
+// .join_login_buttons {
+//   float: right;
+// }
+// //
+// //
+// // .img-sm{
+// //   height: 200px;
+// // }
+// //
+// // .image-spacer {
+// //   text-align: center;
+// //   margin:auto;
+// //   height: 200px;
+// // }
+// //
+// // .center-items {
+// //   padding: 30px;
+// // }
+// //
+// // .logo-homepage {
+// //   max-width:95%;
+// //   margin-bottom: 5%;
+// // }
+// //
+// // // Nav
+// //
+// // .links-right {
+// //   display:inline-block;
+// //   float: right;
+// // }
+// //
+// // .links-left {
+// //   display:inline-block;
+// //   text-align: left;
+// // }
+// //
+// // .header-links a {
+// //   margin-right:10px;
+// // }
+// //
+// // // Header
+// //
+// // .join_login_buttons {
+// //   float: right;
+// // }
+// // Join & Login Form
+//
+// .fb_btn_container {
+//   margin: auto;
+//   text-align: center;
+// }
+//
+// .fb_btn {
+//   background-color: #3B5998;
+//   color: white;
+//   width: 100%
+// }
+//
+// .join_btn {
+//   width: 100%;
+// }
+//
+// .join_inputs {
+//   margin-bottom: 1em;
+// }
+//
+// .join_or {
+//   text-align: center;
+//   margin-bottom: 1em;
+//   font-style: italic;
+// }
+//
+// .join_legals {
+//   text-align: center;
+//   font-style: italic;
+//   font-size: 0.7em;
+// }
+//
+// .login_forgot_prompt {
+//   text-align: center;
+//   font-style: italic;
+//   font-size: 0.7em;
+// }
+//
+// // Profile
+// $profile-pic-container-width: 220px;
+// .profile_photo {
+//   max-width:200px;
+//   max-height:200px;
+//   display: inline;
+// }
+//
+// .user_profile_header {
+//   margin-top: 0px;
+// }
+//
+// .profile_container {
+//   margin-top: 2em;
+// }
+//
+// .profile_pic_container {
+//   text-align: center;
+//   max-width: $profile-pic-container-width;
+// }
+// .edit-profile-pic {
+//   text-align:left;
+//   // max-width: $profile-pic-container-width;
+//   // border: 1px solid #CCC;
+//   // @include box-shadow(0px 1px 1px rgba(0, 0, 0, 0.075) inset) ;
+//
+//   img {
+//     margin-bottom:10px;
+//   }
+//
+//   a {
+//     font-size: 0.9em;
+//     margin-top:10px;
+//   }
+// }
+//
+// .message_user_btn {
+//   margin: auto;
+//   text-align: center;
+//   margin-top: 2em;
+// }
+//
+// .garden_pic {
+//   display: inline;
+//   max-width: 100%;
+// }
+//
+// .garden_headers {
+//   display: inline;
+// }
