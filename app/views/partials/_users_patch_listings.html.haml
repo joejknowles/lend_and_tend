@@ -5,14 +5,15 @@
       %div.panel-heading
         %h4= patch.patch_type
       %div.panel-body
-        %div.col-xs-6
+        .row
+        %div.col-xs-12.col-md-6
           - if patch.patch_images.first
             = image_tag patch.patch_images.first.image.url(:medium)
           -else
             %img{ src: 'http://placehold.it/250x250' }
-        %div.col-xs-6
-        %h5.garden_headers About
-        %p= patch.description
+        %div.col-xs-12.col-md-6
+          %h5.garden_headers About
+          %p= patch.description
       %div.panel-footer
         %div.col-xs-6
           %h5.garden_headers
