@@ -6,8 +6,10 @@
       .col-xs-12.border-box
         - if @user.user_avatar
           = image_tag @user.user_avatar.image.url(:medium), class: 'profile_photo'
-        - else @user.image
+        - elsif @user.image
           = image_tag "#{@user.image}?type=large"
+        - else
+          %img.profile_photo{ src: 'http://placehold.it/250x250' }
 
     .row
 
