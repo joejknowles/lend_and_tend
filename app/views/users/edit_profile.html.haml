@@ -1,32 +1,37 @@
 .header-box
   %h1 Tell us about yourself
-.main-content-box
-  .row
-    .col-sm-4.edit-profile-pic.border-box
-      .row
-        .col-xs-12
-          - if @user.user_avatar
-            = image_tag @user.user_avatar.image.url(:medium), class: 'profile_photo'
-          - else
-            %img.profile_photo{ src: 'http://placehold.it/250x250' }
-      .row
-        .col-xs-12
-          .center
-            = form_for @user, url: users_update_avatar_path,  html: { method: :put } do |f|
-              .form-group
-                = f.label :image, class: 'sr-only'
-                = f.file_field :image
-              .form-group
-                = f.submit 'Update photo', class: 'btn btn-default btn-custom'
-                %br
-                - if @user.user_avatar
-                  = link_to 'Remove photo', user_avatar_path(@user.user_avatar), method: :delete
-    .col-sm-8
-      - placeholder_text = " Do you have or require tools? \n When would like to offer/or access a garden?  \n Do you have pets or children?   \n What would like from this this experience?   \n What's your occupation?  \n Include links to your social channels so people can see you...  \n What would you like done to your garden?  \n Or what would you like to grow?"
-      = form_for @user, url: users_edit_profile_path,  html: { method: :put } do |f|
-        .form-group
-          = f.label :about_me, class: 'sr-only'
-          = f.text_area :about_me, size: '50x11', class: 'form-control', placeholder: placeholder_text
-        .form-group
-          = f.submit 'Save profile', class: 'btn btn-default btn-custom'
-          = link_to 'DANGER: delete my account', user_registration_path, method: :delete, class: 'delete-account', data: {confirm: "Are you sure you want to delete your profile and all your patches?"}
+.main-content-box.container.center
+  .col-sm-4.edit-profile-pic
+    .row
+      .col-xs-12.border-box
+        - if @user.user_avatar
+          = image_tag @user.user_avatar.image.url(:medium), class: 'profile_photo'
+        - else
+          %img.profile_photo{ src: 'http://placehold.it/250x250' }
+        .center
+          = form_for @user, url: users_update_avatar_path,  html: { method: :put } do |f|
+            .form-group
+              = f.label :image, class: 'sr-only'
+              = f.file_field :image
+            .form-group
+              = f.submit 'Update photo', class: 'btn btn-default btn-custom'
+              %br
+              - if @user.user_avatar
+                = link_to 'Remove photo', user_avatar_path(@user.user_avatar), method: :delete
+
+    .row
+      .col-xs-12.border-box
+        %ul
+          %li
+            = link_to 'Update Account Details', edit_user_registration_path
+          %li
+            = link_to 'DANGER: delete my account', user_registration_path, method: :delete, class: 'delete-account', data: {confirm: "Are you sure you want to delete your profile and all your patches?"}
+  .col-sm-8
+    - placeholder_text = " Do you have or require tools? \n When would like to offer/or access a garden?  \n Do you have pets or children?   \n What would like from this this experience?   \n What's your occupation?  \n Include links to your social channels so people can see you...  \n What would you like done to your garden?  \n Or what would you like to grow?"
+    = form_for @user, url: users_edit_profile_path,  html: { method: :put } do |f|
+      .form-group
+        = f.label :about_me, class: 'sr-only'
+        = f.text_area :about_me, size: '50x11', class: 'form-control', placeholder: placeholder_text
+      .form-group
+        = f.submit 'Save profile', class: 'btn btn-default btn-custom'
+        

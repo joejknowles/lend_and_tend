@@ -102,7 +102,7 @@ h2 {
   border-right: none;
 }
 .border-box {
-  border: 1px solid $secondary-color;
+  border: 1px solid #ccc;
   @include rounded-corners(5px);
   padding: 10px;
   margin-bottom: 10px;
@@ -186,3 +186,193 @@ h2 {
   width: 60%;
   margin-bottom: 7em;
 }
+
+// // Place all the styles related to the static controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
+// $primary-color: #fff;
+// $secondary-color: rgba(0, 205, 0, 1);
+// $secondary-color-opaque: lighten(rgba(19, 205, 0, 0.6), 30%);
+// $max-main-width: 960px;
+// $shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $secondary-color-opaque;
+//
+// .home-header {
+//   font-size: 2.5em;
+//   font-weight: bold;
+//   text-shadow: 2px 2px black;
+// }
+//
+// .home-subheader {
+//   text-shadow: 2px 2px black;
+//   font-size: 2.0em;
+//   font-weight: bold;
+// }
+//
+//
+//
+// .home-jumbo {
+//   background-color: rgba(191, 191, 191, 0.41);
+//   text-align: center;
+//   color: white;
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   top: 0;
+//   z-index: 1;
+//   height: 510px;
+//   padding-top: 147px;
+// }
+//
+// .home_img{
+//   background-image: url('http://s0.geograph.org.uk/photos/24/78/247898_35e96af5.jpg');
+//   background-size: cover;
+//   background-position: 50% 50%;
+//   background-repeat: no-repeat;
+//   height: 100%;
+// }
+//
+// .center-block {
+//   letter-spacing: 1em;
+// }
+//
+// .center-block form {
+//   display: inline;
+// }
+//
+// .home-img-container {
+//  /* background-color: black;*/
+//   height: 170px;
+//   padding: 0;
+// }
+//
+// h2 {
+//   font-size: 1.5em;
+//   margin-bottom: 2em;
+// }
+//
+// .what_is {
+//   margin-bottom: 7em;
+// }
+//
+// .what_is h2 {
+//   text-align: center;
+// }
+//
+// .photo_wall {
+//   margin-bottom: 7em;
+// }
+//
+// @mixin padding-sides($padding:10px) {
+//   padding-left: $padding;
+//   padding-right:$padding;
+// }
+// @mixin rounded-corners($radius:5px) {
+//   -webkit-border-radius: $radius;
+//   -moz-border-radius: $radius;
+//   border-radius: $radius;
+// }
+// @mixin box-shadow($shadow) {
+//    -moz-box-shadow:    $shadow;
+//    -webkit-box-shadow: $shadow;
+//    box-shadow:         $shadow;
+// }
+//
+// .top-border-only{
+//   border-top: 1px solid $secondary-color;
+//   border-bottom: none;
+//   border-left: none;
+//   border-right: none;
+// }
+//
+// .bottom-border-only {
+//   border-top: none;
+//   border-bottom: 1px solid $secondary-color;
+//   border-left: none;
+//   border-right: none;
+// }
+// .border-box {
+//   border: 1px solid $secondary-color;
+//   @include rounded-corners(5px);
+//   padding: 10px;
+//   margin-bottom: 10px;
+// }
+// .form-control:focus {
+//   border-color: $secondary-color;
+//   @include box-shadow($shadow);
+// }
+// .errors {
+//   width: $max-main-width;
+//   color: red;
+//   @extend .center;
+//   @include padding-sides;
+// }
+// .btn-custom {
+//   background-color:$primary-color;
+//   &:hover {
+//     background-color: $primary-color;
+//     @extend .form-control:focus;
+//   }
+// }
+// .center {
+//   margin: 0 auto;
+// }
+// .center-everything {
+//   @extend .center;
+//   text-align:center;
+// }
+// .main-content-box {
+//   max-width: $max-main-width;
+//   width:100%;
+//   @extend .center;
+//   /*@extend .container;*/
+//   margin:15px auto 0 auto;
+// }
+// .header-box {
+//   /*@extend .container-fluid;*/
+//   text-align:center;
+//   margin-bottom:25px;
+// }
+// @mixin placeholder-box($min-height:100px) {
+//   min-height: $min-height;
+//   border: 1px solid #f5f5f5;
+// }
+//
+// .vcenter-outer {
+//   padding: 0;
+// }
+//
+// .vcenter-inner {
+//   margin: 0;
+// }
+//
+// .lendr_home_img, .tendr_home_img {
+//   height: 100%;
+//   background-color: rgba(216, 191, 216, 0.8);
+// }
+//
+// //homepage header styles
+// #index-header {
+//   div {
+//     text-align:center;
+//   }
+//
+// }
+// //nav styles
+// .navbar-custom {
+//   margin-bottom: 1em;
+//   background-color: $primary-color;
+//   @extend .bottom-border-only;
+// }
+//
+// .summary {
+//   @extend .center-everything;
+//   padding:20px 10px;
+//   margin: 12em 0;
+// }
+//
+// .social-feed {
+//   /*@include placeholder-box(250px);*/
+//   @extend .center-everything;
+//   width: 60%;
+//   margin-bottom: 7em;
+// }
