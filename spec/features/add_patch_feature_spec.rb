@@ -28,6 +28,16 @@ feature 'Add a patch' do
       expect(current_path).to eq '/patches/new'
     end
 
+    scenario 'fails with invalid postcode location' do
+      visit '/patches/new'
+      fill_in 'Location', with: '6l gs nodhu pt a'
+      select 'Hanging basket', from: 'Space to offer'
+      select '0-1 year', from: 'How long can you offer this space?'
+      click_button 'List my patch'
+      expect(page).to have_content("Please enter a valid location")
+      expect(current_path).to eq '/patches/new'
+    end
+
     scenario 'add a patch with an image' do
       visit '/patches/new'
       select 'Hanging basket', from: 'Space to offer'
@@ -52,15 +62,13 @@ feature 'Add a patch' do
       expect(page).to have_content "EC4M 8AD"
       expect(page).to have_content "YO10 3DD"
     end
-
-    xscenario 'validates postcode is correct' do
-    end
   end
 
   context 'when unauthenticated' do
     scenario 'redirects to the "Log in" page' do
       visit '/patches/new'
-      expect(page).to have_content 'You need to sign in or sign up before continuing.'
+      expect(page).to have_content(
+        'You need to sign in or sign up before continuing.')
       expect(current_path).to eq '/users/sign_in'
     end
   end

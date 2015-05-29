@@ -105,6 +105,14 @@ RSpec.configure do |config|
         }
       ]
     )
+    Geocoder::Lookup::Test.add_stub(
+      '6l gs nodhu pt a', [
+        {
+          'latitude'     => nil,
+          'longitude'    => nil
+        }
+      ]
+    )
   end
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
