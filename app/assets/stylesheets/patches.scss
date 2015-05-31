@@ -1,0 +1,42 @@
+// Place all the styles related to the patches controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.list-unstyled {
+
+  li {
+    padding: 2em 0em;
+    border-top: 2px solid #00cd00;
+    text-align: center;
+    font-size: 1.2em;
+    text-align: center;
+  }
+}
+
+.text-box {
+  text-align: left;
+}
+
+.disabled {
+  visibility: hidden;
+}
+
+.patch-type {
+   font-style: bold;
+}
+
+.pagination a {
+  padding: 0.75em;
+  color: #00cd00;
+  font-weight: bold;
+  border: 1px solid #00cd00;
+}
+
+.filter-form {
+  padding: 1.5em;
+  border: 2px solid #00cd00;
+  margin: 2.5em;
+  border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+}

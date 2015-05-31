@@ -11,3 +11,11 @@
 /log/*
 !/log/.keep
 /tmp
+
+coverage
+coverage/*
+/coverage/*
+.DS_Store
+
+/public/system/
+/public/system/**

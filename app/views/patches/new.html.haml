@@ -1,0 +1,28 @@
+- placeholder_text = " When would like to offer access to your garden?  \n Do you have pets or children?   \n What would like from this this experience?   \n What would you like to see grown?  \n Include links to your social channels so people can see you...  \n How is the garden accessible?  \n Why is your space available? Time, no interest, new experiences..."
+
+.header-box
+  %h1 Tell us about your new patch
+.main-content-box
+  .row
+  = form_for @patch, html: { multipart: true } do |f|
+    .row
+      .col-md-4.form-group
+        = f.label :patch_type, 'Space to offer'
+        = f.select :patch_type, patch_types_list, {}, class: 'form-control'
+      .col-md-4.form-group
+        = f.label :duration, 'How long can you offer this space?'
+        = f.select :duration, [['0-1 year', 1], ['1-2 year', 2]],{}, class: 'form-control'
+      .col-md-4.form-group
+        = f.label :location
+        = f.text_field :location, placeholder: "Postcode, e.g. 'WF12 7ED'", class: 'form-control'
+    .row
+      .col-md-8.form-group
+        = f.label :description
+        = f.text_area :description, class: 'form-control', placeholder: placeholder_text, size: '200x9'
+    .row
+      .col-md-12.form-group
+        = f.label :image
+        = f.file_field :image
+    .row
+      .col-md-4.form-group
+        = f.submit 'List my patch', class: 'btn btn-default btn-custom'
